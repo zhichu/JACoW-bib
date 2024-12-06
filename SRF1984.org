@@ -1,0 +1,95 @@
+#+title: SRF’84
+
+[[file:all-jacow-events.org][All JACoW Events]]
+
+
+* Export
+
+
+#+begin_src emacs-lisp :eval t
+  (let ((org-time-stamp-custom-formats
+         '("<%Y-%m-%d>" . "%Y-%m-%d %a %H:%M"))
+        (org-display-custom-times 't))
+    (org-table-map-tables
+     (lambda ()
+       (org-table-export
+        (concat "./csv/" (file-name-base) (org-entry-get (point) "TAGS") ".tsv")
+        "orgtbl-to-tsv"))))
+#+end_src
+
+#+RESULTS:
+: Mapping tables: done
+
+
+* Table
+
+** Event :event:
+
+|------------+------------------------------------------------------------+--------------|
+| key        | value                                                      | short        |
+|------------+------------------------------------------------------------+--------------|
+| eventtitle | Second Workshop on RF Superconductivity                    | SRF’84       |
+| eventdate  | <1984-07-23>--<1984-07-27>                               |              |
+| venue      | Geneva, Switzerland                                        |              |
+| booktitle  | Proceedings of the Second Workshop on RF Superconductivity | Proc. SRF’84 |
+| editor     | E. Chiaveri and F. Beetschen-Buttay                        |              |
+|------------+------------------------------------------------------------+--------------|
+#+TBLFM: @2$3='(cadar (org-collect-keywords '("TITLE")))::@5$3='(concat "Proc. " (cadar (org-collect-keywords '("TITLE"))))
+
+** Sessions :session:
+
+|---+----------------------------------------|
+| A | Laboratory Reports                     |
+| B | Low Beta Resonators and Accelerators   |
+| C | Large Storage Rings                    |
+| D | Special Topics on RF Superconductivity |
+|---+----------------------------------------|
+
+** Paper :inproceedings:
+
+|----------+---------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| ﻿eid      | title                                                                                       | author                                                                                                                                                                                                               | firstpage | lastpage |   pages |
+|----------+---------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| SRF84-1  | Status of {RF} Superconductivity at {Argonne National Laboratory}                           | K. W. Shepard                                                                                                                                                                                                        |         9 |       24 |    9-24 |
+| SRF84-2  | {RF} - Superconductivity at{ CERN}                                                          | H. Lengeler and C. Benvenuti and P. Bernard and D. Bloess and G. Cavallari and E. Chiaveri and N. Circelli and W. Erdt and E. Haebel and P. Marchand and R. Stierlin and J. Tückmantel and W. Weingarten and H. Piel |        25 |       48 |   25-48 |
+| SRF84-3  | Superconducting {RF} Activities at {Cornell University}                                     | R. Sundelin                                                                                                                                                                                                          |        49 |       62 |   49-62 |
+| SRF84-4  | Superconducting Cavities at {DESY}                                                          | W. Ebeling and B. Dwersteg and W. Flauger and W. D. Moeller and J. Peters and D. Proch and J. Susta                                                                                                                  |        63 |       74 |   63-74 |
+| SRF84-5  | Recent Results on Superconducting Cavities at {KEK}                                         | Y. Kojima                                                                                                                                                                                                            |        75 |       90 |   75-90 |
+| SRF84-6  | {RF} Superconductivity at {Orsay}                                                           | V. Nguyen Tuong and L. Wartski and M. Boussoukaya and K. M’Baye and M. Pham Tu and J. C. Villegier                                                                                                                   |        91 |      106 |  91-106 |
+| SRF84-7  | The Pulsed {RF} Superconductivity Program at {SLAC}                                         | I. E. Campisi and Z. D. Farkas                                                                                                                                                                                       |       107 |      140 | 107-140 |
+| SRF84-8  | Activities on RF-Superconductivity at Wuppertal                                             | H. Heinrichs and G. Arnolds-Mayer and T. Grundey and U. Klein and N. Minatti and G. Müller and M. Peiniger and H. Piel and G. Unterbörsch and H. P. Vogel                                                            |       141 |      172 | 141-172 |
+|----------+---------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| SRF84-9  | Tests of Beta = 0.1 and Development of Beta = 0.2 — Lead Plated Quarter Wave Resonators    | D. W. Storm and T. Goliak and A. G. Seamster and J. M. Brennan and R. Coughlin and I. Ben-Zvi                                                                                                                        |       173 |      180 | 173-180 |
+| SRF84-10 | The Stub to Plate Weld in Quarter Wave Resonators — An Investigation                       | D. C. Weisser and M. Malev and J. S. Sokolowski                                                                                                                                                                      |       181 |      182 | 181-182 |
+| SRF84-11 | The Superconducting Separated Orbit Cyclotron Triton                                        | U. Trinks                                                                                                                                                                                                            |       183 |      188 | 183-188 |
+| SRF84-12 | Development of the Triton Cavities                                                          | L. Dietl                                                                                                                                                                                                             |       189 |      194 | 189-194 |
+| SRF84-13 | Remarks on Low Beta Structures and Accelerators Using Lead Technology                       | J. R. Delayen and J. R. Delayen                                                                                                                                                                                      |       195 |      202 | 195-202 |
+|----------+---------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| SRF84-14 | What did we learn from Storage Ring Tests?                                                  | R. Sundelin                                                                                                                                                                                                          |       203 |      224 | 203-224 |
+| SRF84-15 | Beam Test of a Three-Cell Structure in the Tristan Accumulation Ring                        | Y. Kojima                                                                                                                                                                                                            |       225 |      234 | 225-234 |
+| SRF84-16 | Status Report of the Petra 18-Cell Superconducting Cavity Experiment                        | D. Proch and B. Dwersteg and W. Ebeling and W. Flauger and W. D. Moeller and J. Peters and D. Renken and J. Susta                                                                                                    |       235 |      254 | 235-254 |
+| SRF84-17 | Superconducting Acceleration System for {LEP}                                               | E. Picasso                                                                                                                                                                                                           |       255 |      280 | 255-280 |
+| SRF84-18 | An Improved Superconducting Cavity Design for {LEP}                                         | J. Tückmantel and E. Haebel and P. Marchand                                                                                                                                                                          |       281 |      298 | 281-298 |
+| SRF84-19 | Beam Tube Couplers for the Superconducting {LEP} Cavity                                     | E. Haebel                                                                                                                                                                                                            |       299 |      322 | 299-322 |
+| SRF84-20 | Cryogenics for Superconducting {RF} Cavities in {LEP}                                       | J. Schmid                                                                                                                                                                                                            |       323 |      338 | 323-338 |
+|----------+---------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| SRF84-21 | The Technology of {Nb} Production and Purification                                          | H. Padamsee                                                                                                                                                                                                          |       339 |      376 | 339-376 |
+| SRF84-22 | Diagnostic Techniques and Defect Classification                                             | G. Müller                                                                                                                                                                                                            |       377 |      408 | 377-408 |
+| SRF84-23 | Chemistry and Surface Treatment                                                             | D. Bloess                                                                                                                                                                                                            |       409 |      426 | 409-426 |
+| SRF84-24 | On {RF} Residual Losses in Superconducting Cavities                                         | J. Halbritter                                                                                                                                                                                                        |       427 |      446 | 427-446 |
+| SRF84-25 | Long Term Operation of Niobium Superconducting Resonators in the {Argonne} Heavy-Ion Linac  | K. W. Shepard                                                                                                                                                                                                        |       447 |      454 | 447-454 |
+| SRF84-26 | Surface Studies of {Nb}, its Compounds, and Coatings                                        | E. L. Garwin and R. E. Kirby                                                                                                                                                                                         |       455 |      504 | 455-504 |
+| SRF84-27 | Contribution of Oxide Layers to the Residual Resistance of Niobium                          | F. Palmer                                                                                                                                                                                                            |       505 |      508 | 505-508 |
+| SRF84-28 | Clean Work and its Consequences — Contamination Control Considerations                     | P. Kneisel                                                                                                                                                                                                           |       509 |      532 | 509-532 |
+| SRF84-29 | Field-Induced Electron Emission from Localized Sites on Extended-Area Electrodes            | R. V. Latham                                                                                                                                                                                                         |       533 |      550 | 533-550 |
+| SRF84-30 | Electron Loading                                                                            | W. Weingarten                                                                                                                                                                                                        |       551 |      582 | 551-582 |
+| SRF84-31 | Investigations on Field Emission from Broad Area {Nb} — Cathodes                           | O. Fischer and Ph. Niedermann and N. Sankarraman                                                                                                                                                                     |       583 |      596 | 583-596 |
+| SRF84-32 | Development in Fabrication Methods                                                          | J. Susta                                                                                                                                                                                                             |       597 |      610 | 597-610 |
+| SRF84-33 | Welding of Niobium Cavities at {CERN}                                                       | E. Chiaveri and H. Lengeler                                                                                                                                                                                          |       611 |      626 | 611-626 |
+| SRF84-34 | Superconducting {500 MHz} Accelerating Copper Cavities Sputter — Coated with Niobium Films | C. Benvenuti and N. Circelli and M. Hauer and W. Weingarten                                                                                                                                                          |       627 |      642 | 627-642 |
+| SRF84-35 | {A15} Surfaces in {Nb} Cavities                                                             | G. Arnolds-Mayer                                                                                                                                                                                                     |       643 |      666 | 643-666 |
+|----------+---------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+#+TBLFM: $5=@+1$-1 -1 :: @>$5=666
+#+TBLFM: $6='(if (equal $-2 $-1) (format "%s" $-2) (format "%s-%s" $-2 $-1))
+
+

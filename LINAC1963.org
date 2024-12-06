@@ -1,0 +1,123 @@
+#+title: LINAC’63
+
+[[file:all-jacow-events.org][All JACoW Events]]
+
+
+* Export
+
+
+#+begin_src emacs-lisp :eval t
+  (let ((org-time-stamp-custom-formats
+         '("<%Y-%m-%d>" . "%Y-%m-%d %a %H:%M"))
+        (org-display-custom-times 't))
+    (org-table-map-tables
+     (lambda ()
+       (org-table-export
+        (concat "./csv/" (file-name-base) (org-entry-get (point) "TAGS") ".tsv")
+        "orgtbl-to-tsv"))))
+#+end_src
+
+#+RESULTS:
+: Mapping tables: done
+
+
+* Table
+
+** Event :event:
+
+|------------+------------------------------------------------------------------+----------------|
+| key        | value                                                            | short          |
+|------------+------------------------------------------------------------------+----------------|
+| eventtitle | 1963 Conference on Proton Linear Accelerators                    | LINAC’63       |
+| eventdate  | <1963-10-21>--<1963-10-25>                                     |                |
+| venue      | New Haven, Connecticut, USA                                      |                |
+| booktitle  | Proceedings of the 1963 Conference on Proton Linear Accelerators | Proc. LINAC’63 |
+| editor     | H. B. Knowles                                                    |                |
+|------------+------------------------------------------------------------------+----------------|
+#+TBLFM: @2$3='(cadar (org-collect-keywords '("TITLE")))::@5$3='(concat "Proc. " (cadar (org-collect-keywords '("TITLE"))))
+
+
+** Sessions :session:
+
+|------+------------------------------------|
+| I    | Beam Dynamics                      |
+| II   | Debunching                         |
+| III  | Beam Loading                       |
+| IV   | New Accelerator Structures         |
+| V    | Analysis of High Energy Structures |
+| VI   | Drift Tube Machines                |
+| VII  | Operating Linear Accelerators      |
+| VIII | Prebunching                        |
+| IX   | Synchrotron Injection from Linacs  |
+| X    | Radiofrequency Power               |
+| XI   | Linac Meson Factories              |
+| XII  | New European Designs               |
+| XIII | Linac Vacuum Technique             |
+| XIV  | Linac Fabrication                  |
+| XV   | Buildings and Services             |
+|------+------------------------------------|
+
+
+** Paper :inproceedings:
+
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|   ﻿eid | title                                                                                   | author                                                       |   pages |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  1-01 | Coupled Phase and Radial Motion in Linear Accelerators                                  | D. A. Swenson                                                |    1-13 |
+|  1-02 | Computer Programs for Particle Motion in Linacs                                         | S. Ohnuma                                                    |   14-28 |
+|  1-03 | The Effects of Phase and Field Errors on the Longitudinal Motion in a Long Proton Linac | G. W. Wheeler and T. W. Ludlam                               |   29-48 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  2-01 | Debunching of High Energy Beams                                                         | L. C. Teng                                                   |   49-62 |
+|  2-02 | {RF} Structure of Proton Linac Beams                                                    | R. L. Gluckstern                                             |   63-70 |
+|  2-03 | Debunchers for Semi-Relativistic Linacs                                                 | F. E. Mills                                                  |   71-73 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  3-01 | Beam Loading and Beam Blowup in Electron Linacs                                         | J. E. Leiss                                                  |   74-94 |
+|  3-02 | Beam Loading Effects in Proton Linacs                                                   | R. L. Gluckstern                                             |  95-103 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  4-01 | Crossbar and Cloverleaf Structures at {Rutherford}                                      | A. Carne                                                     | 104-130 |
+|  4-02 | Accelerating Structure Research at {Los Alamos}                                         | E. A. Knapp                                                  | 131-152 |
+|  4-03 | Measurements on Iris-Loaded Waveguides                                                  | S. Giordano                                                  | 153-170 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  5-01 | Steady State Behavior of a Ring or of a Chain a Coupled Circuits                        | D. E. Nagle and E. A. Knapp                                  | 171-189 |
+|  5-02 | Effect of Errors in Repetitive Structures                                               | R. L. Gluckstern                                             | 190-195 |
+|  5-03 | Standing versus Travelling Waveguides                                                   | M. Jakobson                                                  | 196-203 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  6-01 | Drift Tube Structures                                                                   | D. E. Young                                                  | 204-220 |
+|  6-02 | The {Yale} Drift Tube Linac                                                             | J. N. Vitale                                                 | 221-230 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  7-01 | {ZGS} Injector Linac                                                                    | P. Livdahl                                                   | 231-239 |
+|  7-02 | Bevatron Injector Linac {II}                                                            | E. L. Hubbard                                                | 240-247 |
+|  7-03 | {AGS} Injector and Preinjector Beam Studies                                             | van Steenbergen, A.                                          | 248-266 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  8-01 | Prebunching in Electron Linacs                                                          | J. E. Leiss                                                  | 267-272 |
+|  8-02 | Bunching for High-Intensity Linacs                                                      | S. Ohnuma                                                    | 273-278 |
+|  8-03 | Harmonic Bunching                                                                       | R. Perry                                                     | 279-287 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+|  9-01 | Injection into {FFAG} Accelerators                                                      | C. D. Curtis                                                 | 288-300 |
+|  9-02 | Injection into the {BNL} {AGS}                                                          | E. D. Courant                                                | 301-310 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+| 10-01 | {RF} Power Sources                                                                      | D. C. Hagerman                                               | 311-320 |
+| 10-02 | Multiple Excitation of {RF} Cavities with an {RF} Manifold                              | F. Voelker                                                   | 321-332 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+| 11-01 | Radiation Hazards of a High Intensity Proton Linear Accelerator                         | H. B. Knowles                                                | 333-360 |
+| 11-02 | Beam Handling                                                                           | R. D. Edge                                                   | 361-381 |
+| 11-03 | A Meson Factory Experimental Target Area Design                                         | A. D. McGuire                                                | 382-395 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+| 12-01 | Review of Parameters for an {100 MeV} Injector for the {70 GeV} {USSR} Synchrotron      | I. J. Polk                                                   | 396-403 |
+| 12-02 | The {Rutherford} {PLA} and a Linac for the High Energy Accelerator Design Study         | J. M. Dickson and K. Batchelor and D. J. Warner and A. Carne | 404-420 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+| 13-01 | Vacuum Requirements for Linacs                                                          | P. Grand                                                     | 421-430 |
+| 13-02 | The Hydrogen Purging Technique                                                          | H. G. Worstell                                               | 431-441 |
+| 13-03 | Vacuum Techniques                                                                       | P. Livdahl                                                   | 442-448 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+| 14-01 | Linac Fabrication Problems                                                              | P. Livdahl                                                   | 449-455 |
+| 14-02 | Diffusion Techniques in Waveguide Fabrication                                           | M. V. Hoover                                                 | 456-458 |
+| 14-03 | A Demountable Waveguide Assembly Method                                                 | I. J. Polk                                                   | 459-462 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+| 15-01 | Alignment Technigues                                                                    | O. S. Reading                                                | 463-466 |
+| 15-02 | A Meson Factory Building Design                                                         | C. W. Dunham                                                 | 467-479 |
+|-------+-----------------------------------------------------------------------------------------+--------------------------------------------------------------+---------|
+
+
+
+

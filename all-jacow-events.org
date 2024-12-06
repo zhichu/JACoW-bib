@@ -1,0 +1,2937 @@
+#+title: All JACoW Events
+#+PROPERTY: header-args:python :noweb no-export :mkdirp yes :eval no
+
+* Introduction
+
+The idea is to generate two =.bib= databases for each event:
+- one used for the current conference, A.K.A. “this conference”
+- one used by other conferences
+They are basically the same. The only difference would be to add a different database:
+- =\addbibresource[location=remote,type=file]{https://gitlab.com/jacow.org/jacow-events/-/raw/main/bib/CYCLOTRONS1959-this-conference.bib}=
+- =\addbibresource[location=remote,type=file]{https://gitlab.com/jacow.org/jacow-events/-/raw/main/bib/CYCLOTRONS1959.bib}=
+
+
+
+
+** Topology
+
+Each event will have a corresponding =org= file. The information will be put in tables. Use =<Ctrl>-c <Tab>= to hide other columns if the table is too wide.
+
+Each database has a =@proceedings= entry, which has the =eventtitle=, =eventdate=, =venue=, =booktitle=, and possibly =date= (publication date) and =editor= fields. All the works presented at the event, either =@inproceedings= or =@unpublished=, will use =crossref= field to include the information from it.
+
+** TODO Problems
+
+*** DONE Author name
+
+There’re several ways to input author names separated by =and=:
+- =[first_name [von_name]] last_name=
+- =[von_name] last_name, [Jr_name,] first_name=
+- =family=surname, given=first_name, suffix=Jr_name, prefix=von_name=, and their corresponding =<namepart>-i=
+
+
+The JACoW style prefers to use initiated form of first name. It usually works fine, but it’s still worth mentioning that
+- =Charles=, =Christine=, =Philippe=, etc. should be abbreviated to =Ch.=, =Chr.=, =Ph.=, ... respectively.
+- First names should be separated by spaces, even already abbreviated. Therefore, =D.E. Knuth= should be =D. E. Knuth=, otherwise only =D.= will be produced.
+
+What I want to do:
+- Match the first names and replace with the “correct” initials.
+- Pre-process by splitting first name with period.
+
+Right now, I wrap the whole name in ={...}=, but that just make everything as the surname, which is grammatically wrong, and could have consequences. Therefore, could be incompatible with other styles.
+
+The ideal solution would be to use the =BibLaTeX= extended name, but it does not work on vanilla =BibTeX=.
+
+The multiple letter initial could be done by ={\relax Ch}arles=, but this does not work since =biber=
+
+The best thing I can achieve is to use the this form to input author names: =[von_name] last_name, [Jr_name,] first_name=, and use the code from [[https://tex.stackexchange.com/questions/422938/two-or-three-letter-initials-in-bibliography-with-biblatex-again/423534#423534][StackExchange]]:
+#+begin_src latex3
+  \def\do#1{%
+    \ifcsundef{blx@csv@datamodel@names}
+      {\csdef{blx@csv@datamodel@names}{#1}}
+      {\csappto{blx@csv@datamodel@names}{,#1}} %»
+  }
+  \dolistcsloop{blx@datamodel@names}
+
+  \DeclareSourcemap{
+    \maps[datatype=bibtex]{
+      \map[foreach=\blx@csv@datamodel@names,overwrite=true]{
+        \step[
+        fieldsource=\regexp{$MAPLOOP},%$
+        match=\regexp{(\A|\s+and\s+)([a-z'\s]+)?\s*(.+?)\,\s+(Chr?|Th|Ph|[B-DF-HJ-NP-TV-XZ](?:l|r)|(?:À|Â|Ä|Ç|É|È|Ê|Ë|Î|Ï|Ô|Ö|Ù|Û|Ü|Ÿ|Æ|Œ)|\w)(.+?)(?:(\-(?:Chr?|Th|Ph|[B-DF-HJ-NP-TV-XZ](?:l|r)|(?:À|Â|Ä|Ç|É|È|Ê|Ë|Î|Ï|Ô|Ö|Ù|Û|Ü|Ÿ|Æ|Œ)|\w))(.+?))?(?=\Z|\s+and\s+)},
+        replace=\regexp{$1 family=$3, prefix=$2\\relax, given=$4$5$6$7, given-i=\{$4$6\}}%$
+        ]
+        \step[
+        fieldsource=\regexp{$MAPLOOP},%$
+        match=\regexp{(prefix=\,)},
+        replace=\regexp{}
+        ]
+      }
+    }
+  }
+#+end_src
+
+**** DONE Modify bib macros in bbx
+
+Change the =given-family= name format in =\DeclareNameFormat=. See [[file:~/project/JACoW/template/latex3/bbx.org]] for more details.
+
+*** TODO Sorting Authors
+
+Prefixes (=von=, =van=, =de=, =der=, =le=, etc.) should be removed before sorting.
+
+Should some name like: =O’Brian= indexed with =O= or =B=?
+
+- Anglicised versions of Irish surnames typically contain an apostrophe after an =O= (in place of =Ó=), for example "=Dara O’Briain=" for =Dara Ó Bríain=.
+- Some Scottish and Irish surnames use an apostrophe after an =M=, for example =M’Gregor=. The apostrophe here may be seen as marking a contraction where the prefix =Mc= or =Mac= would normally appear.
+
+
+
+
+
+*** TODO Consortia with =and= or =,=
+
+PAC’79, paper 3268: the authors are =PEP I and C Group, PEP Theory Group=
+
+It’s even possible that an author can have =and= in one’s name.
+
+*** Annotation
+
+Before =biber 2.20= (Mar. 2024), annotations through =crossref= are not supported: [[https://github.com/plk/biblatex/issues/1344][github:plk/biblatex#issues/1344]].
+
+
+*** Sub-/Super- scripts
+
+- ⁺⁻⁽¹²³⁴⁵⁶⁷⁸⁹⁰⁾
+- +-(1234567890)
+- ₊₋₍₁₂₃₄₅₆₇₈₉₀₎
+- ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖ𐞥ʳˢᵗᵘᵛʷˣʸᶻ
+- abcdefghijklmnopqrstuvwxyz
+- ₐbcdₑfgₕᵢⱼₖₗₘₙₒₚqᵣₛₜᵤᵥwₓyz
+- ᴬᴮꟲᴰᴱꟳᴳᴴᴵᴶᴷᴸᴹᴺᴼᴾꟴᴿSᵀᵁⱽᵂXYZ
+- ABCDEFGHIJKLMNOPQRSTUVWXYZ
+- no sub cap letters
+
+AZE notation for atom/ion:
+- mass number is greater than or equal to atomic number, so we can put the atomic number (protons) to the left without getting out of the mass number (protons+neutrons) area:
+  - ¹⁰⁸\llap{₄₆}Pd
+- the ion has charge on the upper right corner:
+  - ⁴\llap{₂}He²⁺ or sometimes ⁴\llap{₂}He⁺⁺
+
+
+
+Anyway, these Unicode characters are not necessarily available in a font. Of course we can do something like
+
+#+begin_src latex3
+  \catcode`³=\active
+  \def³{\ifmmode ^3\else \textsuperscript{3}\fi}
+  \catcode`₂=\active
+  \def₂{\ifmmode _2\else \textsubscript{2}\fi}
+#+end_src
+
+
+
+** Notes
+
+|------+-----------------------------+-------------------------------------------------------|
+| unit | description                 | link                                                  |
+|------+-----------------------------+-------------------------------------------------------|
+| c    | cycles per second, cps, c/s | [[https://en.wikipedia.org/wiki/Cycle_per_second]]        |
+| rem  | roentgen equivalent man     | [[https://en.wikipedia.org/wiki/Roentgen_equivalent_man]] |
+| amu  | atomic mass unit            | [[https://en.wikipedia.org/wiki/Atomic_mass]]             |
+| pnA  | particle nanoampere         |                                                       |
+| enA  | pnA × ion charge            |                                                       |
+|------+-----------------------------+-------------------------------------------------------|
+
+- Replace =,= with =and=: =C-M-%= ⇒ =, → " and"=;
+- Remove empty lines: select region ⇒ =M-x= ⇒ =flush-lines= ⇒ =^[ [:space:] ]*$=;
+- Split adjacent first name initials: =C-M-%= ⇒ =\.\([ [:alpha:] ]\) → ". \1"=;
+
+
+* Code
+
+** Compile
+
+#+begin_src emacs-lisp :eval yes
+  (org-entry-get (point) "header-args:python" 'inherit)
+#+end_src
+
+#+RESULTS:
+: :noweb no-export :mkdirp yes :eval no
+
+The codes will be put in =./code= directory. Run the following command to compile everything to python:
+#+begin_src shell :results raw :wrap example
+  coconut --package code/
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Left unchanged    code/event_list.py (pass --force to overwrite).
+Left unchanged    code/__constants__.py (pass --force to overwrite).
+Compiling         code/csv_to_bib.coco ...
+Left unchanged    code/__init__.py (pass --force to overwrite).
+Compiled to       code/csv_to_bib.py .
+#+end_example
+
+#+begin_src shell :results raw :wrap example :dir code
+  ls -lha
+#+end_src
+
+#+RESULTS:
+#+begin_example
+total 188K
+drwxr-xr-x 12 zhichu staff  384 Nov 26 19:21 .
+drwxr-xr-x 19 zhichu staff  608 Nov 26 19:22 ..
+-rw-r--r--  1 zhichu staff 144K Nov 26 19:06 __coconut__.py
+drwxr-xr-x  5 zhichu staff  160 Nov 26 17:05 __coconut_cache__
+-rw-r--r--  1 zhichu staff    1 Nov 26 19:21 __init__.coco
+-rw-r--r--  1 zhichu staff 4.8K Nov 23 12:32 __init__.py
+drwxr-xr-x  6 zhichu staff  192 Nov 26 19:07 __pycache__
+-rw-r--r--  1 zhichu staff 2.0K Nov 26 19:21 csv_to_bib.coco
+-rw-r--r--  1 zhichu staff 9.6K Nov 26 15:46 csv_to_bib.py
+-rw-r--r--  1 zhichu staff  572 Nov 26 19:21 get_list.coco
+-rw-r--r--  1 zhichu staff 6.0K Nov 26 19:06 get_list.py
+-rwxr-xr-x  1 zhichu staff   81 Nov 26 19:21 update_list
+#+end_example
+
+** Create a package
+
+Create an empty =__init__= file so that the directory can be recognised as a package:
+#+begin_src python :tangle code/__init__.coco
+#+end_src
+
+** Constants
+
+#+begin_src python :tangle code/__constants__.coco
+  csv_dir = '../csv'
+  bib_dir = '../bib'
+  ev_list_file  = '../event_list'
+  inf_number = 'inf' ↦ float
+  inf_future =  inf_number
+  inf_past   = -inf_number
+#+end_src
+
+** Convert =.csv= file to =.bib= file
+
+#+begin_src python :tangle code/csv_to_bib.coco
+  <<csv-to-bib-imports>>
+
+  <<csv-to-bib-consts>>
+
+  <<csv-to-bib-funcs>>
+
+  <<csv-to-bib-export-proc>>
+
+  <<csv-to-bib-export-inprocs>>
+
+  <<csv-to-bib-export-unpubs>>
+
+  <<csv-to-bib-ev-to-bib>>
+#+end_src
+
+This file provides a function that takes the event name and returns a string of the bibtex database.
+
+*** Read =.csv= file
+
+We use the =read_table= function from =pandas= library
+#+begin_src python :noweb-ref csv-to-bib-imports
+  from pandas import read_table
+#+end_src
+and convert it to a dictionary:
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  csv_to_dicts =  .tolist() ∘ .apply(⇒ _.dropna().to_dict(),axis=1) ∘ read_table$(dtype=str)
+#+end_src
+The former definition
+#+begin_src python :noweb-ref csv-to-bib-funcs'
+  csv_to_dicts =  .to_dict(orient='records') ∘ read_table$(na_filter= False)
+#+end_src
+The old definition does not convert empty cell to =NaN= so =if dic['value']= will return false for an empty string.
+The new one removes the =NaN= element which makes it more robust.
+
+*** =.csv= file structures
+
+Each event will have three =.csv= files:
+- *<event>*:event:.csv, contains the information of the event, with mandatory fields: =eventtitle=, =eventdate=, =venue=, and =booktitle=, and optional fields like =year= and =month= (publication date). The =*title= fields can have a =short= variant.
+- *<event>*.csv, contains all the papers published in the proceedings, with mandatory fields: =eid=, =author=, =title=, and =pages=, and optional fields like =doi=.
+- *<event>*:unpublished:.csv, contains all the unpublished works presented in the event, with mandatory fields: =eid=, =author=, and =title=.
+
+For example, the =CYCLOTRONS’59= event, the =CYCLOTRONS1959:event:.tsv= looks like this:
+|------------+--------------------------------------------------------------------+--------------|
+| key        | value                                                              | short        |
+|------------+--------------------------------------------------------------------+--------------|
+| eventtitle | Conference on Sector-Focused Cyclotrons                            | CYC’59       |
+| eventdate  | <1959-02-02>--<1959-02-04>                                       |              |
+| venue      | Sea Island, Georgia, USA                                           |              |
+| booktitle  | Proceedings of an Informal Conference on Sector-Focused Cyclotrons | Proc. CYC’59 |
+|------------+--------------------------------------------------------------------+--------------|
+and =CYCLOTRONS1959.tsv= or the =:unpublished:= looks like this:
+|----------+-----------------------------------+------------+-------|
+| ﻿eid      | title                             | author     | pages |
+|----------+-----------------------------------+------------+-------|
+| CYC59A01 | Session {I} Summary               | D. L. Judd |   1-3 |
+| CYC59A02 | Session {I} Introductory Comments | D. L. Judd |   4-6 |
+| ...      | ...                               | ...        |   ... |
+
+**** =<event>:event:.tsv=
+
+The =*date= fields need to be treated a little bit differently. I am using the =org-mode= timestamp format here to make it easy to export my =org-mode= documents to something like =HTML=. When exporting the table to a =.tsv= file, I adopt the format of date to be =<%Y-%m-%d>--<%Y-%m-%d>=. Here, we need the =re= library to do regular expression pattern matching:
+#+begin_src python :noweb-ref csv-to-bib-imports
+  from re import compile as regex
+#+end_src
+To convert the timestamp, we can just find all =\d{4}-\d{2}-\d{2}= and join the first and last occurrences with the forward slash separator: =/=
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  find_dates = r'<([\d-]*)>' ↦ regex  ↦ .findall
+  to_iso8061 = (⇒ _ ↦ find_dates ↦ (x ⇒ f'{x[0]}/{x[-1]}'))
+#+end_src
+and we only need to process that if the field is a =*date=
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  is_date = r'^.*date$' ↦ regex  ↦ .search
+#+end_src
+
+Don’t forget to escape special characters:
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  get_special = r'([%&])' ↦ regex
+#+end_src
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  to_TeX = get_special.sub$(r'\\\1')
+#+end_src
+
+The output of =csv_to_dicts= is a list of dictionaries like: ={'key':'eventtitle', 'value':'Conference on Sector-Focused Cyclotrons', 'short':'CYC’59'}=.
+We need to make a list of strings out of it, in this case: =['eventtitle={Conference on Sector-Focused Cyclotrons}', 'eventtitle+an:short={CYC’59}']=, map over the complete list of dictionaries, and concatenate them:
+#+begin_src python :noweb-ref csv-to-bib-export-proc
+  ev_dict_to_strs = (⇒ _ ↦ lift$(,)(.get('key') , .get('value') , .get('short')) *↦ key_value_short_to_strs ↦ fmap$indent)
+#+end_src
+where =key_value_short_to_strs= take 3 strings and create a list of necessary fields:
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  def key_value_short_to_strs(k,v,s) =
+      (if k ↦ is_date then [f'{k} = {{{v ↦ to_iso8061}}}'] else [f'{k} = {{{v ↦ to_TeX}}}']) + (if s then [f'{k}+an:short = {{="{s ↦ to_TeX}"}}'] else [])
+#+end_src
+and =indent= prepends 2 spaces in front of a string to make it look nice:
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  indent = ('  '+.)
+#+end_src
+
+We don’t want to show the reference so we need to add another dictionary to the list from the =.tsv=:
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  dont_show = (.+[data_only])
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-consts
+  data_only = {'key':'options', 'value':'dataonly'}
+#+end_src
+
+Now we can apply =ev_dict_to_strs= to the new list of dictionaries and get the list of fields of the event:
+#+begin_src python :noweb-ref csv-to-bib-export-proc
+  ev_to_fields = (⇒ f'{csv_dir}/{_}:event:.tsv' ↦ csv_to_dicts ↦ dont_show ↦ fmap$ev_dict_to_strs ↦ reduce$(+))
+#+end_src
+where the path is defined in =__constants__=:
+#+begin_src python :noweb-ref csv-to-bib-imports
+  from __constants__ import *
+#+end_src
+
+A label will be used to be cross referenced by the papers in the event:
+#+begin_src python :noweb-ref csv-to-bib-export-proc
+  ev_to_labeled_fields = (⇒ _ ↦ lift(,)(proc_ref , ev_to_fields) *↦ add_label_to_list)
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  proc_ref = (⇒ f'JACoW:{_}:')
+#+end_src
+is used to generate the label, and
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  def add_label_to_list(x,y) = [x] + y
+#+end_src
+
+Put a comma at the end of each line and join them together:
+#+begin_src python :noweb-ref csv-to-bib-export-proc
+  labeled_fields_to_str = ''.join ∘ fmap$format_fld
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  format_fld = (.+',\n')
+#+end_src
+
+The event entry can be generated with:
+#+begin_src python :noweb-ref csv-to-bib-export-proc
+  ev_to_proc = str_to_proc ∘ labeled_fields_to_str ∘ ev_to_labeled_fields
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  str_to_proc = (⇒ f'@proceedings{{{_}}}\n\n')
+#+end_src
+
+
+**** =<event>.tsv=
+
+Each dictionary is a paper, and can be converted to a list of fields
+#+begin_src python :noweb-ref csv-to-bib-export-inprocs
+  paper_dict_to_fields = (⇒ _ ↦ exclude_keys$({'firstpage','lastpage'}) ↦ .items() ↦ list ↦ fmap$(indent ∘ simple_key_val))
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  def exclude_keys(ks,d) = {k: d[k] for k in d.keys() - ks}
+#+end_src
+and
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  simple_key_val = (⇒f'{_[0]} = {{{_[1] ↦ to_TeX}}}')
+#+end_src
+
+
+It also needs a label in the form =<event><eid>=:
+#+begin_src python :noweb-ref csv-to-bib-export-inprocs
+  paper_dict_to_labeled_fields = (⇒ _ ↦ lift(,)(paper_dict_to_label , paper_dict_to_fields) *↦ add_label_to_list)
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  paper_dict_to_label = to_TeX ∘ reduce$(+) ∘ lift$(,)(.get('crossref') , .get('eid'))
+#+end_src
+
+Now we can generate the paper entry:
+#+begin_src python :noweb-ref csv-to-bib-export-inprocs
+  paper_dict_to_inproc = str_to_inproc ∘ labeled_fields_to_str ∘ paper_dict_to_labeled_fields
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  str_to_inproc = (⇒ f'@inproceedings{{{_}}}\n\n')
+#+end_src
+
+
+#+begin_src python :noweb-ref csv-to-bib-export-inprocs
+  ev_to_inproc_lists = (⇒ f'{csv_dir}/{_}:inproceedings:.tsv' ↦ csv_to_dicts ↦ fmap$(paper_dict_to_inproc ∘ (.|(_↦crossref))))
+#+end_src
+but we need to put the =crossref= field
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  crossref = (⇒ {'crossref': (_ ↦ proc_ref)})
+#+end_src
+to each entry
+
+#+begin_src python :noweb-ref csv-to-bib-export-inprocs
+  ev_to_inprocs = ''.join ∘ ev_to_inproc_lists
+#+end_src
+
+**** =<event>:unpublished:.tsv=
+
+This one is almost the same as =<event>.tsv=
+#+begin_src python :noweb-ref csv-to-bib-export-unpubs
+  paper_dict_to_unpub = str_to_unpub ∘ labeled_fields_to_str ∘ paper_dict_to_labeled_fields
+#+end_src
+except that it uses =@unpublished= type
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  str_to_unpub = (⇒ f'@unpublished{{{_}}}\n\n')
+#+end_src
+
+The file does not necessarily exist:
+#+begin_src python :noweb-ref csv-to-bib-export-unpubs
+  maybe_file_to_unpub_lists = (⇒ (if _[0] then (_[1] ↦ csv_to_dicts ↦ fmap$(paper_dict_to_unpub ∘ (.|(_↦crossref)))) else []))
+#+end_src
+so
+#+begin_src python :noweb-ref csv-to-bib-export-unpubs
+  ev_to_unpub_lists = (⇒ f'{csv_dir}/{_} :unpublished:.tsv' ↦ lift$(,)(isfile,ident) ↦ maybe_file_to_unpub_lists)
+#+end_src
+and
+#+begin_src python :noweb-ref csv-to-bib-imports
+  from os.path import isfile
+#+end_src
+
+#+begin_src python :noweb-ref csv-to-bib-export-unpubs
+  ev_to_unpubs = ''.join ∘ ev_to_unpub_lists
+#+end_src
+
+*** Generate the bibtex database
+
+Combine the =@proceedings=, =@inproceedings= and the =@unpublished= list:
+#+begin_src python :noweb-ref csv-to-bib-ev-to-bib
+  ev_to_bib = (⇒ _ ↦ lift$(,)(ev_to_proc , ev_to_inprocs, ev_to_unpubs) ↦ reduce$(+))
+#+end_src
+
+Write the string to the corresponding =.bib= file
+#+begin_src python :noweb-ref csv-to-bib-ev-to-bib
+  ev_to_bib_file = (⇒ _ ↦ lift$(,)(ev_to_bib , ident) *↦ write_str_to_bib)
+#+end_src
+where
+#+begin_src python :noweb-ref csv-to-bib-funcs
+  def write_str_to_bib(bib_str,ev):
+      with open(f'{bib_dir}/{ev}.bib','w') as f:
+          bib_str ↦ f.write
+      f'{ev}.bib generated' ↦ print
+#+end_src
+
+Now, update all =.bib= databases:
+#+begin_src python :noweb-ref csv-to-bib-ev-to-bib
+  def generate_bib():
+      get_update_list() ↦ fmap$(ident$(side_effect=ev_to_bib_file))
+#+end_src
+where =get_update_list= get the list of events necessary to be updated
+#+begin_src python :noweb-ref csv-to-bib-imports
+from event_list import get_update_list
+#+end_src
+
+*** Handy scripts
+
+Create a handy script to update the bibtex database:
+#+begin_src python :tangle code/update_bib :shebang "#!/usr/bin/env python" :dir code
+  from csv_to_bib import generate_bib
+  generate_bib()
+#+end_src
+Either run the above code block or run the following shell script
+#+begin_src shell :dir code :results raw replace output :wrap example
+  ./update_bib
+#+end_src
+
+#+RESULTS:
+#+begin_example
+#+end_example
+
+
+** Get list of events
+
+#+begin_src python :tangle code/event_list.coco
+  <<event-list-imports>>
+
+  <<event-list-funcs>>
+
+  <<event-list-update-list>>
+
+  <<event-list-get-list>>
+
+  <<event-list-get-update-list>>
+#+end_src
+
+Get the list of =<event>:event:.tsv= files and match the =<event>= part to get the list of events:
+#+begin_src python :noweb-ref event-list-funcs
+  get_event = r'.*/([^/:.]*):event:\.tsv$' ↦ regex ↦ .match
+#+end_src
+which requires the =re= library to do regular expressions:
+#+begin_src python :noweb-ref event-list-imports
+  from re import compile as regex
+#+end_src
+
+Now we can take the list of files in a directory and map the match:
+#+begin_src python :noweb-ref event-list-funcs
+  get_ev_list_from_csv_dir = list ∘ fmap$(.[1] ∘ get_event) ∘ sorted ∘ glob ∘ (.+'/*:event:.tsv')
+#+end_src
+where =glob= gives a list of matching file names and provided by =glob= library:
+#+begin_src python :noweb-ref event-list-imports
+  from glob import glob
+#+end_src
+
+*** Update the list from csv to file
+
+#+begin_src python :noweb-ref event-list-update-list
+  def update_event_list():
+      with open(ev_list_file,'w') as evlist_file:
+          csv_dir ↦ get_ev_list_from_csv_dir ↦ fmap$(ident$(side_effect=str_to_file$evlist_file))
+#+end_src
+The =csv_dir= is the directory we put our =.csv= files and defined in =__constants__=:
+#+begin_src python :noweb-ref event-list-imports
+  from __constants__ import *
+#+end_src
+while =str_to_file= writes the string to a new line of a file:
+#+begin_src python :noweb-ref event-list-funcs
+  def str_to_file(f,s):
+      s+'\n' ↦ f.write
+      f'{s: <16}' ↦ print$(end='')
+#+end_src
+
+
+*** Get the list back from the file
+
+#+begin_src python :noweb-ref event-list-get-list
+  def get_event_list()=
+      with open(ev_list_file,'r') as f:
+          lines = f.read().splitlines()
+      lines
+#+end_src
+
+*** Get the list of =.bib= files need to be updated
+
+We only need to regenerate the old =.bib= files, which needs to compare the creation time of the =.tsv= file and the =.bib= file.
+First, get the file names from the event name:
+#+begin_src python :noweb-ref event-list-funcs
+  ev_bib_file = (⇒ f'{bib_dir}/{_}.bib')
+  ev_csv_file = (⇒ f'{csv_dir}/{_}:event:.tsv')
+#+end_src
+and get the modification file if it exists, or negative infinity when it doesn’t:
+#+begin_src python :noweb-ref event-list-funcs
+  file_to_mtime = (⇒ (if (_ ↦ isfile) then (_ ↦ getmtime) else inf_past))
+#+end_src
+where the =getmtime= function returns the modification time in epoch, =isfile= checks if the file exists, they are defined in =os.path= library:
+#+begin_src python :noweb-ref event-list-imports
+  from os.path import isfile, getmtime
+#+end_src
+the output will be like
+#+begin_example
+(event, bib_time, tsv_time)
+#+end_example
+
+Do not regenerate if either
+- =.tsv= file do not exist
+- =.bib= file exists && newer
+#+begin_example
+(ev, _,    None) ⇒ None
+(ev, None, time) ⇒ ev
+(ev, old,  new ) ⇒ ev
+(ev, new,  old ) ⇒ None
+#+end_example
+so
+#+begin_src python :noweb-ref event-list-funcs
+  to_updatable = (⇒ (if _[1]<_[2] then _[0] else None))
+#+end_src
+
+#+begin_src python :noweb-ref event-list-get-update-list
+  ev_bib_is_recent = to_updatable ∘ lift$(,)(ident, file_to_mtime ∘ ev_bib_file, file_to_mtime ∘ ev_csv_file)
+#+end_src
+
+Map over the list of events, we can get the new list:
+#+begin_src python :noweb-ref event-list-get-update-list
+  def get_update_list()=
+      get_event_list() ↦ fmap$ev_bib_is_recent ↦ filter$(x⇒ x is not None) ↦ list
+#+end_src
+
+*** Handy scripts
+
+Create a handy script to update the event list:
+#+begin_src python :tangle code/update_list :shebang "#!/usr/bin/env python" :dir code
+  from event_list import update_event_list
+  update_event_list()
+#+end_src
+Either run the above code block or run the following shell script
+#+begin_src shell :dir code :results raw replace output :wrap example
+  ./update_list
+#+end_src
+
+** Test
+:PROPERTIES:
+:header-args:python: :eval yes :results output raw :wrap example :dir code
+:END:
+
+#+begin_src emacs-lisp
+  (org-entry-get (point) "header-args:python" 'inherit)
+#+end_src
+
+#+RESULTS:
+: :eval yes :results output raw :wrap example :dir code
+
+#+begin_src shell :dir code :results raw replace output :wrap example
+  ./update_list
+#+end_src
+
+#+RESULTS:
+#+begin_example
+CYCLOTRONS1959  CYCLOTRONS1963  CYCLOTRONS1966  CYCLOTRONS1969  CYCLOTRONS1972  CYCLOTRONS1975  CYCLOTRONS1978  CYCLOTRONS1981  CYCLOTRONS1984  CYCLOTRONS1986  LINAC1961       LINAC1962       LINAC1963       LINAC1964       LINAC1966       LINAC1968       LINAC1970       LINAC1972       LINAC1976       LINAC1979       LINAC1981       LINAC1984       LINAC1986       PAC1965         PAC1967         PAC1969         PAC1971         PAC1973         PAC1975         PAC1977         PAC1979         PAC1981         PAC1983         PAC1985         SRF1980         SRF1984         
+#+end_example
+
+#+begin_src shell :dir code :results raw replace output :wrap example
+  ./update_bib
+#+end_src
+
+#+RESULTS:
+#+begin_example
+SRF1984.bib generated
+#+end_example
+
+
+* JACoW
+
+** Events table
+
+| Series     | Event Date                   | Venue                                      | Year | Link          | TODO |
+|------------+------------------------------+--------------------------------------------+------+---------------+------|
+| CYCLOTRONS | <1959-02-02>--<1959-02-04> | Sea Island, Georgia, USA                   | 1959 | [[file:CYCLOTRONS1959.org][CYCLOTRONS’59]] |      |
+| LINAC      | <1961-04-01>--<1961-04-14> | Upton, Long Island, New York, USA          | 1961 | [[file:LINAC1961.org][LINAC’61]]      |      |
+| LINAC      | <1962-08-20>--<1962-08-24> | Upton, Long Island, New York, USA          | 1962 | [[file:LINAC1962.org][LINAC’62]]      |      |
+| CYCLOTRONS | <1963-04-23>--<1963-04-26> | Geneva, Switzerland                        | 1963 | [[file:CYCLOTRONS1963.org][CYCLOTRONS’63]] |      |
+| LINAC      | <1963-10-21>--<1963-10-25> | New Haven, Connecticut, USA                | 1963 | [[file:LINAC1963.org][LINAC’63]]      |      |
+| LINAC      | <1964-07-20>--<1964-07-24> | Madison, Wisconsin, USA                    | 1964 | [[file:LINAC1964.org][LINAC’64]]      |      |
+| PAC        | <1965-03-10>--<1965-03-12> | Washington D.C., USA                       | 1965 | [[file:PAC1965.org][PAC’65]]        |      |
+| CYCLOTRONS | <1966-05-02>--<1966-05-05> | Gatlinburg, Tennessee, USA                 | 1966 | [[file:CYCLOTRONS1966.org][CYCLOTRONS’66]] |      |
+| LINAC      | <1966-10-03>--<1966-10-07> | Los Alamos, New Mexico, USA                | 1966 | [[file:LINAC1966.org][LINAC’66]]      |      |
+| PAC        | <1967-03-01>--<1967-03-03> | Washington D.C., USA                       | 1967 | [[file:PAC1967.org][PAC’67]]        |      |
+| LINAC      | <1968-05-20>--<1968-05-24> | Upton, Long Island, New York, USA          | 1968 | [[file:LINAC1968.org][LINAC’68]]      |      |
+| PAC        | <1969-03-05>--<1969-03-07> | Washington D.C., USA                       | 1969 | [[file:PAC1969.org][PAC’69]]        |      |
+| CYCLOTRONS | <1969-09-17>--<1969-09-20> | Oxford, United Kingdom                     | 1969 | [[file:CYCLOTRONS1969.org][CYCLOTRONS’69]] |      |
+| LINAC      | <1970-09-28>--<1970-10-02> | Batavia, Illinois, USA                     | 1970 | [[file:LINAC1970.org][LINAC’70]]      |      |
+| PAC        | <1971-03-01>--<1971-03-03> | Chicago, IL, USA                           | 1971 | [[file:PAC1971.org][PAC’71]]        |      |
+| CYCLOTRONS | <1972-07-18>--<1972-07-21> | Vancouver, Canada                          | 1972 | [[file:CYCLOTRONS1972.org][CYCLOTRONS’72]] |      |
+| LINAC      | <1972-10-10>--<1972-10-13> | Los Alamos, New Mexico, USA                | 1972 | [[file:LINAC1972.org][LINAC’72]]      |      |
+| PAC        | <1973-03-05>--<1973-03-07> | San Francisco, CA, USA                     | 1973 | [[file:PAC1973.org][PAC’73]]        |      |
+| PAC        | <1975-03-12>--<1975-03-14> | Washington D.C., USA                       | 1975 | [[file:PAC1975.org][PAC’75]]        |      |
+| CYCLOTRONS | <1975-08-19>--<1975-08-22> | Zürich, Switzerland                        | 1975 | [[file:CYCLOTRONS1975.org][CYCLOTRONS’75]] |      |
+| LINAC      | <1976-09-14>--<1976-09-17> | Chalk River, Ontario, Canada               | 1976 | [[file:LINAC1976.org][LINAC’76]]      |      |
+| PAC        | <1977-03-16>--<1977-03-18> | Chicago, IL, USA                           | 1977 | [[file:PAC1977.org][PAC’77]]        |      |
+| CYCLOTRONS | <1978-09-18>--<1978-09-21> | Bloomington, Indiana, USA                  | 1978 | [[file:CYCLOTRONS1978.org][CYCLOTRONS’78]] |      |
+| PAC        | <1979-03-12>--<1979-03-14> | San Francisco, CA, USA                     | 1979 | [[file:PAC1979.org][PAC’79]]        |      |
+| LINAC      | <1979-09-10>--<1979-09-14> | Montauk, New York, USA                     | 1979 | [[file:LINAC1979.org][LINAC’79]]      |      |
+| SRF        | <1980-07-02>--<1980-07-04> | Karlsruhe, Germany                         | 1980 | [[file:SRF1980.org][SRF’80]]        |      |
+| PAC        | <1981-03-11>--<1981-03-13> | Washington D.C., USA                       | 1981 | [[file:PAC1981.org][PAC’81]]        |      |
+| CYCLOTRONS | <1981-09-07>--<1981-09-10> | Caen, France                               | 1981 | [[file:CYCLOTRONS1981.org][CYCLOTRONS’81]] |      |
+| LINAC      | <1981-10-19>--<1981-10-23> | Santa Fe, New Mexico, USA                  | 1981 | [[file:LINAC1981.org][LINAC’81]]      |      |
+| PAC        | <1983-03-21>--<1983-03-23> | Santa Fe, New Mexico, USA                  | 1983 | [[file:PAC1983.org][PAC’83]]        |      |
+| CYCLOTRONS | <1984-04-30>--<1984-05-03> | East Lansing, Michigan, USA                | 1984 | [[file:CYCLOTRONS1984.org][CYCLOTRONS’84]] |      |
+| LINAC      | <1984-05-07>--<1984-05-11> | Seeheim, Germany                           | 1984 | [[file:LINAC1984.org][LINAC’84]]      |      |
+| SRF        | <1984-07-23>--<1984-07-27> | Geneva, Switzerland                        | 1984 | [[file:SRF1984.org][SRF’84]]        |      |
+| PAC        | <1985-03-13>--<1985-03-16> | Vancouver, BC, Canada                      | 1985 | [[file:PAC1985.org][PAC’85]]        |      |
+| LINAC      | <1986-06-02>--<1986-06-06> | Stanford, California, USA                  | 1986 | [[file:LINAC1986.org][LINAC’86]]      |      |
+| CYCLOTRONS | <1986-10-13>--<1986-10-17> | Tokyo, Japan                               | 1986 | [[file:CYCLOTRONS1986.org][CYCLOTRONS’86]] | *?*    |
+| PAC        | <1987-03-16>--<1987-03-19> | Washington D.C., USA                       | 1987 | [[file:PAC1987.org][PAC’87]]        | *?*    |
+| SRF        | <1987-09-14>--<1987-09-18> | Argonne National Laboratory, Illinois, USA | 1987 | [[file:SRF1987.org][SRF’87]]        | *?*    |
+| EPAC       | <1988-06-07>--<1988-06-11> | Rome, Italy                                | 1988 | [[file:EPAC1988.org][EPAC’88]]       | *?*    |
+| LINAC      | <1988-10-03>--<1988-10-07> | Newport News, Virginia, USA                | 1988 | [[file:LINAC1988.org][LINAC’88]]      | *?*    |
+| PAC        | <1989-03-20>--<1989-03-23> | Chicago, IL, USA                           | 1989 | [[file:PAC1989.org][PAC’89]]        | *?*    |
+| CYCLOTRONS | <1989-05-08>--<1989-05-12> | Berlin, Germany                            | 1989 | [[file:CYCLOTRONS1989.org][CYCLOTRONS’89]] | *?*    |
+| SRF        | <1989-08-14>--<1989-08-18> | KEK, Tsukuba, Japan                        | 1989 | [[file:SRF1989.org][SRF’89]]        | *?*    |
+| EPAC       | <1990-06-12>--<1990-06-16> | Nice, France                               | 1990 | [[file:EPAC1990.org][EPAC’90]]       | *?*    |
+| LINAC      | <1990-09-10>--<1990-09-14> | Albuquerque, New Mexico, USA               | 1990 | [[file:LINAC1990.org][LINAC’90]]      | *?*    |
+| PAC        | <1991-05-06>--<1991-05-09> | San Francisco, CA, USA                     | 1991 | [[file:PAC1991.org][PAC’91]]        | *?*    |
+| SRF        | <1991-08-19>--<1991-08-23> | DESY, Hamburg, Germany                     | 1991 | [[file:SRF1991.org][SRF’91]]        | *?*    |
+| ICALEPCS   | <1991-11-11>--<1991-11-15> | Tsukuba, Japan                             | 1991 | [[file:ICALEPCS1991.org][ICALEPCS’91]]   | *?*    |
+| EPAC       | <1992-03-24>--<1992-03-28> | Berlin, Germany                            | 1992 | [[file:EPAC1992.org][EPAC’92]]       | *?*    |
+| CYCLOTRONS | <1992-07-06>--<1992-07-10> | Vancouver, BC, Canada                      | 1992 | [[file:CYCLOTRONS1992.org][CYCLOTRONS’92]] | *?*    |
+| LINAC      | <1992-08-24>--<1992-08-28> | Ottawa, Ontario, Canada                    | 1992 | [[file:LINAC1992.org][LINAC’92]]      | *?*    |
+| PAC        | <1993-05-17>--<1993-05-20> | Washington D.C., USA                       | 1993 | [[file:PAC1993.org][PAC’93]]        | *?*    |
+| SRF        | <1993-10-04>--<1993-10-08> | CEBAF, Newport News, Virginia, USA         | 1993 | [[file:SRF1993.org][SRF’93]]        | *?*    |
+| EPAC       | <1994-06-27>--<1994-07-01> | London, England                            | 1994 | [[file:EPAC1994.org][EPAC’94]]       | *?*    |
+| LINAC      | <1994-08-21>--<1994-08-26> | Tsukuba, Japan                             | 1994 | [[file:LINAC1994.org][LINAC’94]]      | *?*    |
+| PAC        | <1995-05-01>--<1995-05-05> | Dallas, Texas, USA                         | 1995 | [[file:PAC1995.org][PAC’95]]        | *?*    |
+| CYCLOTRONS | <1995-10-08>--<1995-10-13> | Cape Town, South Africa                    | 1995 | [[file:CYCLOTRONS1995.org][CYCLOTRONS’95]] | *?*    |
+| SRF        | <1995-10-17>--<1995-10-20> | Gif-sur-Yvette, France                     | 1995 | [[file:SRF1995.org][SRF’95]]        | *?*    |
+| EPAC       | <1996-06-10>--<1996-06-14> | Sitges, Spain                              | 1996 | [[file:EPAC1996.org][EPAC’96]]       | *?*    |
+| LINAC      | <1996-08-26>--<1996-08-30> | Geneva, Switzerland                        | 1996 | [[file:LINAC1996.org][LINAC’96]]      | *?*    |
+| PAC        | <1997-05-12>--<1997-05-16> | Vancouver, B.C., Canada                    | 1997 | [[file:PAC1997.org][PAC’97]]        | *?*    |
+| SRF        | <1997-10-06>--<1997-10-10> | Abano Terme (Padova), Italy                | 1997 | [[file:SRF1997.org][SRF’97]]        | *?*    |
+| APAC       | <1998-03-23>--<1998-03-27> | Tsukuba, Japan                             | 1998 | [[file:APAC1998.org][APAC’98]]       | *?*    |
+| CYCLOTRONS | <1998-06-14>--<1998-06-19> | Caen, Franc                                | 1998 | [[file:CYCLOTRONS1998.org][CYCLOTRONS’98]] | *?*    |
+| EPAC       | <1998-06-22>--<1998-06-26> | Stockholm, Sweden                          | 1998 | [[file:EPAC1998.org][EPAC’98]]       | *?*    |
+| LINAC      | <1998-08-23>--<1998-08-28> | Chicago, Illinois, USA                     | 1998 | [[file:LINAC1998.org][LINAC’98]]      | *?*    |
+| PAC        | <1999-03-29>--<1999-04-02> | New York City, New York, USA               | 1999 | [[file:PAC1999.org][PAC’99]]        | *?*    |
+| DIPAC      | <1999-05-16>--<1999-05-18> | Chester, UK                                | 1999 | [[file:DIPAC1999.org][DIPAC’99]]      | *?*    |
+| ICALEPCS   | <1999-10-04>--<1999-10-08> | Trieste, Italy                             | 1999 | [[file:ICALEPCS1999.org][ICALEPCS’99]]   | *?*    |
+| SRF        | <1999-11-01>--<1999-11-05> | Santa Fe, New Mexico, USA                  | 1999 | [[file:SRF1999.org][SRF’99]]        | *?*    |
+| EPAC       | <2000-06-26>--<2000-06-30> | Vienna, Austria                            | 2000 | [[file:EPAC2000.org][EPAC’00]]       | *?*    |
+| LINAC      | <2000-08-21>--<2000-08-25> | Monterey, CA, USA                          | 2000 | [[file:LINAC2000.org][LINAC’00]]      | *?*    |
+| CYCLOTRONS | <2001-05-13>--<2001-05-17> | East Lansing, Michigan, USA                | 2001 | [[file:CYCLOTRONS2001.org][CYCLOTRONS’01]] | *?*    |
+| DIPAC      | <2001-05-13>--<2001-05-15> | Grenoble, France                           | 2001 | [[file:DIPAC2001.org][DIPAC’01]]      | *?*    |
+| PAC        | <2001-06-18>--<2001-06-22> | Chicago, Illinois, USA                     | 2001 | [[file:PAC2001.org][PAC’01]]        | *?*    |
+| SRF        | <2001-09-06>--<2001-09-11> | Tsukuba, Ibaraki, Japan                    | 2001 | [[file:SRF2001.org][SRF’01]]        | *?*    |
+| APAC       | <2001-09-17>--<2001-09-21> | Beijing, China                             | 2001 | [[file:APAC2001.org][APAC’01]]       | *?*    |
+| ICALEPCS   | <2001-11-27>--<2001-11-30> | San Jose, California, USA                  | 2001 | [[file:ICALEPCS2001.org][ICALEPCS’01]]   | *?*    |
+| EPAC       | <2002-06-03>--<2002-06-07> | Paris, France                              | 2002 | [[file:EPAC2002.org][EPAC’02]]       | *?*    |
+| LINAC      | <2002-08-19>--<2002-08-23> | Gyeongju, Korea                            | 2002 | [[file:LINAC2002.org][LINAC’02]]      | *?*    |
+| DIPAC      | <2003-05-05>--<2003-05-07> | Mainz,  Germany                            | 2003 | [[file:DIPAC2003.org][DIPAC’03]]      | *?*    |
+| PAC        | <2003-05-12>--<2003-05-16> | Portland, Oregon, USA                      | 2003 | [[file:PAC2003.org][PAC’03]]        | *?*    |
+| SRF        | <2003-09-08>--<2003-09-12> | Lübeck/Travemünder, Germany                | 2003 | [[file:SRF2003.org][SRF’03]]        | *?*    |
+| ICALEPCS   | <2003-10-13>--<2003-10-17> | Gyeongju, Korea                            | 2003 | [[file:ICALEPCS2003.org][ICALEPCS’03]]   | *?*    |
+| APAC       | <2004-03-22>--<2004-03-26> | Gyeongju, Korea                            | 2004 | [[file:APAC2004.org][APAC’04]]       | *?*    |
+| EPAC       | <2004-07-05>--<2004-07-09> | Lucerne, Switzerland                       | 2004 | [[file:EPAC2004.org][EPAC’04]]       | *?*    |
+| LINAC      | <2004-08-16>--<2004-08-20> | Lübeck, Germany                            | 2004 | [[file:LINAC2004.org][LINAC’04]]      | *?*    |
+| FEL        | <2004-08-29>--<2004-09-03> | Trieste, Italy                             | 2004 | [[file:FEL2004.org][FEL’04]]        | *?*    |
+| RuPAC      | <2004-10-04>--<2004-10-08> | Dubna, Russia                              | 2004 | [[file:RuPAC2004.org][RuPAC’04]]      | *?*    |
+| CYCLOTRONS | <2004-10-18>--<2004-10-22> | Tokyo, Japan                               | 2004 | [[file:CYCLOTRONS2004.org][CYCLOTRONS’04]] | *?*    |
+| PAC        | <2005-05-16>--<2005-05-20> | Knoxville, Tennessee, USA                  | 2005 | [[file:PAC2005.org][PAC’05]]        | *?*    |
+| DIPAC      | <2005-06-06>--<2005-06-08> | Lyon, France                               | 2005 | [[file:DIPAC2005.org][DIPAC’05]]      | *?*    |
+| SRF        | <2005-07-10>--<2005-07-15> | Cornell University, Ithaca, New York, USA  | 2005 | [[file:SRF2005.org][SRF’05]]        | *?*    |
+| FEL        | <2005-08-21>--<2005-08-26> | Palo Alto, California, USA                 | 2005 | [[file:FEL2005.org][FEL’05]]        | *?*    |
+| ICALEPCS   | <2005-10-10>--<2005-10-14> | Geneva, Switzerland                        | 2005 | [[file:ICALEPCS2005.org][ICALEPCS’05]]   | *?*    |
+| FLS        | <2006-05-15>--<2006-05-16> | Hamburg, Germany                           | 2006 | [[file:FLS2006.org][FLS’06]]        | *?*    |
+| HB         | <2006-05-29>--<2006-06-02> | Tsukuba, Japan                             | 2006 | [[file:HB2006.org][HB’06]]         | *?*    |
+| EPAC       | <2006-06-26>--<2006-06-30> | Edinburgh, UK                              | 2006 | [[file:EPAC2006.org][EPAC’06]]       | *?*    |
+| LINAC      | <2006-08-21>--<2006-08-25> | Knoxville, Tennessee USA                   | 2006 | [[file:LINAC2006.org][LINAC’06]]      | *?*    |
+| FEL        | <2006-08-27>--<2006-09-01> | Berlin, Germany                            | 2006 | [[file:FEL2006.org][FEL’06]]        | *?*    |
+| RuPAC      | <2006-09-10>--<2006-09-14> | Novosibirsk, Russia                        | 2006 | [[file:RuPAC2006.org][RuPAC’06]]      | *?*    |
+| ICAP       | <2006-10-02>--<2006-10-06> | Chamonix, France                           | 2006 | [[file:ICAP2006.org][ICAP’06]]       | *?*    |
+| APAC       | <2007-01-29>--<2007-02-02> | Indore, India                              | 2007 | [[file:APAC2007.org][APAC’07]]       | *?*    |
+| DIPAC      | <2007-05-20>--<2007-05-23> | Venice, Italy                              | 2007 | [[file:DIPAC2007.org][DIPAC’07]]      | *?*    |
+| ERL        | <2007-05-21>--<2007-05-25> | Daresbury, United Kingdom                  | 2007 | [[file:ERL2007.org][ERL’07]]        | *?*    |
+| PAC        | <2007-06-25>--<2007-06-29> | Albuquerque, New Mexico, USA               | 2007 | [[file:PAC2007.org][PAC’07]]        | *?*    |
+| FEL        | <2007-08-26>--<2007-08-31> | Novosibirsk, Russia                        | 2007 | [[file:FEL2007.org][FEL’07]]        | *?*    |
+| COOL       | <2007-09-09>--<2007-09-14> | Bad Kreuznach, Germany                     | 2007 | [[file:COOL2007.org][COOL’07]]       | *?*    |
+| CYCLOTRONS | <2007-10-01>--<2007-10-05> | Giardini Naxos, Italy                      | 2007 | [[file:CYCLOTRONS2007.org][CYCLOTRONS’07]] | *?*    |
+| SRF        | <2007-10-14>--<2007-10-19> | Peking Univ., Beijing, China               | 2007 | [[file:SRF2007.org][SRF’07]]        | *?*    |
+| ICALEPCS   | <2007-10-15>--<2007-10-19> | Knoxville, Tennessee, USA                  | 2007 | [[file:ICALEPCS2007.org][ICALEPCS’07]]   | *?*    |
+| eeFACT     | <2008-04-14>--<2008-04-16> | Novosibirsk, Russia                        | 2008 | [[file:eeFACT2008.org][eeFACT’08]]     | *?*    |
+| BIW        | <2008-05-04>--<2008-05-08> | Tahoe City, California, USA                | 2008 | [[file:BIW2008.org][BIW’08]]        | *?*    |
+| EPAC       | <2008-06-23>--<2008-06-27> | Genoa, Italy                               | 2008 | [[file:EPAC2008.org][EPAC’08]]       | *?*    |
+| FEL        | <2008-08-24>--<2008-08-29> | Gyeongju, Korea                            | 2008 | [[file:FEL2008.org][FEL’08]]        | *?*    |
+| HB         | <2008-08-25>--<2008-08-29> | Nashville, Tennessee, USA                  | 2008 | [[file:HB2008.org][HB’08]]         | *?*    |
+| ECRIS      | <2008-09-15>--<2008-09-18> | Chicago, Illinois, USA                     | 2008 | [[file:ECRIS2008.org][ECRIS’08]]      | *?*    |
+| RuPAC      | <2008-09-28>--<2008-10-03> | Zvenigorod, Russia                         | 2008 | [[file:RuPAC2008.org][RuPAC’08]]      | *?*    |
+| LINAC      | <2008-09-29>--<2008-10-03> | Victoria, British Columbia, Canada         | 2008 | [[file:LINAC2008.org][LINAC’08]]      | *?*    |
+| PCaPAC     | <2008-10-20>--<2008-10-23> | Ljubljana, Slovenia                        | 2008 | [[file:PCaPAC2008.org][PCaPAC’08]]     | *?*    |
+| PAC        | <2009-05-04>--<2009-05-08> | Vancouver, British Columbia, Canada        | 2009 | [[file:PAC2009.org][PAC’09]]        | *?*    |
+| DIPAC      | <2009-05-25>--<2009-05-27> | Basel, Switzerland                         | 2009 | [[file:DIPAC2009.org][DIPAC’09]]      | *?*    |
+| ERL        | <2009-06-08>--<2009-06-12> | Ithaca, New York, USA                      | 2009 | [[file:ERL2009.org][ERL’09]]        | *?*    |
+| HIAT       | <2009-06-08>--<2009-06-12> | Venice, Italy                              | 2009 | [[file:HIAT2009.org][HIAT’09]]       | *?*    |
+| FEL        | <2009-08-23>--<2009-08-28> | Liverpool, UK                              | 2009 | [[file:FEL2009.org][FEL’09]]        | *?*    |
+| COOL       | <2009-08-31>--<2009-09-04> | Lanzhou, China                             | 2009 | [[file:COOL2009.org][COOL’09]]       | *?*    |
+| ICAP       | <2009-08-31>--<2009-09-04> | San Francisco, California, US              | 2009 | [[file:ICAP2009.org][ICAP’09]]       | *?*    |
+| SRF        | <2009-09-20>--<2009-09-25> | Berlin, Germany                            | 2009 | [[file:SRF2009.org][SRF’09]]        | *?*    |
+| ICALEPCS   | <2009-10-12>--<2009-10-16> | Kobe, Japan                                | 2009 | [[file:ICALEPCS2009.org][ICALEPCS’09]]   | *?*    |
+| BIW        | <2010-05-02>--<2010-05-06> | Santa Fe, New Mexico, USA                  | 2010 | [[file:BIW2010.org][BIW’10]]        | *?*    |
+| IPAC       | <2010-05-23>--<2010-05-28> | Kyoto, Japan                               | 2010 | [[file:IPAC2010.org][IPAC’10]]       | *?*    |
+| ECRIS      | <2010-08-23>--<2010-08-26> | Grenoble, France                           | 2010 | [[file:ECRIS2010.org][ECRIS’10]]      | *?*    |
+| FEL        | <2010-08-23>--<2010-08-27> | Malmö, Sweden                              | 2010 | [[file:FEL2010.org][FEL’10]]        | *?*    |
+| CYCLOTRONS | <2010-09-06>--<2010-09-10> | Lanzhou, China                             | 2010 | [[file:CYCLOTRONS2010.org][CYCLOTRONS’10]] | *?*    |
+| LINAC      | <2010-09-12>--<2010-09-17> | Tsukuba, Japan                             | 2010 | [[file:LINAC2010.org][LINAC’10]]      | *?*    |
+| HB         | <2010-09-27>--<2010-10-01> | Morschach, Switzerland                     | 2010 | [[file:HB2010.org][HB’10]]         | *?*    |
+| RuPAC      | <2010-09-27>--<2010-10-01> | Protvino, Russia                           | 2010 | [[file:RuPAC2010.org][RuPAC’10]]      | *?*    |
+| PCaPAC     | <2010-10-06>--<2010-10-08> | Saskatoon, Saskatchewan, Canada            | 2010 | [[file:PCaPAC2010.org][PCaPAC’10]]     | *?*    |
+| eCloud     | <2010-10-08>--<2010-10-12> | Ithaca, New York, USA                      | 2010 | [[file:eCloud2010.org][eCloud’10]]     | *?*    |
+| NAPAC      | <2011-03-28>--<2011-04-01> | New York, NY, USA                          | 2011 | [[file:NAPAC2011.org][NAPAC’11]]      | *?*    |
+| DIPAC      | <2011-05-16>--<2011-05-18> | Hamburg, Germany                           | 2011 | [[file:DIPAC2011.org][DIPAC’11]]      | *?*    |
+| SRF        | <2011-07-25>--<2011-07-29> | Chicago, IL, USA                           | 2011 | [[file:SRF2011.org][SRF’11]]        | *?*    |
+| FEL        | <2011-08-22>--<2011-08-26> | Shanghai, China                            | 2011 | [[file:FEL2011.org][FEL’11]]        | *?*    |
+| IPAC       | <2011-09-04>--<2011-09-09> | San Sebastián, Spain                       | 2011 | [[file:IPAC2011.org][IPAC’11]]       | *?*    |
+| COOL       | <2011-09-12>--<2011-09-16> | Alushta, Ukraine                           | 2011 | [[file:COOL2011.org][COOL’11]]       | *?*    |
+| ICALEPCS   | <2011-10-10>--<2011-10-14> | Grenoble, France                           | 2011 | [[file:ICALEPCS2011.org][ICALEPCS’11]]   | *?*    |
+| ERL        | <2011-10-16>--<2011-10-21> | Tsukuba, Japan                             | 2011 | [[file:ERL2011.org][ERL’11]]        | *?*    |
+| BIW        | <2012-04-15>--<2012-04-19> | Newport News, Virginia, USA                | 2012 | [[file:BIW2012.org][BIW’12]]        | *?*    |
+| IPAC       | <2012-05-20>--<2012-05-25> | New Orleans, Louisiana, USA                | 2012 | [[file:IPAC2012.org][IPAC’12]]       | *?*    |
+| HIAT       | <2012-06-18>--<2012-06-21> | Chicago, IL, USA                           | 2012 | [[file:HIAT2012.org][HIAT’12]]       | *?*    |
+| ICAP       | <2012-08-19>--<2012-08-24> | Rostock-Warnemünde, Germany                | 2012 | [[file:ICAP2012.org][ICAP’12]]       | *?*    |
+| FEL        | <2012-08-26>--<2012-08-31> | Nara, Japan                                | 2012 | [[file:FEL2012.org][FEL’12]]        | *?*    |
+| LINAC      | <2012-09-09>--<2012-09-14> | Tel Aviv, Israel                           | 2012 | [[file:LINAC2012.org][LINAC’12]]      | *?*    |
+| HB         | <2012-09-17>--<2012-09-21> | Beijing, China                             | 2012 | [[file:HB2012.org][HB’12]]         | *?*    |
+| RuPAC      | <2012-09-24>--<2012-09-28> | Saint-Petersburg, Russia                   | 2012 | [[file:RuPAC2012.org][RuPAC’12]]      | *?*    |
+| ECRIS      | <2012-09-25>--<2012-09-28> | Sydney, Australia                          | 2012 | [[file:ECRIS2012.org][ECRIS’12]]      | *?*    |
+| IBIC       | <2012-10-01>--<2012-10-04> | Tsukuba, Japan                             | 2012 | [[file:IBIC2012.org][IBIC’12]]       | *?*    |
+| PCaPAC     | <2012-12-04>--<2012-12-07> | Kolkata, India                             | 2012 | [[file:PCaPAC2012.org][PCaPAC’12]]     | *?*    |
+| IPAC       | <2013-05-12>--<2013-05-17> | Shanghai, China                            | 2013 | [[file:IPAC2013.org][IPAC’13]]       | *?*    |
+| COOL       | <2013-06-10>--<2013-06-14> | Mürren, Switzerland                        | 2013 | [[file:COOL2013.org][COOL’13]]       | *?*    |
+| FEL        | <2013-08-26>--<2013-08-30> | Manhattan, NY, USA                         | 2013 | [[file:FEL2013.org][FEL’13]]        | *?*    |
+| ERL        | <2013-09-09>--<2013-09-13> | Novosibirsk, Russia                        | 2013 | [[file:ERL2013.org][ERL’13]]        | *?*    |
+| CYCLOTRONS | <2013-09-16>--<2013-09-20> | Vancouver, BC, Canada                      | 2013 | [[file:CYCLOTRONS2013.org][CYCLOTRONS’13]] | *?*    |
+| IBIC       | <2013-09-16>--<2013-09-19> | Oxford, UK                                 | 2013 | [[file:IBIC2013.org][IBIC’13]]       | *?*    |
+| SRF        | <2013-09-23>--<2013-09-27> | Paris, France                              | 2013 | [[file:SRF2013.org][SRF’13]]        | *?*    |
+| NAPAC      | <2013-09-29>--<2013-10-04> | Pasadena, CA, USA                          | 2013 | [[file:NAPAC2013.org][NAPAC’13]]      | *?*    |
+| ICALEPCS   | <2013-10-06>--<2013-10-11> | San Francisco, CA, USA                     | 2013 | [[file:ICALEPCS2013.org][ICALEPCS’13]]   | *?*    |
+| IPAC       | <2014-06-15>--<2014-06-20> | Dresden, Germany                           | 2014 | [[file:IPAC2014.org][IPAC’14]]       | *?*    |
+| SAP        | <2014-08-13>--<2014-08-15> | Lanzhou, China                             | 2014 | [[file:SAP2014.org][SAP’14]]        | *?*    |
+| ECRIS      | <2014-08-24>--<2014-08-28> | Nizhny Novgorod, Russia                    | 2014 | [[file:ECRIS2014.org][ECRIS’14]]      | *?*    |
+| FEL        | <2014-08-25>--<2014-08-29> | Basel, Switzerland                         | 2014 | [[file:FEL2014.org][FEL’14]]        | *?*    |
+| LINAC      | <2014-08-31>--<2014-09-05> | Geneva, Switzerland                        | 2014 | [[file:LINAC2014.org][LINAC’14]]      | *?*    |
+| IBIC       | <2014-09-14>--<2014-09-18> | Monterey, CA, USA                          | 2014 | [[file:IBIC2014.org][IBIC’14]]       | *?*    |
+| RuPAC      | <2014-10-06>--<2014-10-10> | Obninsk, Russia                            | 2014 | [[file:RuPAC2014.org][RuPAC’14]]      | *?*    |
+| HF         | <2014-10-09>--<2014-10-12> | Beijing, China                             | 2014 | [[file:HF2014.org][HF’14]]         | *?*    |
+| PCaPAC     | <2014-10-14>--<2014-10-17> | Karlsruhe, Germany                         | 2014 | [[file:PCaPAC2014.org][PCaPAC’14]]     | *?*    |
+| HB         | <2014-11-10>--<2014-11-14> | East-Lansing, MI, USA                      | 2014 | [[file:HB2014.org][HB’14]]         | *?*    |
+| IPAC       | <2015-05-03>--<2015-05-08> | Richmond, VA, USA                          | 2015 | [[file:IPAC2015.org][IPAC’15]]       | *?*    |
+| ERL        | <2015-06-07>--<2015-06-12> | Stony Brook, NY, USA                       | 2015 | [[file:ERL2015.org][ERL’15]]        | *?*    |
+| FEL        | <2015-08-23>--<2015-08-28> | Daejeon, Korea                             | 2015 | [[file:FEL2015.org][FEL’15]]        | *?*    |
+| HIAT       | <2015-09-07>--<2015-09-11> | Yokohama, Japan                            | 2015 | [[file:HIAT2015.org][HIAT’15]]       | *?*    |
+| IBIC       | <2015-09-13>--<2015-09-17> | Melbourne, Australia                       | 2015 | [[file:IBIC2015.org][IBIC’15]]       | *?*    |
+| SRF        | <2015-09-13>--<2015-09-18> | Whistler, BC, Canada                       | 2015 | [[file:SRF2015.org][SRF’15]]        | *?*    |
+| COOL       | <2015-09-28>--<2015-10-02> | Newport News, Virginia, USA                | 2015 | [[file:COOL2015.org][COOL’15]]       | *?*    |
+| ICAP       | <2015-10-12>--<2015-10-16> | Shanghai, China                            | 2015 | [[file:ICAP2015.org][ICAP’15]]       | *?*    |
+| ICALEPCS   | <2015-10-17>--<2015-10-23> | Melbourne, Australia                       | 2015 | [[file:ICALEPCS2015.org][ICALEPCS’15]]   | *?*    |
+| HB         | <2016-07-03>--<2016-07-08> | Malmö, Sweden                              | 2016 | [[file:HB2016.org][HB’16]]         | *?*    |
+| IPAC       | <2016-08-08>--<2016-05-13> | Busan, Korea                               | 2016 | [[file:IPAC2016.org][IPAC’16]]       | *?*    |
+| ECRIS      | <2016-08-28>--<2016-09-01> | Busan, Korea                               | 2016 | [[file:ECRIS2016.org][ECRIS’16]]      | *?*    |
+| CYCLOTRONS | <2016-09-11>--<2016-09-16> | Zürich, Switzerland                        | 2016 | [[file:CYCLOTRONS2016.org][CYCLOTRONS’16]] | *?*    |
+| IBIC       | <2016-09-11>--<2016-09-15> | Barcelona, Spain                           | 2016 | [[file:IBIC2016.org][IBIC’16]]       | *?*    |
+| MEDSI      | <2016-09-11>--<2016-09-16> | Barcelona, Spain                           | 2016 | [[file:MEDSI2016.org][MEDSI’16]]      | *?*    |
+| LINAC      | <2016-09-25>--<2016-09-30> | East Lansing, MI, USA                      | 2016 | [[file:LINAC2016.org][LINAC’16]]      | *?*    |
+| NAPAC      | <2016-10-09>--<2016-10-14> | Chicago, IL, USA                           | 2016 | [[file:NAPAC2016.org][NAPAC’16]]      | *?*    |
+| eeFACT     | <2016-10-24>--<2016-10-27> | Daresbury, United Kingdom                  | 2016 | [[file:eeFACT2016.org][eeFACT’16]]     | *?*    |
+| PCaPAC     | <2016-10-25>--<2016-10-28> | Campinas, Brazil                           | 2016 | [[file:PCaPAC2016.org][PCaPAC’16]]     | *?*    |
+| RuPAC      | <2016-11-21>--<2016-11-25> | Saint-Petersburg, Russia                   | 2016 | [[file:RuPAC2016.org][RuPAC’16]]      | *?*    |
+| IPAC       | <2017-05-14>--<2017-05-19> | Copenhagen, Denmark                        | 2017 | [[file:IPAC2017.org][IPAC’17]]       | *?*    |
+| ERL        | <2017-06-18>--<2017-06-23> | Geneva, Switzerland                        | 2017 | [[file:ERL2017.org][ERL’17]]        | *?*    |
+| SRF        | <2017-07-17>--<2017-07-21> | Lanzhou, China                             | 2017 | [[file:SRF2017.org][SRF’17]]        | *?*    |
+| FEL        | <2017-08-20>--<2017-08-25> | Santa Fe, NM, USA                          | 2017 | [[file:FEL2017.org][FEL’17]]        | *?*    |
+| IBIC       | <2017-08-20>--<2017-08-24> | Grand Rapids, MI, USA                      | 2017 | [[file:IBIC2017.org][IBIC’17]]       | *?*    |
+| SAP        | <2017-08-28>--<2017-08-30> | Jishou, Hunan, China                       | 2017 | [[file:SAP2017.org][SAP’17]]        | *?*    |
+| COOL       | <2017-09-18>--<2017-09-21> | Bonn, Germany                              | 2017 | [[file:COOL2017.org][COOL’17]]       | *?*    |
+| ICALEPCS   | <2017-10-08>--<2017-10-13> | Barcelona, Spain                           | 2017 | [[file:ICALEPCS2017.org][ICALEPCS’17]]   | *?*    |
+| FLS        | <2018-03-05>--<2018-03-09> | Shanghai, China                            | 2018 | [[file:FLS2018.org][FLS’18]]        | *?*    |
+| IPAC       | <2018-04-29>--<2018-05-04> | Vancouver, Canada                          | 2018 | [[file:IPAC2018.org][IPAC’18]]       | *?*    |
+| HB         | <2018-06-18>--<2018-06-22> | Daejeon, Korea                             | 2018 | [[file:HB2018.org][HB’18]]         | *?*    |
+| MEDSI      | <2018-06-25>--<2018-06-29> | Paris, France                              | 2018 | [[file:MEDSI2018.org][MEDSI’18]]      | *?*    |
+| IBIC       | <2018-09-09>--<2018-09-13> | Shanghai, China                            | 2018 | [[file:IBIC2018.org][IBIC’18]]       | *?*    |
+| ECRIS      | <2018-09-10>--<2018-09-14> | Catania, Italy                             | 2018 | [[file:ECRIS2018.org][ECRIS’18]]      | *?*    |
+| LINAC      | <2018-09-16>--<2018-09-21> | Beijing, China                             | 2018 | [[file:LINAC2018.org][LINAC’18]]      | *?*    |
+| eeFACT     | <2018-09-24>--<2018-09-27> | Hong Kong, China                           | 2018 | [[file:eeFACT2018.org][eeFACT’18]]     | *?*    |
+| RuPAC      | <2018-10-01>--<2018-10-05> | Protvino, Russia                           | 2018 | [[file:RuPAC2018.org][RuPAC’18]]      | *?*    |
+| PCaPAC     | <2018-10-16>--<2018-10-19> | Hsinchu, Taiwan                            | 2018 | [[file:PCaPAC2018.org][PCaPAC’18]]     | *?*    |
+| ICAP       | <2018-10-20>--<2018-10-24> | Key West, FL, USA                          | 2018 | [[file:ICAP2018.org][ICAP’18]]       | *?*    |
+| HIAT       | <2018-10-22>--<2018-10-26> | Lanzhou, China                             | 2018 | [[file:HIAT2018.org][HIAT’18]]       | *?*    |
+| IPAC       | <2019-05-19>--<2019-05-24> | Melbourne, Australia                       | 2019 | [[file:IPAC2019.org][IPAC’19]]       | *?*    |
+| SRF        | <2019-06-30>--<2019-07-05> | Dresden, Germany                           | 2019 | [[file:SRF2019.org][SRF’19]]        | *?*    |
+| FEL        | <2019-08-26>--<2019-08-30> | Hamburg, Germany                           | 2019 | [[file:FEL2019.org][FEL’19]]        | *?*    |
+| NAPAC      | <2019-09-02>--<2019-09-06> | Lansing, MI, USA                           | 2019 | [[file:NAPAC2019.org][NAPAC’19]]      | *?*    |
+| IBIC       | <2019-09-08>--<2019-09-12> | Malmö, Sweden                              | 2019 | [[file:IBIC2019.org][IBIC’19]]       | *?*    |
+| ERL        | <2019-09-15>--<2019-09-20> | Berlin, Germany                            | 2019 | [[file:ERL2019.org][ERL’19]]        | *?*    |
+| CYCLOTRONS | <2019-09-22>--<2019-09-27> | Cape Town, South Africa                    | 2019 | [[file:CYCLOTRONS2019.org][CYCLOTRONS’19]] | *?*    |
+| COOL       | <2019-09-23>--<2019-09-27> | Novosibirsk, Russian                       | 2019 | [[file:COOL2019.org][COOL’19]]       | *?*    |
+| ICALEPCS   | <2019-10-07>--<2019-10-11> | Brooklyn, New York City, NY, USA           | 2019 | [[file:ICALEPCS2019.org][ICALEPCS’19]]   | *?*    |
+| IPAC       | <2020-05-10>--<2020-05-15> | Caen, France                               | 2020 | [[file:IPAC2020.org][IPAC’20]]       | *?*    |
+| LINAC      | <2020-09-01>--<2020-09-04> | Liverpool, UK                              | 2020 | [[file:LINAC2020.org][LINAC’20]]      | *?*    |
+| IBIC       | <2020-09-14>--<2020-09-18> | Santos, Brazil                             | 2020 | [[file:IBIC2020.org][IBIC’20]]       | *?*    |
+| ECRIS      | <2020-09-28>--<2020-09-30> | East Lansing, MI, USA                      | 2020 | [[file:ECRIS2020.org][ECRIS’20]]      | *?*    |
+| IPAC       | <2021-05-24>--<2021-05-28> | Campinas, Brazil                           | 2021 | [[file:IPAC2021.org][IPAC’21]]       | *?*    |
+| SRF        | <2021-06-27>--<2021-07-02> | East Lansing, MI, USA                      | 2021 | [[file:SRF2021.org][SRF’21]]        | *?*    |
+| MEDSI      | <2021-07-26>--<2021-07-29> | Chicago, IL, USA                           | 2021 | [[file:MEDSI2021.org][MEDSI’21]]      | *?*    |
+| IBIC       | <2021-09-13>--<2021-09-17> | Pohang, Korea                              | 2021 | [[file:IBIC2021.org][IBIC’21]]       | *?*    |
+| RuPAC      | <2021-09-27>--<2021-10-01> | Alushta, Russia                            | 2021 | [[file:RuPAC2021.org][RuPAC’21]]      | *?*    |
+| HB         | <2021-10-04>--<2021-10-08> | Batavia, IL, USA                           | 2021 | [[file:HB2021.org][HB’21]]         | *?*    |
+| ICALEPCS   | <2021-10-14>--<2021-10-22> | Shanghai, China                            | 2021 | [[file:ICALEPCS2021.org][ICALEPCS’21]]   | *?*    |
+| COOL       | <2021-11-01>--<2021-11-05> | Novosibirsk, Russian                       | 2021 | [[file:COOL2021.org][COOL’21]]       | *?*    |
+| IPAC       | <2022-06-12>--<2022-06-17> | Bangkok, Thailand                          | 2022 | [[file:IPAC2022.org][IPAC’22]]       | *?*    |
+| HIAT       | <2022-06-27>--<2022-07-01> | Darmstadt, Germany                         | 2022 | [[file:HIAT2022.org][HIAT’22]]       | *?*    |
+| NAPAC      | <2022-08-07>--<2022-08-12> | Albuquerque, NM, USA                       | 2022 | [[file:NAPAC2022.org][NAPAC’22]]      | *?*    |
+| FEL        | <2022-08-22>--<2022-08-26> | Trieste, Italy                             | 2022 | [[file:FEL2022.org][FEL’22]]        | *?*    |
+| LINAC      | <2022-08-28>--<2022-09-02> | Liverpool, UK                              | 2022 | [[file:LINAC2022.org][LINAC’22]]      | *?*    |
+| IBIC       | <2022-09-11>--<2022-09-15> | Kraków, Poland                             | 2022 | [[file:IBIC2022.org][IBIC’22]]       | *?*    |
+| eeFACT     | <2022-09-12>--<2022-09-16> | Frascati, Italy                            | 2022 | [[file:eeFACT2022.org][eeFACT’22]]     | *?*    |
+| PCaPAC     | <2022-10-04>--<2022-10-07> | Dolní Brežany, Czech Republic              | 2022 | [[file:PCaPAC2022.org][PCaPAC’22]]     | *?*    |
+| CYCLOTRONS | <2022-12-05>--<2022-12-09> | Beijing, China                             | 2022 | [[file:CYCLOTRONS2022.org][CYCLOTRONS’22]] | *?*    |
+| IPAC       | <2023-05-07>--<2023-05-12> | Venice, Italy                              | 2023 | [[file:IPAC2023.org][IPAC’23]]       | *?*    |
+| SRF        | <2023-06-25>--<2023-06-30> | Grand Rapids, MI, USA                      | 2023 | [[file:SRF2023.org][SRF’23]]        | *?*    |
+| FLS        | <2023-08-27>--<2023-09-01> | Luzern, Switzerland                        | 2023 | [[file:FLS2023.org][FLS’23]]        | *?*    |
+| IBIC       | <2023-09-10>--<2023-09-14> | Saskatoon, Canada                          | 2023 | [[file:IBIC2023.org][IBIC’23]]       | *?*    |
+| ICALEPCS   | <2023-10-07>--<2023-10-13> | Cape Town, South Africa                    | 2023 | [[file:ICALEPCS2023.org][ICALEPCS’23]]   | *?*    |
+| COOL       | <2023-10-08>--<2023-10-14> | Montreux, Switzerland                      | 2023 | [[file:COOL2023.org][COOL’23]]       | *?*    |
+| HB         | <2023-10-09>--<2023-10-13> | CERN, Geneva, Switzerland                  | 2023 | [[file:HB2023.org][HB’23]]         | *?*    |
+| MEDSI      | <2023-11-06>--<2023-11-10> | Beijing, China                             | 2023 | [[file:MEDSI2023.org][MEDSI’23]]      | *?*    |
+| IPAC       | <2024-05-18>--<2024-05-24> | Nashville, TN, USA                         | 2024 | [[file:IPAC2024.org][IPAC’24]]       | *?*    |
+| FEL        | <2024-08-19>--<2024-08-23> | Warsaw, Poland                             | 2024 | [[file:FEL2024.org][FEL’24]]        | *?*    |
+| LINAC      | <2024-08-25>--<2024-08-30> | Chicago, IL, USA                           | 2024 | [[file:LINAC2024.org][LINAC’24]]      | *?*    |
+| IBIC       | <2024-09-09>--<2024-09-13> | Beijing, China                             | 2024 | [[file:IBIC2024.org][IBIC’24]]       | *?*    |
+| ECRIS      | <2024-09-15>--<2024-09-19> | Darmstadt, Germany                         | 2024 | [[file:ECRIS2024.org][ECRIS’24]]      | *?*    |
+| ERL        | <2024-09-24>--<2024-09-27> | Tsukuba, Japan                             | 2024 | [[file:ERL2024.org][ERL’24]]        | *?*    |
+| eeFACT     | <2025-03-03>--<2025-03-07> | Tsukuba, Japan                             | 2025 | [[file:eeFACT2025.org][eeFACT’25]]     | *?*    |
+| IPAC       | <2025-06-01>--<2025-06-06> | Taipei, Taiwan                             | 2025 | [[file:IPAC2025.org][IPAC’25]]       | *?*    |
+| HIAT       | <2025-06-22>--<2025-06-27> | East Lansing, MI, USA                      | 2025 | [[file:HIAT2025.org][HIAT’25]]       | *?*    |
+| IBIC       | <2025-09-07>--<2025-09-11> | Liverpool, UK                              | 2025 | [[file:IBIC2025.org][IBIC’25]]       | *?*    |
+| MEDSI      | <2025-09-15>--<2025-09-19> | Lund, Sweden                               | 2025 | [[file:MEDSI2025.org][MEDSI’25]]      | *?*    |
+| ICALEPCS   | <2025-09-20>--<2025-09-26> | Chicago, IL, USA                           | 2025 | [[file:ICALEPCS2025.org][ICALEPCS’25]]   | *?*    |
+| SRF        | <2025-09-21>--<2025-09-26> | Tokyo, japan                               | 2025 | [[file:SRF2025.org][SRF’25]]        | *?*    |
+| HB         | <2025-10-19>--<2025-10-24> | Huizhou, Guangdong, China                  | 2025 | [[file:HB2025.org][HB’25]]         | *?*    |
+#+TBLFM: $4='(if (string-match "[[<]\\([0-9]\\{4\\}\\)-[0-9]\\{2\\}-[0-9]\\{2\\} ?[^]\n>]*?[]>]\\(--?-?[[<][0-9]\\{4\\}-[0-9]\\{2\\}-[0-9]\\{2\\} ?[^]\n>]*?[]>]\\)?" $2) (match-string 1 $2) "")
+#+TBLFM: $5='(concat "[" "[file:" $1 $4 ".org][" $1 "’" (substring $4 2 4) "]" "]")
+#+TBLFM: $6='(if (file-exists-p (concat $1 $4 ".org")) "" "*?*")
+
+
+
+
+
+** Events
+
+*** [[file:event-template.org][Template]]
+
+
+
+*** 1959 :1959:
+
+
+****  [[file:CYCLOTRONS1959.org][CYCLOTRONS’59]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Sea Island, Georgia, USA
+:EVENTDATE: <1959-02-02>--<1959-02-04>
+:END:
+
+#+begin_src emacs-lisp
+  (org-entry-get (point) "TAGS")
+#+end_src
+
+#+RESULTS:
+: :CYCLOTRONS:
+
+*** 1961 :1961:
+
+
+**** [[file:LINAC1961.org][LINAC’61]] :LINAC:
+:PROPERTIES:
+:VENUE: Upton, Long Island, New York, USA
+:EVENTDATE: <1961-04-01>--<1961-04-14>
+:END:
+
+*** 1962 :1962:
+
+
+**** [[file:LINAC1962.org][LINAC’62]] :LINAC:
+:PROPERTIES:
+:VENUE: Upton, Long Island, New York, USA
+:EVENTDATE: <1962-08-20>--<1962-08-24>
+:END:
+
+*** 1963 :1963:
+
+
+**** [[file:CYCLOTRONS1963.org][CYCLOTRONS’63]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Geneva, Switzerland
+:EVENTDATE: <1963-04-23>--<1963-04-26>
+:END:
+
+
+**** [[file:LINAC1963.org][LINAC’63]] :LINAC:
+:PROPERTIES:
+:VENUE: New Haven, Connecticut, USA
+:EVENTDATE: <1963-10-21>--<1963-10-25>
+:END:
+
+*** 1964 :1964:
+
+
+**** [[file:LINAC1964.org][LINAC’64]] :LINAC:
+:PROPERTIES:
+:VENUE: Madison, Wisconsin, USA
+:EVENTDATE: <1964-07-20>--<1964-07-24>
+:END:
+
+*** 1965 :1965:
+
+
+**** [[file:PAC1965.org][PAC’65]] :PAC:
+:PROPERTIES:
+:VENUE: Washington D.C., USA
+:EVENTDATE: <1965-03-10>--<1965-03-12>
+:END:
+
+*** 1966 :1966:
+
+
+****  [[file:CYCLOTRONS1966.org][CYCLOTRONS’66]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Gatlinburg, Tennessee, USA
+:EVENTDATE: <1966-05-02>--<1966-05-05>
+:END:
+
+
+**** [[file:LINAC1966.org][LINAC’66]] :LINAC:
+:PROPERTIES:
+:VENUE: Los Alamos, New Mexico, USA
+:EVENTDATE: <1966-10-03>--<1966-10-07>
+:END:
+
+*** 1967 :1967:
+
+
+**** [[file:PAC1967.org][PAC’67]] :PAC:
+:PROPERTIES:
+:VENUE: Washington D.C., USA
+:EVENTDATE: <1967-03-01>--<1967-03-03>
+:END:
+
+*** 1968 :1968:
+
+
+**** [[file:LINAC1968.org][LINAC’68]] :LINAC:
+:PROPERTIES:
+:VENUE: Upton, Long Island, New York, USA
+:EVENTDATE: <1968-05-20>--<1968-05-24>
+:END:
+
+*** 1969 :1969:
+
+
+**** [[file:PAC1969.org][PAC’69]] :PAC:
+:PROPERTIES:
+:VENUE: Washington D.C., USA
+:EVENTDATE: <1969-03-05>--<1969-03-07>
+:END:
+
+
+**** [[file:CYCLOTRONS1969.org][CYCLOTRONS’69]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Oxford, United Kingdom
+:EVENTDATE: <1969-09-17>--<1969-09-20>
+:END:
+
+*** 1970 :1970:
+
+
+**** [[file:LINAC1970.org][LINAC’70]] :LINAC:
+:PROPERTIES:
+:VENUE: Batavia, Illinois, USA
+:EVENTDATE: <1970-09-28>--<1970-10-02>
+:END:
+
+*** 1971 :1971:
+
+
+**** [[file:PAC1971.org][PAC’71]] :PAC:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <1971-03-01>--<1971-03-03>
+:END:
+
+*** 1972 :1972:
+
+**** [[file:CYCLOTRONS1972.org][CYCLOTRONS’72]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Vancouver, Canada
+:EVENTDATE: <1972-07-18>--<1972-07-21>
+:END:
+
+
+**** [[file:LINAC1972.org][LINAC’72]] :LINAC:
+:PROPERTIES:
+:VENUE: Los Alamos, New Mexico, USA
+:EVENTDATE: <1972-10-10>--<1972-10-13>
+:END:
+
+*** 1973 :1973:
+
+
+**** [[file:PAC1973.org][PAC’73]] :PAC:
+:PROPERTIES:
+:VENUE: San Francisco, CA, USA
+:EVENTDATE: <1973-03-05>--<1973-03-07>
+:END:
+
+*** 1975 :1975:
+
+
+**** [[file:PAC1975.org][PAC’75]] :PAC:
+:PROPERTIES:
+:VENUE: Washington D.C., USA
+:EVENTDATE: <1975-03-12>--<1975-03-14>
+:END:
+
+
+**** [[file:CYCLOTRONS1975.org][CYCLOTRONS’75]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Zürich, Switzerland
+:EVENTDATE: <1975-08-19>--<1975-08-22>
+:END:
+
+*** 1976 :1976:
+
+
+**** [[file:LINAC1976.org][LINAC’76]] :LINAC:
+:PROPERTIES:
+:VENUE: Chalk River, Ontario, Canada
+:EVENTDATE: <1976-09-14>--<1976-09-17>
+:END:
+
+*** 1977 :1977:
+
+
+**** [[file:PAC1977.org][PAC’77]] :PAC:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <1977-03-16>--<1977-03-18>
+:END:
+
+*** 1978 :1978:
+
+
+**** [[file:CYCLOTRONS1978.org][CYCLOTRONS’78]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Bloomington, Indiana, USA
+:EVENTDATE: <1978-09-18>--<1978-09-21>
+:END:
+
+*** 1979 :1979:
+
+
+**** [[file:PAC1979.org][PAC’79]] :PAC:
+:PROPERTIES:
+:VENUE: San Francisco, CA, USA
+:EVENTDATE: <1979-03-12>--<1979-03-14>
+:END:
+
+
+**** [[file:LINAC1979.org][LINAC’79]] :LINAC:
+:PROPERTIES:
+:VENUE: Montauk, New York, USA
+:EVENTDATE: <1979-09-10>--<1979-09-14>
+:END:
+
+*** 1980 :1980:
+
+
+**** [[file:SRF1980.org][SRF’80]] :SRF:
+:PROPERTIES:
+:VENUE: Karlsruhe, Germany
+:EVENTDATE: <1980-07-02>--<1980-07-04>
+:END:
+
+*** 1981 :1981:
+
+
+**** [[file:PAC1981.org][PAC’81]] :PAC:
+:PROPERTIES:
+:VENUE: Washington D.C., USA
+:EVENTDATE: <1981-03-11>--<1981-03-13>
+:END:
+
+
+**** [[file:CYCLOTRONS1981.org][CYCLOTRONS’81]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Caen, France
+:EVENTDATE: <1981-09-07>--<1981-09-10>
+:END:
+
+
+**** [[file:LINAC1981.org][LINAC’81]] :LINAC:
+:PROPERTIES:
+:VENUE: Santa Fe, New Mexico, USA
+:EVENTDATE: <1981-10-19>--<1981-10-23>
+:END:
+
+*** 1983 :1983:
+
+
+**** [[file:PAC1983.org][PAC’83]] :PAC:
+:PROPERTIES:
+:VENUE: Santa Fe, New Mexico, USA
+:EVENTDATE: <1983-03-21>--<1983-03-23>
+:END:
+
+*** 1984 :1984:
+
+
+**** [[file:CYCLOTRONS1984.org][CYCLOTRONS’84]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: East Lansing, Michigan, USA
+:EVENTDATE: <1984-04-30>--<1984-05-03>
+:END:
+
+
+**** LINAC’84 :LINAC:
+:PROPERTIES:
+:VENUE: Seeheim, Germany
+:EVENTDATE: <1984-05-07>--<1984-05-11>
+:END:
+
+
+**** SRF’84 :SRF:
+:PROPERTIES:
+:VENUE: Geneva, Switzerland
+:EVENTDATE: <1984-07-23>--<1984-07-27>
+:END:
+
+*** 1985 :1985:
+
+
+**** [[file:PAC1985.org][PAC’85]] :PAC:
+:PROPERTIES:
+:VENUE: Vancouver, BC, Canada
+:EVENTDATE: <1985-03-13>--<1985-03-16>
+:END:
+
+*** 1986 :1986:
+
+
+**** [[file:LINAC1986.org][LINAC’86]] :LINAC:
+:PROPERTIES:
+:VENUE: Stanford, California, USA
+:EVENTDATE: <1986-06-02>--<1986-06-06>
+:END:
+
+
+**** [[file:CYCLOTRONS1986.org][CYCLOTRONS’86]] :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Tokyo, Japan
+:EVENTDATE: <1986-10-13>--<1986-10-17>
+:END:
+
+*** 1987 :1987:
+
+
+**** PAC’87 :PAC:
+:PROPERTIES:
+:VENUE: Washington D.C., USA
+:EVENTDATE: <1987-03-16>--<1987-03-19>
+:END:
+
+
+**** SRF’87 :SRF:
+:PROPERTIES:
+:VENUE: Argonne National Laboratory, Illinois, USA
+:EVENTDATE: <1987-09-14>--<1987-09-18>
+:END:
+
+*** 1988 :1988:
+
+
+**** EPAC’88 :EPAC:
+:PROPERTIES:
+:VENUE: Rome, Italy
+:EVENTDATE: <1988-06-07>--<1988-06-11>
+:END:
+
+
+**** LINAC’88 :LINAC:
+:PROPERTIES:
+:VENUE: Newport News, Virginia, USA
+:EVENTDATE: <1988-10-03>--<1988-10-07>
+:END:
+
+*** 1989 :1989:
+
+
+**** PAC’89 :PAC:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <1989-03-20>--<1989-03-23>
+:END:
+
+
+**** CYCLOTRONS’89 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Berlin, Germany
+:EVENTDATE: <1989-05-08>--<1989-05-12>
+:END:
+
+
+**** SRF’89 :SRF:
+:PROPERTIES:
+:VENUE: KEK, Tsukuba, Japan
+:EVENTDATE: <1989-08-14>--<1989-08-18>
+:END:
+
+*** 1990 :1990:
+
+
+**** EPAC’90 :EPAC:
+:PROPERTIES:
+:VENUE: Nice, France
+:EVENTDATE: <1990-06-12>--<1990-06-16>
+:END:
+
+
+**** LINAC’90 :LINAC:
+:PROPERTIES:
+:VENUE: Albuquerque, New Mexico, USA
+:EVENTDATE: <1990-09-10>--<1990-09-14>
+:END:
+
+*** 1991 :1991:
+
+
+**** PAC’91 :PAC:
+:PROPERTIES:
+:VENUE: San Francisco, CA, USA
+:EVENTDATE: <1991-05-06>--<1991-05-09>
+:END:
+
+
+**** SRF’91 :SRF:
+:PROPERTIES:
+:VENUE: DESY, Hamburg, Germany
+:EVENTDATE: <1991-08-19>--<1991-08-23>
+:END:
+
+
+**** ICALEPCS’91 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <1991-11-11>--<1991-11-15>
+:END:
+
+*** 1992 :1992:
+
+
+**** EPAC’92 :EPAC:
+:PROPERTIES:
+:VENUE: Berlin, Germany
+:EVENTDATE: <1992-03-24>--<1992-03-28>
+:END:
+
+
+**** CYCLOTRONS’92 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Vancouver, BC, Canada
+:EVENTDATE: <1992-07-06>--<1992-07-10>
+:END:
+
+
+**** LINAC’92 :LINAC:
+:PROPERTIES:
+:VENUE: Ottawa, Ontario, Canada
+:EVENTDATE: <1992-08-24>--<1992-08-28>
+:END:
+
+*** 1993 :1993:
+
+
+**** PAC’93 :PAC:
+:PROPERTIES:
+:VENUE: Washington D.C., USA
+:EVENTDATE: <1993-05-17>--<1993-05-20>
+:END:
+
+
+**** SRF’93 :SRF:
+:PROPERTIES:
+:VENUE: CEBAF, Newport News, Virginia, USA
+:EVENTDATE: <1993-10-04>--<1993-10-08>
+:END:
+
+*** 1994 :1994:
+
+
+**** EPAC’94 :EPAC:
+:PROPERTIES:
+:VENUE: London, England
+:EVENTDATE: <1994-06-27>--<1994-07-01>
+:END:
+
+
+**** LINAC’94 :LINAC:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <1994-08-21>--<1994-08-26>
+:END:
+
+*** 1995 :1995:
+
+
+**** PAC’95 :PAC:
+:PROPERTIES:
+:VENUE: Dallas, Texas, USA
+:EVENTDATE: <1995-05-01>--<1995-05-05>
+:END:
+
+
+**** CYCLOTRONS’95 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Cape Town, South Africa
+:EVENTDATE: <1995-10-08>--<1995-10-13>
+:END:
+
+
+**** SRF’95 :SRF:
+:PROPERTIES:
+:VENUE: Gif-sur-Yvette, France
+:EVENTDATE: <1995-10-17>--<1995-10-20>
+:END:
+
+*** 1996 :1996:
+
+
+**** EPAC’96 :EPAC:
+:PROPERTIES:
+:VENUE: Sitges, Spain
+:EVENTDATE: <1996-06-10>--<1996-06-14>
+:END:
+
+
+**** LINAC’96 :LINAC:
+:PROPERTIES:
+:VENUE: Geneva, Switzerland
+:EVENTDATE: <1996-08-26>--<1996-08-30>
+:END:
+
+*** 1997 :1997:
+
+
+**** PAC’97 :PAC:
+:PROPERTIES:
+:VENUE: Vancouver, B.C., Canada
+:EVENTDATE: <1997-05-12>--<1997-05-16>
+:END:
+
+
+**** SRF’97 :SRF:
+:PROPERTIES:
+:VENUE: Abano Terme (Padova), Italy
+:EVENTDATE: <1997-10-06>--<1997-10-10>
+:END:
+
+*** 1998 :1998:
+
+
+**** APAC’98 :APAC:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <1998-03-23>--<1998-03-27>
+:END:
+
+
+**** CYCLOTRONS’98 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Caen, Franc
+:EVENTDATE: <1998-06-14>--<1998-06-19>
+:END:
+
+
+**** EPAC’98 :EPAC:
+:PROPERTIES:
+:VENUE: Stockholm, Sweden
+:EVENTDATE: <1998-06-22>--<1998-06-26>
+:END:
+
+
+**** LINAC’98 :LINAC:
+:PROPERTIES:
+:VENUE: Chicago, Illinois, USA
+:EVENTDATE: <1998-08-23>--<1998-08-28>
+:END:
+
+*** 1999 :1999:
+
+
+**** PAC’99 :PAC:
+:PROPERTIES:
+:VENUE: New York City, New York, USA
+:EVENTDATE: <1999-03-29>--<1999-04-02>
+:END:
+
+
+**** DIPAC’99 :DIPAC:
+:PROPERTIES:
+:VENUE: Chester, UK
+:EVENTDATE: <1999-05-16>--<1999-05-18>
+:END:
+
+
+**** ICALEPCS’99 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Trieste, Italy
+:EVENTDATE: <1999-10-04>--<1999-10-08>
+:END:
+
+
+**** SRF’99 :SRF:
+:PROPERTIES:
+:VENUE: Santa Fe, New Mexico, USA
+:EVENTDATE: <1999-11-01>--<1999-11-05>
+:END:
+
+*** 2000 :2000:
+
+
+**** EPAC’00 :EPAC:
+:PROPERTIES:
+:VENUE: Vienna, Austria
+:EVENTDATE: <2000-06-26>--<2000-06-30>
+:END:
+
+
+**** LINAC’00 :LINAC:
+:PROPERTIES:
+:VENUE: Monterey, CA, USA
+:EVENTDATE: <2000-08-21>--<2000-08-25>
+:END:
+
+*** 2001 :2001:
+
+
+**** DIPAC’01 :DIPAC:
+:PROPERTIES:
+:VENUE: Grenoble, France
+:EVENTDATE: <2001-05-13>--<2001-05-15>
+:END:
+
+
+**** CYCLOTRONS’01 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: East Lansing, Michigan, USA
+:EVENTDATE: <2001-05-13>--<2001-05-17>
+:END:
+
+
+**** PAC’01 :PAC:
+:PROPERTIES:
+:VENUE: Chicago, Illinois, USA
+:EVENTDATE: <2001-06-18>--<2001-06-22>
+:END:
+
+
+**** SRF’01 :SRF:
+:PROPERTIES:
+:VENUE: Tsukuba, Ibaraki, Japan
+:EVENTDATE: <2001-09-06>--<2001-09-11>
+:END:
+
+
+**** APAC’01 :APAC:
+:PROPERTIES:
+:VENUE: Beijing, China
+:EVENTDATE: <2001-09-17>--<2001-09-21>
+:END:
+
+
+**** ICALEPCS’01 :ICALEPCS:
+:PROPERTIES:
+:VENUE: San Jose, California, USA
+:EVENTDATE: <2001-11-27>--<2001-11-30>
+:END:
+
+*** 2002 :2002:
+
+
+**** EPAC’02 :EPAC:
+:PROPERTIES:
+:VENUE: Paris, France
+:EVENTDATE: <2002-06-03>--<2002-06-07>
+:END:
+
+
+**** LINAC’02 :LINAC:
+:PROPERTIES:
+:VENUE: Gyeongju, Korea
+:EVENTDATE: <2002-08-19>--<2002-08-23>
+:END:
+
+*** 2003 :2003:
+
+
+**** DIPAC’03 :DIPAC:
+:PROPERTIES:
+:VENUE: Mainz,  Germany
+:EVENTDATE: <2003-05-05>--<2003-05-07>
+:END:
+
+
+**** PAC’03 :PAC:
+:PROPERTIES:
+:VENUE: Portland, Oregon, USA
+:EVENTDATE: <2003-05-12>--<2003-05-16>
+:END:
+
+
+**** SRF’03 :SRF:
+:PROPERTIES:
+:VENUE: Lübeck/Travemünder, Germany
+:EVENTDATE: <2003-09-08>--<2003-09-12>
+:END:
+
+
+**** ICALEPCS’03 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Gyeongju, Korea
+:EVENTDATE: <2003-10-13>--<2003-10-17>
+:END:
+
+*** 2004 :2004:
+
+
+**** APAC’04 :APAC:
+:PROPERTIES:
+:VENUE: Gyeongju, Korea
+:EVENTDATE: <2004-03-22>--<2004-03-26>
+:END:
+
+
+**** EPAC’04 :EPAC:
+:PROPERTIES:
+:VENUE: Lucerne, Switzerland
+:EVENTDATE: <2004-07-05>--<2004-07-09>
+:END:
+
+
+**** LINAC’04 :LINAC:
+:PROPERTIES:
+:VENUE: Lübeck, Germany
+:EVENTDATE: <2004-08-16>--<2004-08-20>
+:END:
+
+
+**** FEL’04 :FEL:
+:PROPERTIES:
+:VENUE: Trieste, Italy
+:EVENTDATE: <2004-08-29>--<2004-09-03>
+:END:
+
+
+**** RuPAC’04 :RuPAC:
+:PROPERTIES:
+:VENUE: Dubna, Russia
+:EVENTDATE: <2004-10-04>--<2004-10-08>
+:END:
+
+
+**** CYCLOTRONS’04 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Tokyo, Japan
+:EVENTDATE: <2004-10-18>--<2004-10-22>
+:END:
+
+*** 2005 :2005:
+
+
+**** PAC’05 :PAC:
+:PROPERTIES:
+:VENUE: Knoxville, Tennessee, USA
+:EVENTDATE: <2005-05-16>--<2005-05-20>
+:END:
+
+
+**** DIPAC’05 :DIPAC:
+:PROPERTIES:
+:VENUE: Lyon, France
+:EVENTDATE: <2005-06-06>--<2005-06-08>
+:END:
+
+
+**** SRF’05 :SRF:
+:PROPERTIES:
+:VENUE: Cornell University, Ithaca, New York, USA
+:EVENTDATE: <2005-07-10>--<2005-07-15>
+:END:
+
+
+**** FEL’05 :FEL:
+:PROPERTIES:
+:VENUE: Palo Alto, California, USA
+:EVENTDATE: <2005-08-21>--<2005-08-26>
+:END:
+
+
+**** ICALEPCS’05 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Geneva, Switzerland
+:EVENTDATE: <2005-10-10>--<2005-10-14>
+:END:
+
+*** 2006 :2006:
+
+
+**** FLS’06 :FLS:
+:PROPERTIES:
+:VENUE: Hamburg, Germany
+:EVENTDATE: <2006-05-15>--<2006-05-16>
+:END:
+
+
+**** HB’06 :HB:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <2006-05-29>--<2006-06-02>
+:END:
+
+
+**** EPAC’06 :EPAC:
+:PROPERTIES:
+:VENUE: Edinburgh, UK
+:EVENTDATE: <2006-06-26>--<2006-06-30>
+:END:
+
+
+**** LINAC’06 :LINAC:
+:PROPERTIES:
+:VENUE: Knoxville, Tennessee USA
+:EVENTDATE: <2006-08-21>--<2006-08-25>
+:END:
+
+
+**** FEL’06 :FEL:
+:PROPERTIES:
+:VENUE: Berlin, Germany
+:EVENTDATE: <2006-08-27>--<2006-09-01>
+:END:
+
+
+**** RuPAC’06 :RuPAC:
+:PROPERTIES:
+:VENUE: Novosibirsk, Russia
+:EVENTDATE: <2006-09-10>--<2006-09-14>
+:END:
+
+
+**** ICAP’06 :ICAP:
+:PROPERTIES:
+:VENUE: Chamonix, France
+:EVENTDATE: <2006-10-02>--<2006-10-06>
+:END:
+
+*** 2007 :2007:
+
+
+**** APAC’07 :APAC:
+:PROPERTIES:
+:VENUE: Indore, India
+:EVENTDATE: <2007-01-29>--<2007-02-02>
+:END:
+
+
+**** DIPAC’07 :DIPAC:
+:PROPERTIES:
+:VENUE: Venice, Italy
+:EVENTDATE: <2007-05-20>--<2007-05-23>
+:END:
+
+
+**** ERL’07 :ERL:
+:PROPERTIES:
+:VENUE: Daresbury, United Kingdom
+:EVENTDATE: <2007-05-21>--<2007-05-25>
+:END:
+
+
+**** PAC’07 :PAC:
+:PROPERTIES:
+:VENUE: Albuquerque, New Mexico, USA
+:EVENTDATE: <2007-06-25>--<2007-06-29>
+:END:
+
+
+**** FEL’07 :FEL:
+:PROPERTIES:
+:VENUE: Novosibirsk, Russia
+:EVENTDATE: <2007-08-26>--<2007-08-31>
+:END:
+
+
+**** COOL’07 :COOL:
+:PROPERTIES:
+:VENUE: Bad Kreuznach, Germany
+:EVENTDATE: <2007-09-09>--<2007-09-14>
+:END:
+
+
+**** CYCLOTRONS’07 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Giardini Naxos, Italy
+:EVENTDATE: <2007-10-01>--<2007-10-05>
+:END:
+
+
+**** SRF’07 :SRF:
+:PROPERTIES:
+:VENUE: Peking Univ., Beijing, China
+:EVENTDATE: <2007-10-14>--<2007-10-19>
+:END:
+
+
+**** ICALEPCS’07 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Knoxville, Tennessee, USA
+:EVENTDATE: <2007-10-15>--<2007-10-19>
+:END:
+
+*** 2008 :2008:
+
+
+**** eeFACT’08 :eeFACT:
+:PROPERTIES:
+:VENUE: Novosibirsk, Russia
+:EVENTDATE: <2008-04-14>--<2008-04-16>
+:END:
+
+
+**** BIW’08 :BIW:
+:PROPERTIES:
+:VENUE: Tahoe City, California, USA
+:EVENTDATE: <2008-05-04>--<2008-05-08>
+:END:
+
+
+**** EPAC’08 :EPAC:
+:PROPERTIES:
+:VENUE: Genoa, Italy
+:EVENTDATE: <2008-06-23>--<2008-06-27>
+:END:
+
+
+**** FEL’08 :FEL:
+:PROPERTIES:
+:VENUE: Gyeongju, Korea
+:EVENTDATE: <2008-08-24>--<2008-08-29>
+:END:
+
+
+**** HB’08 :HB:
+:PROPERTIES:
+:VENUE: Nashville, Tennessee, USA
+:EVENTDATE: <2008-08-25>--<2008-08-29>
+:END:
+
+
+**** ECRIS’08 :ECRIS:
+:PROPERTIES:
+:VENUE: Chicago, Illinois, USA
+:EVENTDATE: <2008-09-15>--<2008-09-18>
+:END:
+
+
+**** RuPAC’08 :RuPAC:
+:PROPERTIES:
+:VENUE: Zvenigorod, Russia
+:EVENTDATE: <2008-09-28>--<2008-10-03>
+:END:
+
+
+**** LINAC’08 :LINAC:
+:PROPERTIES:
+:VENUE: Victoria, British Columbia, Canada
+:EVENTDATE: <2008-09-29>--<2008-10-03>
+:END:
+
+
+**** PCaPAC’08 :PCaPAC:
+:PROPERTIES:
+:VENUE: Ljubljana, Slovenia
+:EVENTDATE: <2008-10-20>--<2008-10-23>
+:END:
+
+*** 2009 :2009:
+
+
+**** PAC’09 :PAC:
+:PROPERTIES:
+:VENUE: Vancouver, British Columbia, Canada
+:EVENTDATE: <2009-05-04>--<2009-05-08>
+:END:
+
+
+**** DIPAC’09 :DIPAC:
+:PROPERTIES:
+:VENUE: Basel, Switzerland
+:EVENTDATE: <2009-05-25>--<2009-05-27>
+:END:
+
+
+**** HIAT’09 :HIAT:
+:PROPERTIES:
+:VENUE: Venice, Italy
+:EVENTDATE: <2009-06-08>--<2009-06-12>
+:END:
+
+
+**** ERL’09 :ERL:
+:PROPERTIES:
+:VENUE: Ithaca, New York, USA
+:EVENTDATE: <2009-06-08>--<2009-06-12>
+:END:
+
+
+**** FEL’09 :FEL:
+:PROPERTIES:
+:VENUE: Liverpool, UK
+:EVENTDATE: <2009-08-23>--<2009-08-28>
+:END:
+
+
+**** ICAP’09 :ICAP:
+:PROPERTIES:
+:VENUE: San Francisco, California, US
+:EVENTDATE: <2009-08-31>--<2009-09-04>
+:END:
+
+
+**** COOL’09 :COOL:
+:PROPERTIES:
+:VENUE: Lanzhou, China
+:EVENTDATE: <2009-08-31>--<2009-09-04>
+:END:
+
+
+**** SRF’09 :SRF:
+:PROPERTIES:
+:VENUE: Berlin, Germany
+:EVENTDATE: <2009-09-20>--<2009-09-25>
+:END:
+
+
+**** ICALEPCS’09 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Kobe, Japan
+:EVENTDATE: <2009-10-12>--<2009-10-16>
+:END:
+
+*** 2010 :2010:
+
+
+**** BIW’10 :BIW:
+:PROPERTIES:
+:VENUE: Santa Fe, New Mexico, USA
+:EVENTDATE: <2010-05-02>--<2010-05-06>
+:END:
+
+
+**** IPAC’10 :IPAC:
+:PROPERTIES:
+:VENUE: Kyoto, Japan
+:EVENTDATE: <2010-05-23>--<2010-05-28>
+:END:
+
+
+**** FEL’10 :FEL:
+:PROPERTIES:
+:VENUE: Malmö, Sweden
+:EVENTDATE: <2010-08-23>--<2010-08-27>
+:END:
+
+
+**** ECRIS’10 :ECRIS:
+:PROPERTIES:
+:VENUE: Grenoble, France
+:EVENTDATE: <2010-08-23>--<2010-08-26>
+:END:
+
+
+**** CYCLOTRONS’10 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Lanzhou, China
+:EVENTDATE: <2010-09-06>--<2010-09-10>
+:END:
+
+
+**** LINAC’10 :LINAC:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <2010-09-12>--<2010-09-17>
+:END:
+
+
+**** RuPAC’10 :RuPAC:
+:PROPERTIES:
+:VENUE: Protvino, Russia
+:EVENTDATE: <2010-09-27>--<2010-10-01>
+:END:
+
+
+**** HB’10 :HB:
+:PROPERTIES:
+:VENUE: Morschach, Switzerland
+:EVENTDATE: <2010-09-27>--<2010-10-01>
+:END:
+
+
+**** PCaPAC’10 :PCaPAC:
+:PROPERTIES:
+:VENUE: Saskatoon, Saskatchewan, Canada
+:EVENTDATE: <2010-10-06>--<2010-10-08>
+:END:
+
+
+**** eCloud’10 :eCloud:
+:PROPERTIES:
+:VENUE: Ithaca, New York, USA
+:EVENTDATE: <2010-10-08>--<2010-10-12>
+:END:
+
+*** 2011 :2011:
+
+
+**** NAPAC’11 :NAPAC:
+:PROPERTIES:
+:VENUE: New York, NY, USA
+:EVENTDATE: <2011-03-28>--<2011-04-01>
+:END:
+
+
+**** DIPAC’11 :DIPAC:
+:PROPERTIES:
+:VENUE: Hamburg, Germany
+:EVENTDATE: <2011-05-16>--<2011-05-18>
+:END:
+
+
+**** SRF’11 :SRF:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <2011-07-25>--<2011-07-29>
+:END:
+
+
+**** FEL’11 :FEL:
+:PROPERTIES:
+:VENUE: Shanghai, China
+:EVENTDATE: <2011-08-22>--<2011-08-26>
+:END:
+
+
+**** IPAC’11 :IPAC:
+:PROPERTIES:
+:VENUE: San Sebastián, Spain
+:EVENTDATE: <2011-09-04>--<2011-09-09>
+:END:
+
+
+**** COOL’11 :COOL:
+:PROPERTIES:
+:VENUE: Alushta, Ukraine
+:EVENTDATE: <2011-09-12>--<2011-09-16>
+:END:
+
+
+**** ICALEPCS’11 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Grenoble, France
+:EVENTDATE: <2011-10-10>--<2011-10-14>
+:END:
+
+
+**** ERL’11 :ERL:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <2011-10-16>--<2011-10-21>
+:END:
+
+*** 2012 :2012:
+
+
+**** BIW’12 :BIW:
+:PROPERTIES:
+:VENUE: Newport News, Virginia, USA
+:EVENTDATE: <2012-04-15>--<2012-04-19>
+:END:
+
+
+**** IPAC’12 :IPAC:
+:PROPERTIES:
+:VENUE: New Orleans, Louisiana, USA
+:EVENTDATE: <2012-05-20>--<2012-05-25>
+:END:
+
+
+**** HIAT’12 :HIAT:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <2012-06-18>--<2012-06-21>
+:END:
+
+
+**** ICAP’12 :ICAP:
+:PROPERTIES:
+:VENUE: Rostock-Warnemünde, Germany
+:EVENTDATE: <2012-08-19>--<2012-08-24>
+:END:
+
+
+**** FEL’12 :FEL:
+:PROPERTIES:
+:VENUE: Nara, Japan
+:EVENTDATE: <2012-08-26>--<2012-08-31>
+:END:
+
+
+**** LINAC’12 :LINAC:
+:PROPERTIES:
+:VENUE: Tel Aviv, Israel
+:EVENTDATE: <2012-09-09>--<2012-09-14>
+:END:
+
+
+**** HB’12 :HB:
+:PROPERTIES:
+:VENUE: Beijing, China
+:EVENTDATE: <2012-09-17>--<2012-09-21>
+:END:
+
+
+**** RuPAC’12 :RuPAC:
+:PROPERTIES:
+:VENUE: Saint-Petersburg, Russia
+:EVENTDATE: <2012-09-24>--<2012-09-28>
+:END:
+
+
+**** ECRIS’12 :ECRIS:
+:PROPERTIES:
+:VENUE: Sydney, Australia
+:EVENTDATE: <2012-09-25>--<2012-09-28>
+:END:
+
+
+**** IBIC’12 :IBIC:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <2012-10-01>--<2012-10-04>
+:END:
+
+
+**** PCaPAC’12 :PCaPAC:
+:PROPERTIES:
+:VENUE: Kolkata, India
+:EVENTDATE: <2012-12-04>--<2012-12-07>
+:END:
+
+*** 2013 :2013:
+
+
+**** IPAC’13 :IPAC:
+:PROPERTIES:
+:VENUE: Shanghai, China
+:EVENTDATE: <2013-05-12>--<2013-05-17>
+:END:
+
+
+**** COOL’13 :COOL:
+:PROPERTIES:
+:VENUE: Mürren, Switzerland
+:EVENTDATE: <2013-06-10>--<2013-06-14>
+:END:
+
+
+**** FEL’13 :FEL:
+:PROPERTIES:
+:VENUE: Manhattan, NY, USA
+:EVENTDATE: <2013-08-26>--<2013-08-30>
+:END:
+
+
+**** ERL’13 :ERL:
+:PROPERTIES:
+:VENUE: Novosibirsk, Russia
+:EVENTDATE: <2013-09-09>--<2013-09-13>
+:END:
+
+
+**** IBIC’13 :IBIC:
+:PROPERTIES:
+:VENUE: Oxford, UK
+:EVENTDATE: <2013-09-16>--<2013-09-19>
+:END:
+
+
+**** CYCLOTRONS’13 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Vancouver, BC, Canada
+:EVENTDATE: <2013-09-16>--<2013-09-20>
+:END:
+
+
+**** SRF’13 :SRF:
+:PROPERTIES:
+:VENUE: Paris, France
+:EVENTDATE: <2013-09-23>--<2013-09-27>
+:END:
+
+
+**** NAPAC’13 :NAPAC:
+:PROPERTIES:
+:VENUE: Pasadena, CA, USA
+:EVENTDATE: <2013-09-29>--<2013-10-04>
+:END:
+
+
+**** ICALEPCS’13 :ICALEPCS:
+:PROPERTIES:
+:VENUE: San Francisco, CA, USA
+:EVENTDATE: <2013-10-06>--<2013-10-11>
+:END:
+
+*** 2014 :2014:
+
+
+**** IPAC’14 :IPAC:
+:PROPERTIES:
+:VENUE: Dresden, Germany
+:EVENTDATE: <2014-06-15>--<2014-06-20>
+:END:
+
+
+**** SAP’14 :SAP:
+:PROPERTIES:
+:VENUE: Lanzhou, China
+:EVENTDATE: <2014-08-13>--<2014-08-15>
+:END:
+
+
+**** ECRIS’14 :ECRIS:
+:PROPERTIES:
+:VENUE: Nizhny Novgorod, Russia
+:EVENTDATE: <2014-08-24>--<2014-08-28>
+:END:
+
+
+**** FEL’14 :FEL:
+:PROPERTIES:
+:VENUE: Basel, Switzerland
+:EVENTDATE: <2014-08-25>--<2014-08-29>
+:END:
+
+
+**** LINAC’14 :LINAC:
+:PROPERTIES:
+:VENUE: Geneva, Switzerland
+:EVENTDATE: <2014-08-31>--<2014-09-05>
+:END:
+
+
+**** IBIC’14 :IBIC:
+:PROPERTIES:
+:VENUE: Monterey, CA, USA
+:EVENTDATE: <2014-09-14>--<2014-09-18>
+:END:
+
+
+**** RuPAC’14 :RuPAC:
+:PROPERTIES:
+:VENUE: Obninsk, Russia
+:EVENTDATE: <2014-10-06>--<2014-10-10>
+:END:
+
+
+**** HF’14 :HF:
+:PROPERTIES:
+:VENUE: Beijing, China
+:EVENTDATE: <2014-10-09>--<2014-10-12>
+:END:
+
+
+**** PCaPAC’14 :PCaPAC:
+:PROPERTIES:
+:VENUE: Karlsruhe, Germany
+:EVENTDATE: <2014-10-14>--<2014-10-17>
+:END:
+
+
+**** HB’14 :HB:
+:PROPERTIES:
+:VENUE: East-Lansing, MI, USA
+:EVENTDATE: <2014-11-10>--<2014-11-14>
+:END:
+
+*** 2015 :2015:
+
+
+**** IPAC’15 :IPAC:
+:PROPERTIES:
+:VENUE: Richmond, VA, USA
+:EVENTDATE: <2015-05-03>--<2015-05-08>
+:END:
+
+
+**** ERL’15 :ERL:
+:PROPERTIES:
+:VENUE: Stony Brook, NY, USA
+:EVENTDATE: <2015-06-07>--<2015-06-12>
+:END:
+
+
+**** FEL’15 :FEL:
+:PROPERTIES:
+:VENUE: Daejeon, Korea
+:EVENTDATE: <2015-08-23>--<2015-08-28>
+:END:
+
+
+**** HIAT’15 :HIAT:
+:PROPERTIES:
+:VENUE: Yokohama, Japan
+:EVENTDATE: <2015-09-07>--<2015-09-11>
+:END:
+
+
+**** SRF’15 :SRF:
+:PROPERTIES:
+:VENUE: Whistler, BC, Canada
+:EVENTDATE: <2015-09-13>--<2015-09-18>
+:END:
+
+
+**** IBIC’15 :IBIC:
+:PROPERTIES:
+:VENUE: Melbourne, Australia
+:EVENTDATE: <2015-09-13>--<2015-09-17>
+:END:
+
+
+**** COOL’15 :COOL:
+:PROPERTIES:
+:VENUE: Newport News, Virginia, USA
+:EVENTDATE: <2015-09-28>--<2015-10-02>
+:END:
+
+
+**** ICAP’15 :ICAP:
+:PROPERTIES:
+:VENUE: Shanghai, China
+:EVENTDATE: <2015-10-12>--<2015-10-16>
+:END:
+
+
+**** ICALEPCS’15 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Melbourne, Australia
+:EVENTDATE: <2015-10-17>--<2015-10-23>
+:END:
+
+*** 2016 :2016:
+
+
+**** HB’16 :HB:
+:PROPERTIES:
+:VENUE: Malmö, Sweden
+:EVENTDATE: <2016-07-03>--<2016-07-08>
+:END:
+
+
+**** IPAC’16 :IPAC:
+:PROPERTIES:
+:VENUE: Busan, Korea
+:EVENTDATE: <2016-08-08>--<2016-05-13>
+:END:
+
+
+**** ECRIS’16 :ECRIS:
+:PROPERTIES:
+:VENUE: Busan, Korea
+:EVENTDATE: <2016-08-28>--<2016-09-01>
+:END:
+
+
+**** MEDSI’16 :MEDSI:
+:PROPERTIES:
+:VENUE: Barcelona, Spain
+:EVENTDATE: <2016-09-11>--<2016-09-16>
+:END:
+
+
+**** IBIC’16 :IBIC:
+:PROPERTIES:
+:VENUE: Barcelona, Spain
+:EVENTDATE: <2016-09-11>--<2016-09-15>
+:END:
+
+
+**** CYCLOTRONS’16 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Zürich, Switzerland
+:EVENTDATE: <2016-09-11>--<2016-09-16>
+:END:
+
+
+**** LINAC’16 :LINAC:
+:PROPERTIES:
+:VENUE: East Lansing, MI, USA
+:EVENTDATE: <2016-09-25>--<2016-09-30>
+:END:
+
+
+**** NAPAC’16 :NAPAC:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <2016-10-09>--<2016-10-14>
+:END:
+
+
+**** eeFACT’16 :eeFACT:
+:PROPERTIES:
+:VENUE: Daresbury, United Kingdom
+:EVENTDATE: <2016-10-24>--<2016-10-27>
+:END:
+
+
+**** PCaPAC’16 :PCaPAC:
+:PROPERTIES:
+:VENUE: Campinas, Brazil
+:EVENTDATE: <2016-10-25>--<2016-10-28>
+:END:
+
+
+**** RuPAC’16 :RuPAC:
+:PROPERTIES:
+:VENUE: Saint-Petersburg, Russia
+:EVENTDATE: <2016-11-21>--<2016-11-25>
+:END:
+
+*** 2017 :2017:
+
+
+**** IPAC’17 :IPAC:
+:PROPERTIES:
+:VENUE: Copenhagen, Denmark
+:EVENTDATE: <2017-05-14>--<2017-05-19>
+:END:
+
+
+**** ERL’17 :ERL:
+:PROPERTIES:
+:VENUE: Geneva, Switzerland
+:EVENTDATE: <2017-06-18>--<2017-06-23>
+:END:
+
+
+**** SRF’17 :SRF:
+:PROPERTIES:
+:VENUE: Lanzhou, China
+:EVENTDATE: <2017-07-17>--<2017-07-21>
+:END:
+
+
+**** IBIC’17 :IBIC:
+:PROPERTIES:
+:VENUE: Grand Rapids, MI, USA
+:EVENTDATE: <2017-08-20>--<2017-08-24>
+:END:
+
+
+**** FEL’17 :FEL:
+:PROPERTIES:
+:VENUE: Santa Fe, NM, USA
+:EVENTDATE: <2017-08-20>--<2017-08-25>
+:END:
+
+
+**** SAP’17 :SAP:
+:PROPERTIES:
+:VENUE: Jishou, Hunan, China
+:EVENTDATE: <2017-08-28>--<2017-08-30>
+:END:
+
+
+**** COOL’17 :COOL:
+:PROPERTIES:
+:VENUE: Bonn, Germany
+:EVENTDATE: <2017-09-18>--<2017-09-21>
+:END:
+
+
+**** ICALEPCS’17 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Barcelona, Spain
+:EVENTDATE: <2017-10-08>--<2017-10-13>
+:END:
+
+*** 2018 :2018:
+
+
+**** FLS’18 :FLS:
+:PROPERTIES:
+:VENUE: Shanghai, China
+:EVENTDATE: <2018-03-05>--<2018-03-09>
+:END:
+
+
+**** IPAC’18 :IPAC:
+:PROPERTIES:
+:VENUE: Vancouver, Canada
+:EVENTDATE: <2018-04-29>--<2018-05-04>
+:END:
+
+
+**** HB’18 :HB:
+:PROPERTIES:
+:VENUE: Daejeon, Korea
+:EVENTDATE: <2018-06-18>--<2018-06-22>
+:END:
+
+
+**** MEDSI’18 :MEDSI:
+:PROPERTIES:
+:VENUE: Paris, France
+:EVENTDATE: <2018-06-25>--<2018-06-29>
+:END:
+
+
+**** IBIC’18 :IBIC:
+:PROPERTIES:
+:VENUE: Shanghai, China
+:EVENTDATE: <2018-09-09>--<2018-09-13>
+:END:
+
+
+**** ECRIS’18 :ECRIS:
+:PROPERTIES:
+:VENUE: Catania, Italy
+:EVENTDATE: <2018-09-10>--<2018-09-14>
+:END:
+
+
+**** LINAC’18 :LINAC:
+:PROPERTIES:
+:VENUE: Beijing, China
+:EVENTDATE: <2018-09-16>--<2018-09-21>
+:END:
+
+
+**** eeFACT’18 :eeFACT:
+:PROPERTIES:
+:VENUE: Hong Kong, China
+:EVENTDATE: <2018-09-24>--<2018-09-27>
+:END:
+
+
+**** RuPAC’18 :RuPAC:
+:PROPERTIES:
+:VENUE: Protvino, Russia
+:EVENTDATE: <2018-10-01>--<2018-10-05>
+:END:
+
+
+**** PCaPAC’18 :PCaPAC:
+:PROPERTIES:
+:VENUE: Hsinchu, Taiwan
+:EVENTDATE: <2018-10-16>--<2018-10-19>
+:END:
+
+
+**** ICAP’18 :ICAP:
+:PROPERTIES:
+:VENUE: Key West, FL, USA
+:EVENTDATE: <2018-10-20>--<2018-10-24>
+:END:
+
+
+**** HIAT’18 :HIAT:
+:PROPERTIES:
+:VENUE: Lanzhou, China
+:EVENTDATE: <2018-10-22>--<2018-10-26>
+:END:
+
+*** 2019 :2019:
+
+
+**** IPAC’19 :IPAC:
+:PROPERTIES:
+:VENUE: Melbourne, Australia
+:EVENTDATE: <2019-05-19>--<2019-05-24>
+:END:
+
+
+**** SRF’19 :SRF:
+:PROPERTIES:
+:VENUE: Dresden, Germany
+:EVENTDATE: <2019-06-30>--<2019-07-05>
+:END:
+
+
+**** FEL’19 :FEL:
+:PROPERTIES:
+:VENUE: Hamburg, Germany
+:EVENTDATE: <2019-08-26>--<2019-08-30>
+:END:
+
+
+**** NAPAC’19 :NAPAC:
+:PROPERTIES:
+:VENUE: Lansing, MI, USA
+:EVENTDATE: <2019-09-02>--<2019-09-06>
+:END:
+
+
+**** IBIC’19 :IBIC:
+:PROPERTIES:
+:VENUE: Malmö, Sweden
+:EVENTDATE: <2019-09-08>--<2019-09-12>
+:END:
+
+
+**** ERL’19 :ERL:
+:PROPERTIES:
+:VENUE: Berlin, Germany
+:EVENTDATE: <2019-09-15>--<2019-09-20>
+:END:
+
+
+**** CYCLOTRONS’19 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Cape Town, South Africa
+:EVENTDATE: <2019-09-22>--<2019-09-27>
+:END:
+
+
+**** COOL’19 :COOL:
+:PROPERTIES:
+:VENUE: Novosibirsk, Russian
+:EVENTDATE: <2019-09-23>--<2019-09-27>
+:END:
+
+
+**** ICALEPCS’19 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Brooklyn, New York City, NY, USA
+:EVENTDATE: <2019-10-07>--<2019-10-11>
+:END:
+
+*** 2020 :2020:
+
+
+**** IPAC’20 :IPAC:
+:PROPERTIES:
+:VENUE: Caen, France
+:EVENTDATE: <2020-05-10>--<2020-05-15>
+:END:
+
+
+**** LINAC’20 :LINAC:
+:PROPERTIES:
+:VENUE: Liverpool, UK
+:EVENTDATE: <2020-09-01>--<2020-09-04>
+:END:
+
+
+**** IBIC’20 :IBIC:
+:PROPERTIES:
+:VENUE: Santos, Brazil
+:EVENTDATE: <2020-09-14>--<2020-09-18>
+:END:
+
+
+**** ECRIS’20 :ECRIS:
+:PROPERTIES:
+:VENUE: East Lansing, MI, USA
+:EVENTDATE: <2020-09-28>--<2020-09-30>
+:END:
+
+*** 2021 :2021:
+
+
+**** IPAC’21 :IPAC:
+:PROPERTIES:
+:VENUE: Campinas, Brazil
+:EVENTDATE: <2021-05-24>--<2021-05-28>
+:END:
+
+
+**** SRF’21 :SRF:
+:PROPERTIES:
+:VENUE: East Lansing, MI, USA
+:EVENTDATE: <2021-06-27>--<2021-07-02>
+:END:
+
+
+**** MEDSI’21 :MEDSI:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <2021-07-26>--<2021-07-29>
+:END:
+
+
+**** IBIC’21 :IBIC:
+:PROPERTIES:
+:VENUE: Pohang, Korea
+:EVENTDATE: <2021-09-13>--<2021-09-17>
+:END:
+
+
+**** RuPAC’21 :RuPAC:
+:PROPERTIES:
+:VENUE: Alushta, Russia
+:EVENTDATE: <2021-09-27>--<2021-10-01>
+:END:
+
+
+**** HB’21 :HB:
+:PROPERTIES:
+:VENUE: Batavia, IL, USA
+:EVENTDATE: <2021-10-04>--<2021-10-08>
+:END:
+
+
+**** ICALEPCS’21 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Shanghai, China
+:EVENTDATE: <2021-10-14>--<2021-10-22>
+:END:
+
+
+**** COOL’21 :COOL:
+:PROPERTIES:
+:VENUE: Novosibirsk, Russian
+:EVENTDATE: <2021-11-01>--<2021-11-05>
+:END:
+
+*** 2022 :2022:
+
+
+**** IPAC’22 :IPAC:
+:PROPERTIES:
+:VENUE: Bangkok, Thailand
+:EVENTDATE: <2022-06-12>--<2022-06-17>
+:END:
+
+
+**** HIAT’22 :HIAT:
+:PROPERTIES:
+:VENUE: Darmstadt, Germany
+:EVENTDATE: <2022-06-27>--<2022-07-01>
+:END:
+
+
+**** NAPAC’22 :NAPAC:
+:PROPERTIES:
+:VENUE: Albuquerque, NM, USA
+:EVENTDATE: <2022-08-07>--<2022-08-12>
+:END:
+
+
+**** FEL’22 :FEL:
+:PROPERTIES:
+:VENUE: Trieste, Italy
+:EVENTDATE: <2022-08-22>--<2022-08-26>
+:END:
+
+
+**** LINAC’22 :LINAC:
+:PROPERTIES:
+:VENUE: Liverpool, UK
+:EVENTDATE: <2022-08-28>--<2022-09-02>
+:END:
+
+
+**** IBIC’22 :IBIC:
+:PROPERTIES:
+:VENUE: Kraków, Poland
+:EVENTDATE: <2022-09-11>--<2022-09-15>
+:END:
+
+
+**** eeFACT’22 :eeFACT:
+:PROPERTIES:
+:VENUE: Frascati, Italy
+:EVENTDATE: <2022-09-12>--<2022-09-16>
+:END:
+
+
+**** PCaPAC’22 :PCaPAC:
+:PROPERTIES:
+:VENUE: Dolní Brežany, Czech Republic
+:EVENTDATE: <2022-10-04>--<2022-10-07>
+:END:
+
+
+**** CYCLOTRONS’22 :CYCLOTRONS:
+:PROPERTIES:
+:VENUE: Beijing, China
+:EVENTDATE: <2022-12-05>--<2022-12-09>
+:END:
+
+*** 2023 :2023:
+
+
+**** IPAC’23 :IPAC:
+:PROPERTIES:
+:VENUE: Venice, Italy
+:EVENTDATE: <2023-05-07>--<2023-05-12>
+:END:
+
+
+**** SRF’23 :SRF:
+:PROPERTIES:
+:VENUE: Grand Rapids, MI, USA
+:EVENTDATE: <2023-06-25>--<2023-06-30>
+:END:
+
+
+**** FLS’23 :FLS:
+:PROPERTIES:
+:VENUE: Luzern, Switzerland
+:EVENTDATE: <2023-08-27>--<2023-09-01>
+:END:
+
+
+**** IBIC’23 :IBIC:
+:PROPERTIES:
+:VENUE: Saskatoon, Canada
+:EVENTDATE: <2023-09-10>--<2023-09-14>
+:END:
+
+
+**** ICALEPCS’23 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Cape Town, South Africa
+:EVENTDATE: <2023-10-07>--<2023-10-13>
+:END:
+
+
+**** COOL’23 :COOL:
+:PROPERTIES:
+:VENUE: Montreux, Switzerland
+:EVENTDATE: <2023-10-08>--<2023-10-14>
+:END:
+
+
+**** HB’23 :HB:
+:PROPERTIES:
+:VENUE: CERN, Geneva, Switzerland
+:EVENTDATE: <2023-10-09>--<2023-10-13>
+:END:
+
+
+**** MEDSI’23 :MEDSI:
+:PROPERTIES:
+:VENUE: Beijing, China
+:EVENTDATE: <2023-11-06>--<2023-11-10>
+:END:
+
+*** 2024 :2024:
+
+
+**** IPAC’24 :IPAC:
+:PROPERTIES:
+:VENUE: Nashville, TN, USA
+:EVENTDATE: <2024-05-18>--<2024-05-24>
+:END:
+
+
+**** FEL’24 :FEL:
+:PROPERTIES:
+:VENUE: Warsaw, Poland
+:EVENTDATE: <2024-08-19>--<2024-08-23>
+:END:
+
+
+**** LINAC’24 :LINAC:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <2024-08-25>--<2024-08-30>
+:END:
+
+
+**** IBIC’24 :IBIC:
+:PROPERTIES:
+:VENUE: Beijing, China
+:EVENTDATE: <2024-09-09>--<2024-09-13>
+:END:
+
+
+**** ECRIS’24 :ECRIS:
+:PROPERTIES:
+:VENUE: Darmstadt, Germany
+:EVENTDATE: <2024-09-15>--<2024-09-19>
+:END:
+
+
+**** ERL’24 :ERL:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <2024-09-24>--<2024-09-27>
+:END:
+
+*** 2025 :2025:
+
+
+**** eeFACT’25 :eeFACT:
+:PROPERTIES:
+:VENUE: Tsukuba, Japan
+:EVENTDATE: <2025-03-03>--<2025-03-07>
+:END:
+
+
+**** IPAC’25 :IPAC:
+:PROPERTIES:
+:VENUE: Taipei, Taiwan
+:EVENTDATE: <2025-06-01>--<2025-06-06>
+:END:
+
+
+**** HIAT’25 :HIAT:
+:PROPERTIES:
+:VENUE: East Lansing, MI, USA
+:EVENTDATE: <2025-06-22>--<2025-06-27>
+:END:
+
+
+**** IBIC’25 :IBIC:
+:PROPERTIES:
+:VENUE: Liverpool, UK
+:EVENTDATE: <2025-09-07>--<2025-09-11>
+:END:
+
+
+**** MEDSI’25 :MEDSI:
+:PROPERTIES:
+:VENUE: Lund, Sweden
+:EVENTDATE: <2025-09-15>--<2025-09-19>
+:END:
+
+
+**** ICALEPCS’25 :ICALEPCS:
+:PROPERTIES:
+:VENUE: Chicago, IL, USA
+:EVENTDATE: <2025-09-20>--<2025-09-26>
+:END:
+
+
+**** SRF’25 :SRF:
+:PROPERTIES:
+:VENUE: Tokyo, japan
+:EVENTDATE: <2025-09-21>--<2025-09-26>
+:END:
+
+
+**** HB’25 :HB:
+:PROPERTIES:
+:VENUE: Huizhou, Guangdong, China
+:EVENTDATE: <2025-10-19>--<2025-10-24>
+:END:
+

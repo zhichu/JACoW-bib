@@ -1,0 +1,58 @@
+#+title: ’
+
+[[file:all-jacow-events.org][All JACoW Events]]
+
+
+* Export
+
+
+#+begin_src emacs-lisp :eval t
+  (let ((org-time-stamp-custom-formats
+         '("<%Y-%m-%d>" . "%Y-%m-%d %a %H:%M"))
+        (org-display-custom-times 't))
+    (org-table-map-tables
+     (lambda ()
+       (org-table-export
+        (concat "./csv/" (file-name-base) (org-entry-get (point) "TAGS") ".tsv")
+        "orgtbl-to-tsv"))))
+#+end_src
+
+
+* Table
+
+** Event :event:
+
+|------------+-------+-------|
+| key        | value | short |
+|------------+-------+-------|
+| eventtitle |       |       |
+| eventdate  |       |       |
+| venue      |       |       |
+| booktitle  |       |       |
+| editor     |       |       |
+|------------+-------+-------|
+#+TBLFM: @2$3='(cadar (org-collect-keywords '("TITLE")))::@5$3='(concat "Proc. " (cadar (org-collect-keywords '("TITLE"))))
+
+** Sessions :session:
+
+
+
+** Paper :inproceedings:
+
+|-----+-------+-----------+--------|
+| ﻿eid | title | firstpage | author |
+|-----+-------+-----------+--------|
+
+
+
+#+TBLFM: $5=@+1$-1 -1 :: @>$5=416
+#+TBLFM: $6='(if (equal $-2 $-1) (format "%s" $-2) (format "%s-%s" $-2 $-1))
+#+TBLFM: $1='(format "%04d" (string-to-number $4))
+
+
+** Unpublished :unpublished:
+
+|-----+-------+--------|
+| eid | title | author |
+|-    |       |        |
+

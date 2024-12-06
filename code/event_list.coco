@@ -1,0 +1,27 @@
+from re import compile as regex
+from glob import glob
+from __constants__ import *
+from os.path import isfile, getmtime
+
+get_event = r'.*/([^/:.]*):event:\.tsv$' ↦ regex ↦ .match
+get_ev_list_from_csv_dir = list ∘ fmap$(.[1] ∘ get_event) ∘ sorted ∘ glob ∘ (.+'/*:event:.tsv')
+def str_to_file(f,s):
+    s+'\n' ↦ f.write
+    f'{s: <16}' ↦ print$(end='')
+ev_bib_file = (⇒ f'{bib_dir}/{_}.bib')
+ev_csv_file = (⇒ f'{csv_dir}/{_}:event:.tsv')
+file_to_mtime = (⇒ (if (_ ↦ isfile) then (_ ↦ getmtime) else inf_past))
+to_updatable = (⇒ (if _[1]<_[2] then _[0] else None))
+
+def update_event_list():
+    with open(ev_list_file,'w') as evlist_file:
+        csv_dir ↦ get_ev_list_from_csv_dir ↦ fmap$(ident$(side_effect=str_to_file$evlist_file))
+
+def get_event_list()=
+    with open(ev_list_file,'r') as f:
+        lines = f.read().splitlines()
+    lines
+
+ev_bib_is_recent = to_updatable ∘ lift$(,)(ident, file_to_mtime ∘ ev_bib_file, file_to_mtime ∘ ev_csv_file)
+def get_update_list()=
+    get_event_list() ↦ fmap$ev_bib_is_recent ↦ filter$(x⇒ x is not None) ↦ list

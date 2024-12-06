@@ -1,0 +1,6 @@
+csv_dir = '../csv'
+bib_dir = '../bib'
+ev_list_file  = '../event_list'
+inf_number = 'inf' ↦ float
+inf_future =  inf_number
+inf_past   = -inf_number

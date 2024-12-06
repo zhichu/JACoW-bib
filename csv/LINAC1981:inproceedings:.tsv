@@ -1,0 +1,96 @@
+﻿eid	title	author	firstpage	lastpage	pages
+A101	The {Livermore} {MTA} Project and its Influence on Modern Linacs	P. V. Livdahl	5	11	5-11
+A102	Low Energy {100 %} Duty Factor {Alvarez} Linacs at {Chalk River}	J. Ungrin and J. C. Brown and B. G. Chidley and R. M. Hutcheon and G. E. McMichael and S. O. Schriber	12	14	12-14
+A103	Status Report on Operation and Upgrading of the Unilac	N. Angert and D. Böhne	15	17	15-17
+A201	The Linear Accelerator for the Proposed {German} Spallation Source	A. Citron	18	21	18-21
+A202	Operating Experience with {MAMI I}	H. Euteneuer and H. Aufhaus and H. Herminghaus and W. Heyne and K. H. Kaiser and H. J. Kreidel and U. Ludwig-Mertin and K. Merle and von der Schmitt, H. and H. Schoeler and G. Stephan	22	24	22-24
+A203	Status of the {Argonne} Superconducting-Linac Heavy-Ion Booster	J. Aron and R. Benaroya and L. M. Bollinger and B. E. Clifft and K. W. Johnson and P. Markovich and J. M. Nixon and R. Pardo and K. W. Shepard and G. Zinkann	25	30	25-30
+B01	Octupole Focusing in Transport and Acceleration Systems	K. R. Crandall and R. H. Stokes and T. P. Wangler and M. Pabst	31	35	31-35
+B02	Matching the {RF} Quadrupole Beam to the Drift Tube Section in the {FMIT} Accelerator	G. P. Boicourt and R. A. Jameson and R. S. Mills	36	38	36-38
+B03	Dead Beat Filling and Feedforward {RF} Control for the {Spallation Neutron Source SNQ}	D. Schulze	39	42	39-42
+B04	Preaccelerator Design and Component Development for the {SNQ} Linear Accelerator	B. Piosczyk	43	45	43-45
+B05	A Beam Cavity Interaction Computer Code for Linacs	K. C. D. Chan and J. McKeown	46	48	46-48
+B06	Design and Constraints for the {ZEBRA} Injector, {RFQ} and {DTL}	B. G. Chidley and J. C. Brown and G. E. McMichael and S. O. Schriber and M. R. Shubaly and J. Ungrin	49	52	49-52
+B07	Loss Monitors for the {Fermilab} Linac	L. J. Allen and C. D. Curtis and B. M. Hanna	53	55	53-55
+B08	A Microprocessor-Controlled Bead Puller for {RF} Cavity Measurements	J. D. Hepburn and W. L. Michel	56	58	56-58
+B09	{KEK} Polarized Proton Preaccelerator	S. Fukumoto and Z. Igarashi and K. Ito and T. Kato and C. Kubota and Y. Mori and A. Takagi and E. Takasaki and T. Takenaka	59	61	59-61
+B10	{CID} Thermionic Gun System	R. F. Koontz	62	64	62-64
+B11	The Racetrack Microtron Radio-Frequency System	P. J. Tallerico and A. K. Mitra	65	67	65-67
+B12	Construction of a High-Power RF Resonant Test Load	J. Ungrin and J. C. Brown and B. G. Chidley and S. B. Hodge and G. E. McMichael and S. O. Schriber and R. B. Turner	68	70	68-70
+B13	{RFQ} Pole-Tip Construction	K. R. Crandall and J. E. Stovall	71	73	71-73
+B14	Tuning Experience with {FMIT} Scale-Model Drift-Tube Linac	L. M. Earley and J. M. Potter and A. J. Thomas	74	76	74-76
+B15	Brazing Techniques and Alloys for Accelerator {RF} Components	R. B. Turner and J. Ungrin	77	79	77-79
+B16	Effects of Radial Support Stems on the Disk-and-Washer Structure	K. Hayakawa and N. Nakamura and K. Sato and K. Tsukada	80	80	80
+B17	A {RFQ} Concept Using Circular Rods	P. Junior and H. Deitinghoff and K. D. Halfmann and H. Klein and A. Schempp	81	83	81-83
+B18	A Variable Strength Permanent Magnet Dipole	R. D. Hay and C. G. Masi	84	88	84-88
+C01	First Results on the {BNL} {H¯} {MEQALAC}	G. Gammel and J. Brodowski and K. Dobbs and J. Keane and A. Maschke and E. Meier and R. Sanders	89	91	89-91
+C02	The Pulsed Proton Prototype of a High Current Ion Linac	R. M. Vengrov and I. V. Chuvilo and E. N. Daniltsev and I. M. Kapchinskij and A. M. Kozodaev and V. V. Kushin and N. V. Lazarev and A. A. Nikitin	92	95	92-95
+C03	Properties of a 0-Mode {RFQ} Structure and Recent Experimental Results	H. Klein and M. Dähne and H. Deitinghoff and P. Junior and K. Langbein and J. Müller and W. Neumann and A. Schempp and A. Schönlein and R. W. Müller	96	98	96-98
+C04	{SUPERFISH}	D. W. Reid and A. Harvey and G. W. Rodenz and R. F. Holsinger	99	101	99-101
+C05	{ULTRAFISH} - Generalisation of {SUPERFISH} to $m ≥ 1$	R. L. Gluckstern and R. F. Holsinger and K. Halbach and G. N. Minerbo	102	110	102-110
+D101	Beam Dynamics in Heavy Ion Induction Linacs	L. Smith	111	115	111-115
+D102	Computer Simulation of Longitudinal-Transverse Space Charge Effects in Bunched Beams	I. Hofmann and I. Bozsik	116	119	116-119
+D103	On Space Charge Instabilities and Emittance Growth in {RF} Linacs	K. Mittag and H. G. Hereward	120	124	120-124
+D104	Equipartitioning in Linear Accelerators	R. A. Jameson	125	129	125-129
+D201	Beam Parameter Measurements for the {SLAC Linear Collider}	J. E. Clendenin and C. Blocker and M. Breidenbach and T. N. Constant and R. J. Hollebeek and M. B. James and M. J. Lee and G. A. Loew and R. J. Miller and J. L. Siegrist and J. E. Spencer and J. B. Truher	130	136	130-136
+D202	Cavity Loading Associated with High-Current {RF} Linacs	R. J. Faehl and D. S. Lemons and L. E. Thode	137	141	137-141
+D203	On Proton Beam Emittance Growth in Linac	R. P. Kujbida and A. V. Kryzhanovskij and N. V. Lazarev	142	148	142-148
+E01	Beam Dynamics Studies of High Current {RFQ} and {DTL} Tanks	G. E. McMichael and B. G. Chidley	149	152	149-152
+E02	Statistical Treatment of Misalignments in Linear Accelerators	M. Pabst and K. Bongardt	153	155	153-155
+E03	{MOTION} — A Versatile Multiparticle Simulation Code	K. Mittag and D. Sanitz	156	158	156-158
+E04	Noninterceptive Transverse Beam Measurements	D. D. Chamberlin and G. N. Minerbo and C. T. Mottershead	159	160	159-160
+E05	Power Reduction by Changing the Design Particle Phase	G. R. Swain	161	163	161-163
+E06	Microwave Measurements of Energy Lost to Longitudinal Modes by Single Electron Bunches Traversing Periodic Structures	J. W. Wang and G. A. Loew and J. N. Weaver and P. B. Wilson	164	166	164-166
+E07	Funneling of Heavy Ion Beams	K. Bongardt	167	170	167-170
+E08	Evolution of the Racetrack Microtron Control System	E. R. Martin and R. E. Gritzo and V. A. Martinez and C. M. Schneider and R. E. Trout	171	173	171-173
+E09	{H¯} Beam Emittance for the Penning and the Asymmetric, Grooved Magnetron Surface-Plasma Sources	Smith, Jr., H. V. and P. Allison	174	176	174-176
+E10	The {RF} System of the Photon Factory Injector Linac	S. Anami and R. Bissonnette and S. Fukuda and H. Honma and Y. Saito and T. Shidara and J. Tanaka	177	179	177-179
+E11	Design Considerations for a Developmental High Power Coupling Loop to Drive a Resonant Load	J. C. Brown and R. M. Hutcheon	180	182	180-182
+E12	Post Coupler Studies for {Alvarez} Tanks to be Used for High Power or Variable Energy	J. Ungrin and S. O. Schriber and R. A. Vokes	183	186	183-186
+E13	Variable-Energy Drift-Tube Linacs	D. A. Swenson and Boyd, Jr., T. J. and J. M. Potter and J. E. Stovall	187	190	187-190
+E14	Variable Energy Standing Wave Linear Accelerator Structure	E. Tanabe and G. Meddaugh	191	193	191-193
+E15	Loop Coupling to a {Radio Frequency Quadrupole Resonator (RFQ)}	D. Howard and H. Lancaster	194	196	194-196
+E16	Low Frequency {RFQ} Linacs for Heavy Ion Fusion	A. Moretti and R. J. Lari and R. L. Martin and R. L. Stockley and J. M. Watson	197	199	197-199
+E17	A Program Development for {SUPERFISH}	S. Okumura	200	204	200-204
+F01	Review of Induction Linacs	A. Faltens and D. Keefe	205	213	205-213
+F02	Design of {REC} Permanent Magnet Quadrupoles Taking into Account $B$, $H$ Non-Linearity	R. L. Gluckstern and R. F. Holsinger	214	218	214-218
+F03	{Free-Electron Laser} Results	.W. E. Stein and C. A. Brau and B. E. Newman and R. W. Warren and J. Winston and L. M. Young	219	224	219-224
+G101	Recent Work on Collective Accelerators	F. T. Cole	225	231	225-231
+G102	Particle Simulations of {Radlac}	J. W. Poukey and R. B. Miller and S. L. Shope	232	234	232-234
+G103	Experimental Studies of Electron Beam Focusing with Solenoid Lenses Near the Space Charge Limit	M. Reiser and P. Loschialpo and W. Namkung and J. Suter and J. D. Lawson	235	238	235-238
+G104	Beam Instabilities in Race Track Microtrons	H. Euteneuer and H. Herminghaus and R. Klein	239	241	239-241
+G201	Focussing Considerations in the Race Track Microtron and Double-Sided Microtron	E. P. Colton	242	244	242-244
+G202	Automatic Beam-Steering of the Mainz Microtron	H.-J. Kreidel and K. Merle	245	247	245-247
+G203	Numerical Method for Determining Electrode Shapes for High-Perveance Extractors	J. D. Schneider and D. D. Armstrong	248	250	248-250
+G204	Ion Source Development and Injector Design for {ZEBRA}	M. R. Shubaly	251	256	251-256
+H01	The Image Displacement Instability in Radial Line Accelerators	B. B. Godfrey and R. J. Adler and M. M. Campbell and D. J. Sullivan and T. C. Genoni	257	259	257-259
+H02	The Design of Double Sided Microtrons	H. Herminghaus and K.-H. Kaiser and U. Ludwig-Mertin	260	262	260-262
+H03	Resistance Driven Bunching Mode of an Accelerated Ion Pulse	E. P. Lee	263	265	263-265
+H04	Design of an Electron Beam Spectral Modification System	J. C. Sheppard and R. C. York and B. E. Norum and J. S. McCarthy	266	269	266-269
+H05	Longitudinal Beam Optimization of the {Argonne} Superconducting Heavy-Ion Linear Accelerator	R. Pardo and L. M. Bollinger and W. Henning	270	273	270-273
+H06	A Modular System for the Control of Complex Accelerators Using Portable Software	von der Schmitt and H. and H. Aufhaus	274	276	274-276
+H07	The Distributed Control System for the {Fermilab} {200 MeV} Linac	R. W. Goodwin and M. F. Shea	277	280	277-280
+H08	Electrode Shapes for Spherical Pierce Flow	D. W. Mueller	281	283	281-283
+H09	Modulator Reliability and Bandwidth Improvement: Replacing Tetrodes with {MOSFETs}	A. R. Donaldson	284	286	284-286
+H10	Low-Cost Megawatt {RF} Power Sources for Linear Accelerators to {70 MHz} and Above	J. A. Fugitt and F. K. Crosby and M. L. Nolan	287	289	287-289
+H11	The {RF} Modulator Design and Phase Amplitude Control for a High-Power {Free-Electron-Laser} Linac	R. F. Hoeberling and P. J. Tallerico	290	292	290-292
+H12	An Analytical Solution for the Electrical Properties of a {Radio-Frequency Quadrupole (RFQ)} with Simple Vanes	H. Lancaster	293	295	293-295
+H13	Measurement of Model Inter-Digital {H} Type Linac	T. Fukushima and T. Hattori and T. Hori and K. Sato and E. Tojyo and K. Yoshida	296	298	296-298
+H14	An {RFQ} Linac for Heavy Ion Acceleration	N. Ueda and S. Arai and T. Fukushima and Y. Hirao and T. Hori and T. Katayama and T. Nakanishi and A. Noda and M. Takanaka and N. Tokuda and S. Yamada	299	301	299-301
+H15	Experimental {RFQ} as Injector to the {CERN} Linac {I}	E. Boltezar and H. Haseroth and W. Pirkl and G. Plass and M. Weiss and K. R. Crandall and R. W. Hamm and J. M. Potter and R. H. Stokes and J. E. Stovall and T. P. Wangler	302	305	302-305
+H16	A {750 keV} {RFQ} Linac for the {AGS} Polarized Proton Program	J. M. Watson and D. R. Moffett and A. Moretti and R. Stockley and T. P. Wangler	306	308	306-308
+H17	A 30-{kV} Proton Injector for {PIGMI}	R. W. Hamm and D. W. Mueller and R. G. Sturgess	309	312	309-312
+H18	New Formulation of the {RFQ} Radial Matching Section	N. Tokuda and S. Yamada	313	315	313-315
+H19	Buncher Section Optimization of Heavy Ion {RFQ} Linacs	S. Yamada	316	320	316-320
+I01	High-Power Klystrons — A New Breath, A Second Youth	G. Faillon	321	325	321-325
+I02	{RF} Sources for Particle Accelerators — A Progress Report	M. B. Shrader and D. H. Preist	326	328	326-328
+I03	Mechanical Design of {RFQ} Resonator Cavities in the 400-{MHz} Frequency Range	L. D. Hansborough and J. M. Potter and N. G. Wilson	329	331	329-331
+I04	High Power, On-Axis Coupled Linac Structure	J. McKeown and R. T. F. Bird and K. C. D. Chan and S. H. Kidner and J.-P. Labrie	332	334	332-334
+I05	The {DAW} Structure for the {NBS}/{Los Alamos} Racetrack Microtron	L. M. Young and J. M. Potter	335	340	335-340
+J101	Operation and Status of the {ANL} Heavy Ion Fusion Linac	R. L. Martin and J. M. Bogaty and A. Moretti and N. Q. Sesol and J. M. Watson and A. J. Wright	341	343	341-343
+J102	Radioisotope-Production Linac	J. E. Stovall and L. D. Hansborough and O’Brien, Jr., H. A.	344	348	344-348
+J103	{New England Nuclear Corp.} Linear Accelerator Progress Report	R. F. Bentley	349	351	349-351
+J104	{SATURNE} Linac Performances in $2βλ$ Mode for Polarized Protons Acceleration	P. A. Chamouard and J. M. Lagniel and J. L. Lemaire	352	355	352-355
+J105	Some Performance of the Interlaced Accelerator Structure	G. Benguang and F. Jianian and Y. Junqi and C. Xuiqi	356	359	356-359
+J201	Construction Progress of the Photon Factory {2.5 GeV} Electron Linac	J. Tanaka and A. Asami and A. Enomoto and H. Matsumoto and S. Osawa and Y. Saito and I. Sato	360	362	360-362
+J202	The {ZEBRA (Zero Energy Breeder Accelerator)} Program at {CRNL} — {300 mA}-{10 MeV} Proton Linac	S. O. Schriber	363	366	363-366

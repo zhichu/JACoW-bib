@@ -1,0 +1,149 @@
+#+title: LINAC’68
+
+[[file:all-jacow-events.org][All JACoW Events]]
+
+
+* Export
+
+
+#+begin_src emacs-lisp :eval t
+  (let ((org-time-stamp-custom-formats
+         '("<%Y-%m-%d>" . "%Y-%m-%d %a %H:%M"))
+        (org-display-custom-times 't))
+    (org-table-map-tables
+     (lambda ()
+       (org-table-export
+        (concat "./csv/" (file-name-base) (org-entry-get (point) "TAGS") ".tsv")
+        "orgtbl-to-tsv"))))
+#+end_src
+
+#+RESULTS:
+: Mapping tables: done
+
+
+* Table
+
+** Event :event:
+
+|------------+--------------------------------------------------------------+----------------|
+| key        | value                                                        | short          |
+|------------+--------------------------------------------------------------+----------------|
+| eventtitle | 1968 Proton Linear Accelerator Conference                    | LINAC’68       |
+| eventdate  | <1968-05-20>--<1968-05-24>                                 |                |
+| venue      | Upton, Long Island, New York, USA                            |                |
+| booktitle  | Proceedings of the 1968 Proton Linear Accelerator Conference | Proc. LINAC’68 |
+| editor     | John W. Bittner                                              |                |
+|------------+--------------------------------------------------------------+----------------|
+#+TBLFM: @2$3='(cadar (org-collect-keywords '("TITLE")))
+#+TBLFM: @5$3='(concat "Proc. " @2$3)
+
+
+** Sessions :session:
+
+|---+------------------------------------------------------------------------|
+| A | Mechanical Design                                                      |
+| B | RF Sources, Modulators, Beam Loading Compensation                      |
+| C | Control, Beam Diagnostics                                              |
+| D | Ion Sources, Preinjectors                                              |
+| E | Beam Dynamics, Bunching, Transport                                     |
+| F | RF Structures                                                          |
+| G | New and Future Accelerators, Progress Reports on Existing Accelerators |
+| H | Electron, Heavy Ion, Cryogenic Accelerators                            |
+|---+------------------------------------------------------------------------|
+
+** Paper :inproceedings:
+
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| ﻿eid  | title                                                                                                                        | author                                                                                                                  | firstpage | lastpage |   pages |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| A-1  | Mechanical Design of {LASL} Linac Structures - ({LAMPF})                                                                     | H. G. Worstell                                                                                                          |         1 |       16 |    1-16 |
+| A-2  | The {Brookhaven} {200 MeV} Linac Injector Construction Progress Report                                                       | P. Grand                                                                                                                |        17 |       29 |   17-29 |
+| A-3  | Mechanical Design Features of the {NAL} {200 MeV} Linac Injector                                                             | J. O’Meara and M. Palmer                                                                                                |        30 |       40 |   30-40 |
+| A-4  | Accelerator Magnet Development at {CRNL}                                                                                     | A. Harvey and F. P. Blackstein and A. J. Otter and W. A. Wolfe                                                          |        41 |       51 |   41-51 |
+| A-5  | High Gradient Magnetic Drift Tube Quadrupoles                                                                                | R. M. Main and K. Halbach and D. Kolody and P. Kennedy and A. Watanabe and R. Yourd                                     |        52 |       59 |   52-59 |
+| A-6  | A New Technique for High Precision Alignment of Linear Accelerators                                                          | H. D. Betz                                                                                                              |        60 |       67 |   60-67 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| B-1  | {RF} Sources Development at {CRNL}                                                                                           | P. J. Waterton                                                                                                          |        68 |       75 |   68-75 |
+| B-2  | {805 MHz} Power Sources for the {LAMPF} Accelerator                                                                          | D. C. Hagerman                                                                                                          |        76 |       86 |   76-86 |
+| B-3  | {LAMPF} {200 MHz} Power Sources                                                                                              | J. R. Faulkner and Boyd, Jr., T. J.                                                                                     |        87 |       90 |   87-90 |
+| B-4  | High Duty Factor Modulator for {Los Alamos Meson Physics Facility}                                                           | T. G. VanVessem                                                                                                         |        91 |       93 |   91-93 |
+| B-5  | A New Pulse Modulator for the Zero Gradient Synchrotron Linac                                                                | J. Abraham and N. Sesol                                                                                                 |        94 |      100 |  94-100 |
+| B-6  | Fault Protection Circuitry for the {LASL} {201.25 MHz} Power Amplifiers                                                      | J. D. Doss                                                                                                              |       101 |      107 | 101-107 |
+| B-7  | Transient Beam Loading in Standing Wave Linacs                                                                               | M. J. Lee                                                                                                               |       108 |      113 | 108-113 |
+| B-8  | Steady-State Beam Loading of a Standing Wave Linac {RF} System                                                               | M. J. Lee                                                                                                               |       114 |      122 | 114-122 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| C-1  | Control System Philosophy from the Nuclear Reactor Field                                                                     | A. Pearson                                                                                                              |       123 |      133 | 123-133 |
+| C-2  | {LAMPF} Control Philosophy                                                                                                   | R. A. Gore                                                                                                              |       134 |      139 | 134-139 |
+| C-3  | Programs for Computer Control of {EPA}                                                                                       | M. D. J. MacRoberts and S. Ohlsen and C. M. Plopper and D. D. Simmonds and R. F. Thomas                                 |       140 |      148 | 140-148 |
+| C-4  | Automatic Control of {RF} Amplifier Systems                                                                                  | R. A. Jameson                                                                                                           |       149 |      158 | 149-158 |
+| C-5  | Temperature Control for Maintaining Resonance of Linac Tanks                                                                 | G. R. Swain and R. A. Gore and R. A. Jameson                                                                            |       159 |      167 | 159-167 |
+| C-6  | Emittance Measurement at the {CERN PS} Linac with an On-Line Computer                                                        | U. Tallgren and U. Kracht and van der Schueren, A.                                                                      |       168 |      174 | 168-174 |
+| C-7  | A Real-Time Sampling Beam Position Monitor                                                                                   | J. M. Potter                                                                                                            |       175 |      189 | 175-189 |
+| C-8  | A Nondestructive Linac Beam Profile Monitor                                                                                  | W. H. DeLuca and M. F. Shea                                                                                             |       190 |      197 | 190-197 |
+| C-9  | Beam Diagnostics of the {50 MeV} Proton Linear Accelerator of the {Argonne} {Zero Gradient Synchrotron}                      | M. E. Abdelaziz and R. Perry                                                                                            |       198 |      219 | 198-219 |
+| C-10 | Phase Shift of Beam Bunches as a Function of Linac Accelerating Gradient                                                     | R. Perry and J. Abraham                                                                                                 |       220 |      227 | 220-227 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| D-1  | Recent Progress in Linac Pre-Accelerators                                                                                    | Th. J. M. Sluyters                                                                                                      |       228 |      239 | 228-239 |
+| D-2  | The New {SATURNE} Injector Status Report on the {750 keV} Preinjector                                                        | J. Faure                                                                                                                |       240 |      250 | 240-250 |
+| D-3  | Discussion of {H.V.} Power Supply Units Connected with High Gradient Tubes in Linac Preinjectors                             | V. J. Kovarik and Th. J. M. Sluyters                                                                                    |       251 |      268 | 251-268 |
+| D-4  | Preliminary Study of a Higher Energy Preinjector for the {CERN PS}                                                           | J. Huguenin and U. Tallgren and M. Weiss                                                                                |       269 |      292 | 269-292 |
+| D-5  | The {LASL} High-Duty-Factor Ion Source                                                                                       | C. R. Emigh and D. W. Mueller                                                                                           |       293 |      305 | 293-305 |
+| D-6  | A Comparative Study of Drifting Arc and Extended Stationary Arc Duoplasmatrons                                               | J. A. Fasolo                                                                                                            |       306 |      316 | 306-316 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| E-1  | Bunching                                                                                                                     | P. M. Lapostolle                                                                                                        |       317 |      327 | 317-327 |
+| E-2  | Design of a Buncher and the Transport System in its Drift Space for the {200 MeV} {BNL} Injector Linac                       | C. Agritellis and R. W. Chasman                                                                                         |       328 |      337 | 328-337 |
+| E-3  | Double-Drift Buncher                                                                                                         | C. R. Emigh                                                                                                             |       338 |      345 | 338-345 |
+| E-4  | Longitudinal Space-Charge Effects in Bunchers                                                                                | G. E. Lee-Whiting and J. H. Ormrod                                                                                      |       346 |      352 | 346-352 |
+| E-5  | Phase Space Acceptance of a Quadrupole Doublet Analytic Expressions and Numerical Results                                    | E. Regenstreif                                                                                                          |       353 |      356 | 353-356 |
+| E-6  | Acceptance Calculations for Accelerator Beam Lines                                                                           | F. P. Blackstein                                                                                                        |       357 |      363 | 357-363 |
+| E-7  | The Beam Transport Design for the {LAMPF} Injector                                                                           | P. W. Allison and Stevens, Jr., R. R.                                                                                   |       364 |      371 | 364-371 |
+| E-8  | Numerical Calculations of the Effects of Space Charge on Six Dimensional Beam Dynamics in Proton Linear Accelerators         | R. W. Chasman                                                                                                           |       372 |      388 | 372-388 |
+| E-9  | Multimode and Resonance Effects in Transverse Beam Blow-Up                                                                   | R. L. Gluckstern and S. C. Prasad                                                                                       |       389 |      394 | 389-394 |
+| E-10 | A Unified Theory on Beam Dynamics in Proton Linacs                                                                           | T. Nishikawa                                                                                                            |       395 |      399 | 395-399 |
+| E-11 | Electromagnetic Field of Traveling Charge in Beam Duct                                                                       | H. Hirakawa                                                                                                             |       400 |      408 | 400-408 |
+| E-12 | Longitudinal and Transverse $T$ and $S$ Transit Time Coefficients                                                            | B. Schnizer                                                                                                             |       409 |      415 | 409-415 |
+| E-13 | Reduction of Energy Spread on the {Rutherford} Laboratory {PLA}                                                              | A. Carne and J. M. Dickson and S. Norcliffe and J. S. Webb and K. Batchelor                                             |       416 |      425 | 416-425 |
+| E-14 | Energy Modulated Beam Injection at the {Argonne} Zero Gradient Synchrotron                                                   | W. Myers                                                                                                                |       426 |      429 | 426-429 |
+| E-15 | Calculation of the Depolarization of an Initially Polarized Beam in the {Los Alamos} Linac                                   | R. M. Mobley                                                                                                            |       430 |      432 | 430-432 |
+| E-16 | Round Table Discussion on Space Charge and Related Effects                                                                   | L. Smith and R. W. Chasman and K. R. Crandall and R. L. Gluckstern and T. Nishikawa and J. Haimson and P. M. Lapostolle |       433 |      444 | 433-444 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| F-1  | A New Interpretation of Structure Compensation                                                                               | G. Dôme and P. M. Lapostolle                                                                                            |       445 |      456 | 445-456 |
+| F-2  | Triperiodic Structure                                                                                                        | B. Epsztein and D. T. Tran                                                                                              |       457 |      470 | 457-470 |
+| F-3  | Analysis of Equivalent Circuits for Linac Tanks                                                                              | G. E. Lee-Whiting                                                                                                       |       471 |      474 | 471-474 |
+| F-4  | Measurements of Field Stability Against Perturbations in Non-Uniform Linac Structures                                        | G. Dôme and I. White                                                                                                    |       475 |      498 | 475-498 |
+| F-5  | Field Perturbations in the Post Coupled Drift Tube Linac                                                                     | E. J. Schneider and D. A. Swenson                                                                                       |       499 |      511 | 499-511 |
+| F-6  | An Improved Method for Calculating Proton Linac Cavities                                                                     | M. Martini and D. J. Warner                                                                                             |       512 |      522 | 512-522 |
+| F-7  | Optimization of Alternating-Periodic Iris-Loaded Deflectors for Superconducting {RF} Beam Separators                         | H. Hahn                                                                                                                 |       523 |      532 | 523-532 |
+| F-8  | Linac Cavity Field Calculations                                                                                              | G. E. Lee-Whiting                                                                                                       |       533 |      536 | 533-536 |
+| F-9  | A Mesh-Iteration Program for Field Calculations in Linac Cavities                                                            | G. Parzen                                                                                                               |       537 |      542 | 537-542 |
+| F-10 | Model Cavity Studies for Tank Design and on Tank Fabrication                                                                 | H. Baba and H. Hirakawa and T. Nishikawa and S. Okumura and J. Tanaka and Y. Tao                                        |       543 |      556 | 543-556 |
+| F-11 | Studies of a Slotted Iris Structure (Dispersion Curve, Coupling, Flatness, and Electron Analog Experiment)                   | H. Eschelbacher and M. Kuntze and D. Schinzel and J. Vetter                                                             |       557 |      564 | 557-564 |
+| F-12 | Field Measurements of Variable β Multi-Stem Accelerating Structure                                                           | S. T. Giordano and J. Hannwacker                                                                                        |       565 |      569 | 565-569 |
+| F-13 | A Preliminary Study of the {TS} Zero Mode and its Role in Field Flattening of Multi and Tunable Stem Accelerating Structures | S. T. Giordano and J. Hannwacker                                                                                        |       570 |      578 | 570-578 |
+| F-14 | Field Stabilization in Periodic Systems                                                                                      | D. Carter                                                                                                               |       579 |      582 | 579-582 |
+| F-15 | Round Table Discussion of {RF} Structures                                                                                    | E. A. Knapp and D. A. Swenson and A. Carne and G. Dôme and S. T. Giordano and C. W. Owen                                |       583 |      599 | 583-599 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| G-1  | Future Factory Type Accelerators                                                                                             | W. B. Lewis                                                                                                             |       600 |      605 | 600-605 |
+| G-2  | The Electron Ring Accelerator                                                                                                | A. M. Sessler                                                                                                           |       606 |      607 | 606-607 |
+| G-3  | Status of the Intense Neutron Generator Study Programme                                                                      | P. R. Tunnicliffe and A. G. Ward                                                                                        |       608 |      621 | 608-621 |
+| G-4  | Linear Accelerator for Unstable Particles                                                                                    | D. E. Nagle                                                                                                             |       622 |      625 | 622-625 |
+| G-5  | A {3 MeV} Experimental Proton Linac: Design, Construction and Proposed Experiments                                           | E. Boltezar and H. F. Malthouse and D. J. Warner                                                                        |       626 |      634 | 626-634 |
+| G-6  | Design and Initial Performance of a {20 MeV} High Current Side Coupled Cavity Electron Accelerator                           | E. A. Knapp and W. J. Shlaer                                                                                            |       635 |      659 | 635-659 |
+| G-7  | The New {SATURNE} Injector Status Report on the {20 MeV} Linac                                                               | J. M. Lefèbvre and M. Promé                                                                                             |       660 |      672 | 660-672 |
+| G-8  | Recent Developments at {SLAC}                                                                                                | R. H. Helm and G. A. Loew and R. H. Miller and R. B. Neal                                                               |       673 |      693 | 673-693 |
+| G-9  | {CERN - PS} {50 MeV} Linac Progress Report                                                                                   | C. S. Taylor and F. Block and F. Chiari and J. Huguenin and P. Têtu                                                     |       694 |      705 | 694-705 |
+| G-10 | Report on the {ITEP} {24.6 MeV} and {Serpukhov} {100 MeV} Linacs                                                             | C. S. Taylor                                                                                                            |       706 |      712 | 706-712 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+| H-1  | The {Astron} Linear Accelerator                                                                                              | J. W. Beal                                                                                                              |       713 |      723 | 713-723 |
+| H-2  | Improvements to the {Berkeley} {HILAC}                                                                                       | J. M. Haughian                                                                                                          |       724 |      734 | 724-734 |
+| H-3  | Study of a Variable Energy Heavy Ion Linear Accelerator                                                                      | Ch. Schmelzer                                                                                                           |       735 |      744 | 735-744 |
+| H-4  | Electric Quadrupole Focusing in Linear Ion Accelerators                                                                      | K. Blasche and R. Friehmelt and K. Kaspar and Ch. Schmelzer and U. Wolfangel                                            |       745 |      754 | 745-754 |
+| H-5  | Progress Report on the Investigations of Superconducting Structures at {Karlsruhe}                                           | H. Schopper                                                                                                             |       755 |      764 | 755-764 |
+| H-6  | Investigation of Additional Losses of Superconducting Cavities Due to Field Dependent Effects at High Levels                 | W. Kühn                                                                                                                 |       765 |      769 | 765-769 |
+| H-7  | $Q$-Measurements in Superconducting Lead Cavities at {800 MHz}                                                               | F. Flécher and J. Halbritter and R. Hietschold and P. Kneisel and L. List and O. Stoltz                                 |       770 |      773 | 770-773 |
+| H-8  | $Q$-Measurements of Superconducting Cavities at {2.868 GHz}                                                                  | H. Hahn and H. J. Halama                                                                                                |       774 |      774 |     774 |
+| H-9  | Non-Cryogenic High Duty Cycle Electron Linear Accelerators                                                                   | J. Haimson                                                                                                              |       775 |      802 | 775-802 |
+|------+------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------+----------+---------|
+#+TBLFM: $5=@+1$-1 -1 :: @>$5=802
+#+TBLFM: $6='(if (equal $-2 $-1) (format "%s" $-2) (format "%s-%s" $-2 $-1))
+

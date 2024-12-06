@@ -1,0 +1,72 @@
+﻿eid	title	author	firstpage	lastpage	pages
+A01	Relevance of Linacs	L. Rosen	2	3	2-3
+A02	Status and Performance of {LAMPF}	D. E. Nagle	4	11	4-11
+B01	Operation of the {BNL} 200-{MeV} Linac	K. Batchelor	12	16	12-16
+B02	Operating Experience with the {NAL} 200-{MeV} Linac	C. D. Curtis and E. R. Gray and P. V. Livdahl and C. W. Owen and M. F. Shea and D. E. Young	17	24	17-24
+B03	Status Report on the {UNILAC}-Project	D. Böhne	25	32	25-32
+B04	Accelerator Research and Development with the {CERN} {3 MeV} Linac	D. J. Warner	33	40	33-40
+B05	Calculations and Measurements on Reduction of the Energy Spread and the Variation in Mean Energy of the 200-{MeV} Linac Beam at {Brookhaven}	R. Chasman and K. Batchelor and N. Fewell	41	46	41-46
+B06	The Dependence of Transverse Emittance Growth on the Quadrupole Focussing Strength in the {Brookhaven} 200-{MeV} Linac	R. Chasman and K. Batchelor and N. Fewell and R. Witkover	47	50	47-50
+C01	Transverse Beam Matching Using Wire Scanners	K. R. Crandall	51	53	51-53
+C02	Beam Diagnostics at the {BNL} {200 MeV} Linac	N. Fewell and R. Witkover	54	62	54-62
+C03	Recent Measurement of the {ZGS} Injector Beam Characteristics	E. F. Parker	63	66	63-66
+C04	Results of Beam Measurements at the {SuperHILAC}	F. B. Selph and D. A. Spence and R. R. Stevenson	67	72	67-72
+C05	Beam Transport Studies on the Proton Beam Line in the Injector Complex of {LAMPF}	Stevens, Jr., R. R. and B. C. Goplen and J. E. Stovall	73	79	73-79
+C06	{RMS} Emittance and the {LAMPF} Beam	D. W. Mueller	80	81	80-81
+D01	Current Status of Superconducting Accelerator Technology	P. B. Wilson	82	89	82-89
+D02	Magnetization Curves of Superconductors - Type {I}, Type {II} and Type {III}	B. T. Matthias	90	92	90-92
+E01	First Operation of a Superconducting Proton Accelerator	A. Brandelik and A. Citron and P. Flécher and J. L. Fricke and R. Hietschold and G. Hochschild and G. Hornung and G. Krafft and W. Kühn and M. Kuntze and B. Piosczyk and E. Sauter and D. Schulze and L. Szecsi and J. E. Vetter and K. W. Zieher and H. Klein and A. Schempp	93	97	93-97
+E02	Recent Measurements of {S}-Band and {L}-Band Cavities at {Stanford}	C. Lyneis and M. McAshan and V. Nguyen	98	102	98-102
+E03	Mechanical Design Features of the {UNILAC}	T. Niewodniczanski and E. Malwitz	103	113	103-113
+E04	Study of High-Energy Proton Linac Structures	V. G. Andreev and V. M. Belugin and V. G. Kulman and E. A. Mirochnik and B. M. Pirozhenko	114	118	114-118
+E05	Focusing by Longitudinal Magnetic Field in a High-Energy Proton Linear Accelerator	A. P. Fedotov and B. I. Bondarev and V. V. Kushin and B. P. Murin and L. Yu. Solovyev	119	121	119-121
+F01	The $∆t$ Turn-On Procedure	K. R. Crandall and R. A. Jameson and D. Morris and D. Swenson	122	125	122-125
+F02	Beam Performance of the Superconducting Injector for the {Stanford Linear Electron Accelerator}	L. R. Suelzle and E. E. Chambers	126	130	126-130
+F03	Beam Breakup in a Superconducting Electron Accelerator	K. Mittag and H. D. Schwarz and H. A. Schwettman	131	139	131-139
+F04	Beam Tests with {S}-Band Standing Wave Accelerators Using On-Axis Couplers	S. O. Schriber and L. W. Funk and E. A. Heighway	140	144	140-144
+F05	A Summary of Measurements on Superconducting Helically Loaded Resonators	J. E. Vetter and J. L. Fricke and B. Piosczyk	145	150	145-150
+F06	Measurements on the First Section of the Superconducting Proton Linac at {Karlsruhe}	J. L. Fricke and B. Piosczyk and J. E. Vetter	151	155	151-155
+G01	{RF} Control of Superconducting Helically Loaded Cavities	D. Schulze and A. Brandelik and R. Hietschold and G. Hochschild and A. Hornung and F. Spielböck and L. Szecsi	156	162	156-162
+G02	A Slow Tuner for Superconducting Helically Loaded Resonant Cavities	C. M. Jones and J. L. Fricke and B. Piosczyk and J. E. Vetter	163	167	163-167
+G03	Progress in the Development of Superconducting Resonators for Heavy Ion Acceleration	W. J. Ramler and J. Aron and R. Benaroya and K. E. Gray and A. H. Jaffey and K. Johnson and T. Khoe and J. J. Livingood and J. M. Nixon and G. W. Parker and W. A. Wesolowski	168	174	168-174
+G04	The {Stanford Recirculating Linear Accelerator}	W. K. H. Panofsky	175	181	175-181
+H01	Statistical Beam Transport for High Intensity Ion Currents	C. R. Emigh	182	190	182-190
+H02	Limitations of Acceleration of Deuterons in {Alvarez}-Type Proton Linacs	S. Ohnuma and Th. Sluyters	191	196	191-196
+H03	Modern Electron Linacs and New User Needs	J. E. Leiss	197	204	197-204
+H04	Pulsed Drift Tube Quadrupole Magnets with High Precision	H. Baba and S. Inagaki and M. Kobayashi and S. Okumura and J. Tanaka	205	208	205-208
+I01	Alignment Philosophy, Design and Techniques Used at {LAMPF}	E. W. Colston and V. E. Hart	209	217	209-217
+I02	The {Chalk River High Current Test Facility}	B. G. Chidley and J. C. Brown and S. B. Hodge and J. H. Ormrod and J. Ungrin	218	225	218-225
+I03	The {Chalk River Electron Test Accelerator}	J. S. Fraser and S. H. Kidner and J. McKeown and G. E. McMichael	226	232	226-232
+I04	High Power Operation of Two Side-Coupled Standing Wave Linac Structures	J. McKeown and H. R. Schneider and S. O. Schriber	233	241	233-241
+I05	Cavity Tuning for the {LAMPF} {805 MHz} Linac	G. R. Swain and R. A. Jameson and R. A. Kandarian and D. J. Liska and E. R. Martin and J. M. Potter	242	249	242-249
+I06	Bridge Coupler Design and Tuning Experience at {Los Alamos}	J. M. Potter and E. A. Knapp	250	255	250-255
+J01	Measurements and Calculations of Field Distributions in Short Helical Resonators	P. J. Bendt and B. H. Erkkila and R. H. Stokes and T. A. Tombrello and K. S. Jancaitis	256	264	256-264
+J02	Recent Work on the Helix Structure and Properties of Tandem Helix Combinations for the Acceleration of Heavy Ions	H. Klein and P. Junior and A. Schempp and P. Finke and H. Herminghaus and J. Klabunde and L. Lehr	265	274	265-274
+J03	The Experience of Big Pulsed Current Acceleration on the Linac {I-2}	V. I. Bobylev and V. A. Batalin and E. N. Daniltsev and V. I. Edemskij and I. M. Kapchynskij and L. V. Kartsev and R. P. Khoujbida and A. A. Kolomiets and V. V. Koloskov and B. K. Kondratiev and A. M. Kosodaev and N. V. Lasarev	275	278	275-278
+J04	Linac-Type {RF} Structures for High Energy Storage Rings	M. A. Allen and P. B. Wilson	279	282	279-282
+K01	Ion Sources for Proton Linacs	Th. Sluyters	283	290	283-290
+K02	Collective Phenomena in Accelerators	A. M. Sessler	291	302	291-302
+P01	Status of the {LAMPF} {H¯} Injector	P. W. Allison and E. A. Meyer and D. W. Mueller and Stevens, Jr., R. R.	303	309	303-309
+P02	Meson Factory Injector Complex	M. A. Avramenko and R. P. Fidelskaya and V. P. Golubev and E. G. Komar and V. L. Komarov and V. S. Kuznetsov and G. A. Nalivaiko and G. L. Saksaganski and A. I. Solnyshkov and G. I. Trubnikov and S. G. Tsepakin and G. I. Batskikh and G. I. Klenov	310	313	310-313
+P03	Operation of the Linac-Injector Modulator into a Mismatched Load	V. I. Bobylev	314	317	314-317
+P04	Construction of Alumina Insulated Bending Magnets for {LAMPF}	Bush, Jr., E. D. and R. L. Rhorer	318	325	318-325
+P05	Deuterons Acceleration with the {SATURNE} Linac	P. A. Chamouard and J. M. Lefebvre and M. Olivier and M. Promé	326	329	326-329
+P06	{SATURNE} Linac Three Years Operation Report	P. A. Chamouard and M. Olivier	330	337	330-337
+P07	Beam Transport Design Using a Thin Lens Approximation	B. G. Chidley	338	342	338-342
+P08	Computer Control of {LAMPF}’s {201.25 MHz} {RF}	R. A. DeHaven	343	348	343-348
+P09	Real-Time Measurements of Proton Bunch Form	L. R. Evans and D. J. Warner	349	355	349-355
+P10	The Source of Negative Ions	V. P. Golubev and G. A. Nalivaiko and S. G. Tsepakin	356	357	356-357
+P11	Installation and Alignment of {LAMPF} {201 MHz} and {805 MHz} Linac Tanks	V. E. Hart and E. W. Colston	358	364	358-364
+P12	Preliminary Test of a Nozzle Type Plasma Expansion Cup	M. Kobayashi and S. Fukumoto and A. Takagi and Th. Sluyters	365	370	365-370
+P13	{Super-HILAC} Vacuum System	K. M. Mirk	371	377	371-377
+P14	Operation and Performance of the High-Intensity Proton Injector of {LAMPF}	D. W. Mueller and C. R. Emigh and B. C. Goplen and E. A. Meyer and M. A. Paciotti and Stevens, Jr., R. R.	378	386	378-386
+P15	High-Current Ion Linear Accelerator for Medium-Energy Physics (Meson Factory)	B. P. Murin and G. I. Batskikh and A. P. Fedotov and V. G. Kulman and B. I. Polyakov	387	395	387-395
+P16	A New Beam-Spill Control System for {LAMPF}	J. R. Parker and J. D. Easley and J. H. Richardson	396	399	396-399
+P17	Basic Properties of the Symmetric Insertion	E. Regenstreif	400	402	400-402
+P18	Ripple Current and Flux in Mineral Insulated Magnets	E. J. Schneider	403	406	403-406
+P19	Exact Equilibrium Current Solutions for a Set of {LC} Coupled Loop Circuits with Second Neighbour Coupling	S. O. Schriber	407	410	407-410
+P20	On Measurement of Ion Beam Phase Volume	A. I. Solnyshkov and E. I. Gerasimov and G. V. Tarvid	411	414	411-414
+P21	Some High Resolution Techniques for Use with Negative Ion Beams	J. E. Spencer and H. A. Thiessen	415	421	415-421
+P22	An Automated Admittance Measurement at {LAMPF}	J. E. Stovall	422	426	422-426
+P23	The {LAMPF} Klystron Repair Facility	P. J. Tallerico	427	429	427-429
+P24	Cement Potted Coils for Muon Channel Magnets	H. F. Vogel and J. J. Rosenthal	430	432	430-432

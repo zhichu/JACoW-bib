@@ -1,0 +1,162 @@
+﻿eid	title	author	firstpage	lastpage	pages
+MO1-1	History of Proton Linear Accelerators	L. W. Alvarez	3	9	3-9
+MO1-2	Linear Induction Accelerators	R. J. Briggs	10	16	10-16
+MO2-1	The Control of Beam Dynamics in High Energy Induction Linacs	G. J. Caporaso	17	21	17-21
+MO2-2	{RF} Linacs for Esoteric Applications	R. A. Jameson	22	28	22-28
+MO2-3	{RF} Power Sources for 1990 and Beyond	D. W. Reid	29	32	29-32
+MO2-4	Linacs for Medical and Industrial Applications	R. W. Hamm	33	38	33-38
+MO3-1	Operational Experience with {SLAC} Energy Upgrade	M. A. Allen and R. L. Cassel and N. R. Dean and G. T. Konrad and R. F. Koontz and H. D. Schwarz and A. E. Vlieks	39	42	39-42
+MO3-2	Focusing Mechanisms in the Pulselac {CU} Accelerator	D. J. Johnson and T. R. Lockner	43	45	43-45
+MO3-4	Thermal Design of Drift Tubes for High-Gradient Linacs	D. J. Liska and N. Bultman and L. O. Carlisle	46	47	46-47
+MO3-5	Precision Alignment of Permanent Magnet Drift Tubes	D. J. Liska and L. B. Dauelsberg and G. Spalek	48	49	48-49
+MO3-7	Longitudinal Trapping and Particle Loss of High Intensity Bunched Beams	M. Pabst and K. Bongardt	50	52	50-52
+MO3-8	{RF} Power Amplifier with Dedicated Interlock and Feedback Controller	A. K. Mitra and W. Janßen and M. Sauer	53	55	53-55
+MO3-9	Non-Destructive Beam Monitors for the {SNQ}-Linac	van der Hart, A. and K. Bongardt and C. Kennepohl and K. Kennepohl and F. Schmidt and R. Uhlemann and K. Zwoll	56	58	56-58
+MO3-10	Control of Linear Accelerator Noise in the {Los Alamos} {Free-Electron Laser (FEL)}	M. T. Lynch	59	61	59-61
+MO3-11	Proper Input Phase-Space Filling for Accurate Beam-Dynamics Codes	G. P. Boicourt and M. C. Vasquez	62	64	62-64
+MO3-12	Internal Dynamics and Emittance Growth in Non-Uniform Beams	O. A. Anderson	65	69	65-69
+MO3-13	{RF} Drive System for the {CEBAF} Superconducting Cavities	J. A. Fugitt and T. L. Moore	70	72	70-72
+MO3-14	The {CEBAF} Cavity Cryostat	G. Biallas and P. Brindza and J. Kirchgessner and H. L. Phillips	73	75	73-75
+MO3-15	The {CEBAF} Cryogenic System	P. Brindza and C. Rode	76	80	76-80
+MO3-16	Beam Dynamics, Efficiency and Power of the {SLAC} {Lasertron} — Simulation Results	J. J. Welch	81	84	81-84
+MO3-17	The Maximum Efficiency of a Conventional Klystron Output Cavity	J. J. Welch	85	86	85-86
+MO3-18	Collector Material Desorption Tests	J. J. Welch and C. K. Sinclair	87	89	87-89
+MO3-19	Boiling Heat Transfer Process in the Design of High Power Linac Structures	T. Tran Ngoc and J.-P. Labrie	90	92	90-92
+MO3-22	A New Design of Profile Grid Electronics with High Performance	M. Fradj and R. Christmann and M. Hartung and P. Strehl	93	95	93-95
+MO3-23	Fast On Line Phase Measurement of Pulsed {RF} Signals in the Range of {9–108 MHz}	W. Losert and R. Christmann and M. Fradj and M. Hartung and P. Strehl and D. Wilms	96	97	96-97
+MO3-24	A Universal Electronic Phaseshifter	G. Hutter and W. Gutowski and K. Waitz	98	100	98-100
+MO3-25	Longitudinal Emittance Measurement at the {ATS}	W. B. Cottingame and J. H. Cortez and W. W. Higgins and O. R. Sander and D. P. Sandoval	101	103	101-103
+MO3-26	Cryogenic Studies of RF Accelerating Structures, Vintage 1978	D. J. Liska and J. Potter and J. Uher	104	105	104-105
+MO3-28	High Power Pulsed Klystron for Linacs	T. Onodera and K. Hayashi and H. Iyeki	106	108	106-108
+MO3-29	Improving the Efficiency of Microwave Devices with a Double Output Cavity	K. R. Eppley and W. B. Herrmannsfeldt and T. G. Lee	109	111	109-111
+MO3-30	Novel Accelerators Employing High-Current Electron Beams: Numerical Simulations	W. M. Fawley and G. J. Caporaso and M. R. Teague and S. S. Yu and A. M. Sessler	112	115	112-115
+MO3-31	Construction and First Operation of Upgraded Linear Accelerator	S. Fukumoto and Z. Igarashi and K. Ikegami and T. Kamei and T. Kato and C. Kubota and S. Machida and Y. Mori and T. Shintomi and A. Takagi and E. Takasaki and T. Takenaka	116	118	116-118
+MO3-32	{RF} Tuning of the {KEK} {40 MeV} Proton Linac with Post Couplers	T. Kato and S. Machida	119	121	119-121
+MO3-33	{RF}-Sources for Proton Linacs	G. Faillon and D. T. Tran	122	124	122-124
+MO3-34	Vacuum System Design Considerations of the {Los Alamos} {Accelerator Test Stand (ATS)}	N. G. Wilson	125	127	125-127
+MO3-36	Fabrication and Tuning Techniques for Side-Coupled Electron Accelerator Structures	L. D. Hansborough and W. L. Clark and R. A. DePaula and F. A. Martinez and P. L. Roybal and L. C. Wilkerson and L. M. Young	128	130	128-130
+MO3-37	Status of the {BNL} {200 MeV} Linac	A. McNerney and J. M. Brennan and B. Briscoe and J. Brodowski and R. Horton and V. LoDestro and P. Montemurro and S. Y. Zhang	131	133	131-133
+MO3-39	Polarized {H⁻} Source Development at {BNL}	J. G. Alessi and A. Hershcovitch and A. Kponou and Th. Sluyters and T. Niinikoski	134	137	134-137
+MO3-41	Factors Affecting {H⁻} Beam Performance in the {Fermilab} Linac	C. D. Curtis and C. W. Owen and C. W. Schmidt	138	140	138-140
+MO3-42	A Compact Proton Linac for Positron Tomography	R. W. Hamm and K. R. Crandall and M. E. Hamm and L. D. Hansborough and J. M. Potter	141	143	141-143
+MO3-43	The {SLAC} Low Emittance Accelerator Test Facility	G. A. Loew and R. H. Miller and C. K. Sinclair	144	147	144-147
+MO3-44	Post Coupler Studies for {Alvarez} Tanks	M. Sawamura and Y. Iwashita and H. Takekoshi	148	150	148-150
+MO3-45	$Q$ Value of {DAW} Linac with Biperiodic T Stem	Y. Iwashita and S. Abe and H. Takekoshi	151	153	151-153
+MO3-46	Multiple-Measurement Beam Probe	J. D. Gilpatrick and D. L. Grant	154	156	154-156
+MO3-47	A Coherent Very High Power Microwave Source Using a Virtual Cathode Oscillator	M. V. Fazio and R. F. Hoeberling	157	159	157-159
+MO3-48	Unified Formulation for Linear Accelerator Design	Z. D. Farkas	160	162	160-162
+MO3-49	New Concepts in Microwave Sources for {e⁺e⁻} Supercolliders	V. L. Granatstein and P. E. Latham and W. Lawson and J. H. McAdoo and M. Reiser and C. D. Striffler	163	165	163-165
+MO3-50	A High Peak Power, {X}-Band Gyroklystron for Linear Accelerators	W. Lawson and J. Calame and V. L. Granatstein and P. E. Latham and G. S. Park and M. Reiser and C. D. Striffler and F. J. Williams and J. Neilson	166	170	166-170
+TU1-1	Highlights of the Heavy Ion Fusion Symposium	D. Keefe	171	175	171-175
+TU1-2	High-Current Beam Dynamics and Transport, Theory and Experiment	M. Reiser	176	182	176-182
+TU2-1	Emittance Growth	I. Hofmann	183	187	183-187
+TU2-2	Recent Developments in {RF} Superconductivity for Linac Structures	H. Lengeler	188	193	188-193
+TU2-3	The {CEBAF} Superconducting Accelerator — An Overview	C. W. Leemann	194	199	194-199
+TU2-4	Comparison of Standing-Wave and Traveling-Wave Structures	R. H. Miller	200	208	200-208
+WE1-1	A Progress Report on the {SLAC Linear Collider}	J. Rees	209	213	209-213
+WE1-2	Special {SLC} Linac Developments	J. T. Seeman and J. C. Sheppard	214	219	214-219
+WE1-3	Advanced Technology Recently Developed at {KEK} for Future Linear Colliders	J. Tanaka	220	226	220-226
+WE2-1	{RFQ}’s in Research and Industry	J. Staples	227	231	227-231
+WE2-2	Innovations in Ion Sources and Injectors	R. Keller	232	236	232-236
+WE2-3	Progress in the Development of {H⁻} Ion Sources	K. Prelec	237	242	237-242
+WE2-4	{RF} Cavity Design and Codes	T. Weiland	243	250	243-250
+WE3-4	Field Stabilisation with Resonant Line Couplers	A. Schempp	251	253	251-253
+WE3-5	Status of the {HERA}-{RFQ} Injector	A. Schempp and H. Klein and P. Schastok and K. H. Pape and S. H. Wang	254	256	254-256
+WE3-6	The Design of a Single Pulse Accelerator	A. Schempp	257	259	257-259
+WE3-8	Design of an {RFQ}-Based, {H⁻} Injector for the {BNL}/{FNAL} {200 MeV} Proton Linacs	R. A. Gough and D. Howard and J. Staples and J. Tanabe and D. Yee and C. D. Curtis and K. Prelec	260	262	260-262
+WE3-9	The {SuperHILAC} Upgrade Project	B. Feinberg and I. G. Brown	263	265	263-265
+WE3-10	Status of the Positive-Ion Injector for {ATLAS}	L. M. Bollinger and R. C. Pardo and K. W. Shepard	266	268	266-268
+WE3-11	Development of a Heavy-Ion Linac Based on Superconducting Interdigital Accelerating Structures	K. W. Shepard	269	271	269-271
+WE3-12	Microwave Undulator	K. Batchelor	272	275	272-275
+WE3-13	{MAFIA} — A Three-Dimensional Electromagnetic {CAD} System for Magnets, RF Structures, and Transient Wake-Field Calculations	R. Klatt and F. Krawczyk and W.-R. Novender and C. Palm and T. Weiland and B. Steffen and T. Barts and M. J. Browman and R. K. Cooper and C. T. Mottershead and G. Rodenz and S. G. Wipf	276	278	276-278
+WE3-14	Three-Dimensional Cavity Calculations	M. J. Browman and R. K. Cooper and T. Weiland	279	281	279-281
+WE3-15	Wake Field Calculations with Three-Dimensional {BCI} Code	R. Klatt and T. Weiland	282	285	282-285
+WE3-16	Cavity and Waveguide Design by Triangular Mesh Code {URMEL-T}	van Rienen, U. and T. Weiland	286	288	286-288
+WE3-17	Impedance of Cavities with Beam Ports Above Cut-Off	van Rienen, U. and T. Weiland	289	291	289-291
+WE3-18	Modes in Infinitely Repeating Structures of Cylindrical Symmetry	T. Weiland	292	295	292-295
+WE3-19	Beam Transport with Space Charge Compensation	J. Klabunde and A. Schönlein	296	298	296-298
+WE3-20	The Project of a High-Current Injector at the {UNILAC}	J. Klabunde and N. Angert and L. Dahl and R. Keller and M. Müller and R. W. Müller and P. Spädtke and J. Häuser and H. Klein and A. Schempp and A. Schönlein and T. Weis	299	301	299-301
+WE3-21	The {UNILAC} as a Fast Switching, Variable Ion and Energy Accelerator	J. Glatz	302	304	302-304
+WE3-22	Low-$β$ Ion Acceleration with a {MEQALAC}	van Amersfoort, P. W. and F. Siebenlist and R. W. Thomae and R. Wojke and F. G. Schonewille and S. T. Ivanov and H. Klein and A. Schempp and T. Weis	305	307	305-307
+WE3-23	{RFQ} Linacs with Constant Inner Aperture and Modulation	P. Junior and H. Deitinghoff and A. Harth	308	310	308-310
+WE3-24	High Current {RFQ} Accelerator Using a Split Coaxial Resonator with a Four Rod Structure	P. Leipe and H. Deitinghoff and H. Klein and K. Langbein and A. Schempp	311	314	311-314
+WE3-26	Beam Dynamics in Long Transit Time Linac Cavities for Heavy Ion Boosters	P. M. Lapostolle and S. Valero	315	317	315-317
+WE3-29	{RF} Linac for Heavy Ion Fusion Driver	I. M. Kapchinskiy and V. S. Artemov and V. A. Batalin and E. N. Daniltzev and A. Ju. Djadin and D. D. Iosseliani and A. M. Kozodaev and V. V. Kushin and A. R. Kurs and N. V. Lazarev and I. M. Lipkin and I. O. Parschin and S. V. Plotnikov and V. G. Shevchenko and V. S. Skachkov and S. B. Ugarov and A. B. Zarubin	318	322	318-322
+WE3-30	Bunch Shape Measuring Technique and its Application for an Ion Linac Tuning	A. V. Feschenko and P. N. Ostroumov	323	327	323-327
+WE3-31	Heavy-Ion {RFQ} Accelerator {MAXILAC} Achieves {45 keV} / {AMU}	R. W. Müller and J. Bolle and R. Keller and U. Kopf and H. Liesem and P. Spädtke and A. Schönlein	328	329	328-329
+WE3-33	{OSCAR2D}, A Computer Code for the Design of {RF} Cavities and Structures	P. Fernandes and R. Parodi	330	332	330-332
+WE3-34	The Use of the {IBM-PC} Computer in Accelerator Design Calculations	J. Colman	333	335	333-335
+WE3-35	Numerical Studies of Emittance Exchange in {2-D} Charged Particle Beams	F. W. Guy and T. P. Wangler	336	339	336-339
+WE3-36	The Influence of Equipartitioning on the Emittance of Intense Charged-Particle Beams	T. P. Wangler and F. W. Guy and I. Hofmann	340	345	340-345
+WE3-37	{RFQ} Scaling-Law Implications and Examples	E. A. Wadlinger	346	348	346-348
+WE3-39	Understanding Scaling Laws	W. P. Lysenko	349	351	349-351
+WE3-40	A New High Intensity {DC} {H⁻} Ion Source for {TRIUMF}	R. Baartman and K. R. Kendall and M. McDonald and D. R. Mosscrop and P. W. Schmor and D. Yuan	352	354	352-354
+WE3-41	Ion Acceleration in the {CERN} Linac 1	H. Haseroth and C. E. Hill and P. Têtu and M. Weiss and N. Angert and J. Klabunde and B. Langenbeck and K. Leible and P. Spädtke and B. H. Wolf and R. Caylor and R. A. Gough and D. Howard and R. MacGill and J. Staples and J. Tanabe	355	357	355-357
+WE3-42	Operation of a Short Pulse Negative Ion Source	C. E. Hill	358	360	358-360
+WE3-43	A Heavy Ion {RFQ} with High Accelerating Gradient	B. G. Chidley and R. M. Hutcheon and G. E. McMichael	361	363	361-363
+WE3-44	Ionization Front Accelerator	C. L. Olson	364	366	364-366
+WE3-47	The {KUTI-20} Accelerator First Stage Adjusting	V. G. Dolbilov and A. A. Fateev and V. I. Kazacha and V. I. Mironov and V. A. Petrov and V. P. Sarantsev and A. S. Shcheulin and A. I. Sidorov and A. P. Sumbaev and S. I. Tiutiunnikov	367	370	367-370
+WE3-48	Beam Test of the {RFQ} Linac {TALL}	N. Ueda and S. Arai and T. Fukushima and Y. Hirao and A. Mizobuchi and T. Nakanishi and S. Tatsumi and S. Yamada and M. Olivier	371	373	371-373
+WE3-49	A Multi-Module Cavity Structure of Split Coaxial {RFQ}	E. Tojyo and S. Arai and T. Fujino and T. Fukushima and N. Tokuda and T. Hattori	374	376	374-376
+WE3-50	Construction and Acceleration Characteristics of the {Tokyo Institute of Technology} Heavy Ion Linac	T. Hattori and E. Arai and Y. Oguri and K. Sato and H. Suzuki	377	379	377-379
+WE3-51	A Computer Program for Beam Phase Space with Arbitrary Configuration	S. Fu and Y. B. Chen and X. Xie	380	384	380-384
+TH1-1	The Two-Beam Accelerator	A. M. Sessler and D. B. Hopkins	385	390	385-390
+TH1-2	Progress on Plasma Accelerators	P. Chen	391	397	391-397
+TH1-3	Wake Field Acceleration	W. Bialowons and H. D. Bremer and F.-J. Decker and von Hartrott, M. and H. C. Lewin and T. Weiland and P. Wilhelm and G.-A. Voss and K. Yokoya and C. Xiao	398	406	398-406
+TH2-1	Magnet Innovations for Linacs	K. Halbach	407	410	407-410
+TH2-2	Electron Linac Injector Developments	J. S. Fraser	411	415	411-415
+TH2-3	Linacs for Microtrons and Pulse Stretchers	S. Penner	416	420	416-420
+TH2-4	Intense Low Emittance Linac Beams for Free Electron Lasers	T. I. Smith	421	428	421-428
+TH3-1	A Pulse Compression System for the {ANL} {20 MeV} Linac	G. Mavrogenes and J. Norem and J. Simpson	429	430	429-430
+TH3-2	Positron Injection Linac System for the {Argonne Light Source}	G. Mavrogenes and Y. Cho and T. Khoe	431	433	431-433
+TH3-3	Progress Report on {ANL} Advanced Accelerator Test Facility	R. Konecny and J. MacLachlan and J. Norem and A. G. Ruggiero and P. Schoessow and J. Simpson	434	436	434-436
+TH3-4	High-Field Capture Section for {SLC} Positron Source	H. A. Hoag and H. Deruyter and J. Kramer and C. G. Yao	437	440	437-440
+TH3-6	{SLC} Energy Spectrum Monitor Using Synchrotron Radiation	J. T. Seeman and W. Brunk and R. Early and M. Ross and E. Tillmann and D. Walz	441	443	441-443
+TH3-7	Industrial Development of {Cornell} Superconducting Cavities for {CEBAF}	W. Bensiek and G. Garner and J. Hager and G. Biallas and A. Chargin and B. Moss and J. Parkinson and J. Amato and J. Brawley and D. Coulombe and A. Heidt and S. Herb and J. Kirchgessner and D. Morse and K. Nakajima and H. Padamsee and F. Palmer and H. L. Phillips and C. Reece and R. Sundelin and M. Tigner and K. Schulz and U. Klein and A. Palussek and H. P. Vogel and E. Conner and S. Loer and P. Weller and R. Fleck and Th. Grundey and H. Heinrichs and D. Huppelsberg and A. Matheisen and M. Peiniger and H. Piel and R. Roeth	444	448	444-448
+TH3-8	Optics of Beam Recirculation in the {CEBAF} {CW} Linac	D. R. Douglas	449	451	449-451
+TH3-9	Multipass Beam Breakup in the {CEBAF} Superconducting Linac	J. J. Bisognano and G. A. Krafft	452	454	452-454
+TH3-10	An {X}-Band Coaxial Standing-Wave Linear Accelerator Structure	E. Tanabe and M. Bayer and S. D. Ireton and G. Kalkanis	455	457	455-457
+TH3-11	Voltage Breakdown at {X}-Band and {C}-Band Frequencies	E. Tanabe and G. A. Loew and J. W. Wang	458	460	458-460
+TH3-12	{RF} Breakdown Studies in a {SLAC} Disk-Loaded Structure	J. W. Wang and G. A. Loew and V. Nguyen-Tuong	461	464	461-464
+TH3-13	First Electron Beams from the {LEP} Injector Linacs	D. J. Warner	465	468	465-468
+TH3-14	Simulation of Trajectory Control in {LIL}	R. Chehab and Y. Thiery and K. Hübner	469	471	469-471
+TH3-15	Design of a High Intensity Electron Buncher	D. Tronc and C. Bourat and J. P. Georges and A. Setty and B. Spataro	472	474	472-474
+TH3-16	Beam-Beam Deflections as an Interaction Point Diagnostic for the {SLC}	P. Bambade and R. Erickson	475	477	475-477
+TH3-17	{Beamstrahlung} Monitor for{ SLC} Final Focus Using Gamma Ray Energies	G. Bonvicini and A. Minten and C. Field	478	479	478-479
+TH3-18	{Beamstrahlung} Monitor for {SLC} Final Focus Using Visible Wavelengths	G. Bonvicini and A. Minten and J. Ferrie and C. Field	480	480	480
+TH3-19	Phase Control System of the {KEK} {2.5 GeV} Electron Linac	H. Hanaki and S. Anami and S. Ohsawa and Y. Otake and Y. Saito and J. Tanaka	481	483	481-483
+TH3-20	Image Processing System for Electron Linac Beam Diagnosis	D.-K. Liu and I. Abe and A. Enomoto and K. Nakahara and J. Tanaka and T. Urano	484	486	484-486
+TH3-21	Electron Gun for the Positron Generator	S. Fukuda and S. Anami and A. Asami and N. Kaneko and Y. Ogawa and S. Ohsawa and Y. Otake and Y. Saito and T. Shidara and J. Tanaka	487	489	487-489
+TH3-22	Deflection by the Image Current and Charges of a Beam Scraper	K. L. F. Bane and P. L. Morton	490	492	490-492
+TH3-24	Radiation of a Charge in a Perfectly Conducting Cylindrical Pipe with a Jump in its Cross Section	S. A. Kheifets and S. A. Heifets	493	495	493-495
+TH3-25	Injector of the Positron Generator	A. Asami and I. Abe and S. Anami and A. Enomoto and S. Fukuda and N. Kaneko and Y. Ogawa and S. Ohsawa and Y. Otake and Y. Saito and I. Sato and T. Shidara and J. Tanaka	496	498	496-498
+TH3-26	Accelerator Guide of Positron Generator Linac	I. Sato and A. Enomoto and K. Kakihara and H. Matsumoto and T. Oogoe and J. Tanaka and K. Inoue and Y. Iino and K. Taki and N. Yamaguchi	499	501	499-501
+TH3-27	Acceleration Characteristics of Positron Generator Linac	I. Sato and I. Abe and S. Anami and A. Asami and A. Enomoto and T. Fukuda and H. Hanaki and H. Honma and K. Kakihara and N. Matsuda and H. Matsumoto and K. Nakahara and K. Nakao and Y. Ogawa and S. Ohsawa and Y. Ohtake and T. Oogoe and Y. Saito and T. Shidara and J. Tanaka and T. Urano and K. Miyata and N. Kaneko and H. Tanaka and N. Terabayashi	502	504	502-504
+TH3-28	A {90 MeV} Electron Linac of {IHEP}	S. Zhou	505	507	505-507
+TH3-29	Experiences in Fabricating and Testing the {RF}-Sections of the {Mainz} Microtron	H. Euteneuer and H. Schöler	508	511	508-511
+TH3-30	The Superconducting {130 MeV} Recyclotron for Electrons at {Darmstadt}	K. Alrutz-Ziemssen and H.-D. Gräf and V. Huck and K. D. Hummel and G. Kaster and M. Knirsch and A. Richter and M. Schanz and S. Simrock and E. Spamer and O. Titze and Th. Grundey and H. Heinrichs and H. Piel	512	514	512-514
+TH3-31	The {200 MeV} Linac at {HESYRL}	D.-F. Wang and T.-H. Ho and Y.-J. Pei	515	517	515-517
+TH3-32	A New Electron Linac for the {Saclay} Stretcher Ring Project	B. Aune and C. Bourat and K. Djidi and M. Jablonka and M. Juillard and F. Netter	518	519	518-519
+TH3-33	Improvement of the Electron Injection for the {ALS} Electron Linac	B. Aune and P. Corveller and Ph. Damsin and M. Jablonka and J. M. Joly and M. Juillard	520	522	520-522
+TH3-34	Field Computations and Measurements on a Biperiodic Buncher Structure	F. Tazzioli and B. Spataro and P. Fernandes and R. Parodi and D. Tronc	523	525	523-525
+TH3-35	Present Optics Options for {TeV} Colliders	J. E. Spencer	526	530	526-530
+TH3-36	Frequency Scaling of Linear Super-Colliders	A. Mondelli and D. Chernin and A. Drobot and V. L. Granatstein and M. Reiser	531	533	531-533
+TH3-38	Experimental Investigation of Beam Generation, Acceleration, Transport, and Extraction in the {RADLAC-II} Pulsed Transmission Line Linear Accelerator	M. G. Mazarakis and C. A. Ekdahl and J. R. Freeman and C. A. Frost and D. E. Hasti and D. L. Johnson and G. T. Leifeste and R. B. Miller and J. W. Poukey and K. R. Prestwich and S. L. Shope and D. L. Smith and W. A. Stygar	534	536	534-536
+TH3-39	Ion Focused Transport Experiments	C. A. Frost and C. A. Ekdahl and J. R. Freeman and G. T. Leifeste and M. G. Mazarakis and R. B. Miller and J. W. Poukey and S. L. Shope and W. K. Tucker and B. B. Godfrey	537	539	537-539
+TH3-40	Cumulative Beam Breakup with a Distribution of Deflecting Mode Frequencies	R. L. Gluckstern and F. Neri and R. K. Cooper	540	542	540-542
+TH3-41	Beam Breakup in a Multi-Section Recirculating Linac	R. L. Gluckstern	543	545	543-545
+TH3-42	{EG&G} Electron Linac Modifications	N. J. Norris and J. L. Detch and C. L. Hudson and S. M. Kocimski and C. R. Sawyer	546	548	546-548
+TH3-43	Acceleration of Electrons by the Wake Field of Proton Bunches	A. G. Ruggiero	549	552	549-552
+TH3-44	First Observations of Acceleration of Injected Electrons in a Laser Plasma Beatwave Experiment	N. A. Ebrahim and P. Bordeur and E. A. Heighway and P. Lavigne and F. Martin and J. P. Matte and H. Pepin	553	556	553-556
+TH3-45	A Recirculating Linac as an Injector for Small Storage Rings or Free Electron Lasers	W. A. Gillespie and E. A. Hughes and N. Marks and G. Saxon	557	559	557-559
+TH3-48	Modifying a Research Linac Laboratory into an Applied Radiation Facility	R. C. Block	560	562	560-562
+TH3-49	Operation of a {300 MeV} Electron Linac in the Short-Beam Mode	V. A. Azhippo and N. I. Ajzatskij and V. G. Batij and V. P. Bozhko and S. N. Dyukov and V. Ya. Golovnya and G. M. Ivanov and L. A. Makhnenko and S. N. Olejnik and P. M. Ryabka and G. F. Timoshevskij	563	565	563-565
+TH3-50	Self-Oscillatory Mode of Acceleration in Electron Linac with Feedback	V. A. Azhippo and N. I. Ajzatskij and L. A. Makhnenko	566	569	566-569
+TH3-51	Feedback System Analysis for Beam Breakup in a Multipass Multisection Electron Linac	A. Mosnier and B. Aune	570	572	570-572
+TH3-52	Studies of Electron Linac Beam Postacceleration in a Chain of Passive Cavity Structures	G. L. Fursov and V. A. Kushnir and V. P. Romas’ko and A. M. Shenderovich and V. A. Vishnyakov and V. V. Zakutin	573	575	573-575
+TH3-53	{Kharkov} Electron Linac as Injector for Stretcher Ring	V. A. Vishnyakov and G. K. Demyanenko and A. N. Dovbnya and V. M. Kobezsky and V. B. Mufel and G. D. Pugachev and V. A. Shendrik	576	577	576-577
+TH3-54	A Few Aspects of Excitation of Wake Waves in Accelerating Structures	E. M. Laziev and V. M. Tsakanov	578	579	578-579
+TH3-55	Beam Emittance Measurement on Electron Gun	N. Liu and L. Fu and W. Gao and Z. Guo	580	584	580-584
+FR1-1	Future {e⁺e⁻} Linear Colliders and Beam-Beam Effects	P. B. Wilson	585	590	585-590
+FR1-2	Factors Limiting the Operation of Structures under High Gradient	S. O. Schriber	591	598	591-598
+FR2-1	Collider Constraints in the Choices for Wavelength and Gradient Scaling	J. D. Lawson	599	603	599-603

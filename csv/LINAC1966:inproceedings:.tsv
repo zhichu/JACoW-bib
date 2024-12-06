@@ -1,0 +1,80 @@
+﻿eid	title	author	firstpage	lastpage	pages
+I-01	Linacs of the Future	J. P. Blewett	1	3	1-3
+I-02	Initial Operating Experience and Performance of the {SLAC} Accelerator	R. B. Neal	4	19	4-19
+I-03	The {NBS} Linac	J. E. Leiss	20	27	20-27
+II-01	Measurements and Calculations on the 50-{MeV} {Brookhaven} Linac	K. Batchelor and R. Chasman and T. Werntz	28	33	28-33
+II-02	Measurements of the Linear-Accelerator Exit Beam of the {Bevatron} Injector	Allison, Jr., R. W. and D. M. Evans and R. M. Richter and A. J. Sherwood and E. Zajec	34	47	34-47
+II-03	Progress Report on the {CERN-PS} Linac	C. S. Taylor and F. Block and P. Têtu and D. J. Warner	48	59	48-59
+II-04	Recent Operating Experience with the {ZGS} Injector Linac	R. Perry	60	64	60-64
+II-05	Measurements of the {SLAC} Injector Emittance	R. H. Miller	65	71	65-71
+II-06	Partial Energy Beams from an Ion Linac	A. Ghiorso and E. L. Hubbard and R. M. Main and D. A. Spence and F. Voelker	72	77	72-77
+II-07	Performance Characteristics of the Zero Gradient Synchrotron Linac Automatic Gradient Stabilizer	R. W. Castor and J. Abraham	78	82	78-82
+III-01	Accelerating Structure Research at {Los Alamos}	E. A. Knapp and P. W. Allison and C. R. Emigh and L. N. Engel and J. M. Potter and W. J. Shlaer	83	87	83-87
+III-02	Measurement on a Multistem Drift Tube Structure	S. Giordano and J. P. Hannwacker	88	95	88-95
+III-03	Self Focusing in Heavy Ion Linacs	D. Boussard	96	103	96-103
+III-04	Aperture and Cell Size Effects on Shunt Impedance of Alternating Periodic Structures	D. Carter and T. Nishikawa	104	108	104-108
+III-05	Transverse Modes in a Resonantly Coupled Accelerator	J. M. Potter	109	114	109-114
+III-06	Linac Cavity Field Calculations	P. F. Dahl and S. Giordano and J. P. Hannwacker and K. Jellett and G. Parzen and D. E. Young	115	118	115-118
+III-07	Designing Resonant Cavities with the {LALA} Computer Program	H. C. Hoyt	119	124	119-124
+III-08	Circuit Analog Techniques for Analysis of Resonantly Coupled Linear Accelerator Structures	G. R. Swain	125	131	125-131
+III-09	Tuning and Field Measurement Techniques in a Resonantly Coupled Accelerator Tank	L. N. Engel and E. A. Knapp	132	136	132-136
+III-10	Operating Characteristics of a Full Power Cloverleaf Accelerator Tank	D. R. Copenhagen and E. A. Knapp and J. M. Potter	137	139	137-139
+IV-01	{RF} Perturbation Measurements in Long Linac Cavities	C. W. Owen and C. A. Radmer and D. E. Young	140	145	140-145
+IV-02	Measurements on a Model {RF} Manifold System	F. Voelker	146	152	146-152
+IV-03	High-Gradient Drift-Tube Quadrupole Magnets	R. M. Main and J. M. Haughian and R. B. Meuser	153	156	153-156
+IV-04	Mechanical Design of Drift Tubes and Quadrupole Magnets for the {Alvarez} Linac	Bush, Jr., E. D.	157	162	157-162
+IV-05	{SLAC} Alignment System	W. B. Herrmannsfeldt	163	168	163-168
+IV-06	Design, Development, and Fabrication of Multicavity {805 MHz} Accelerator Tanks	H. G. Worstell	169	175	169-175
+IV-07	High Field Measurements at {200 MHz} in Conventional Proton Linear Accelerator Geometries at 5, 50, and {130 MeV}	C. W. Owen and C. A. Radmer and D. E. Young	176	182	176-182
+IV-08	Experimental Results on the {RCA} 7835, and Initial Operating Parameters of the {FTH} 515	J. T. Keane and A. J. McNerney	183	190	183-190
+IV-09	Modular Development at {Los Alamos Scientific Laboratory}	R. W. Freyman and R. P. Severns	191	193	191-193
+IV-10	Properties of Disc-Loaded Cylindrical Waveguide Propagating the TM-02 Mode	W. J. Gallagher	194	195	194-195
+IV-11	Energy Spectrum Improvement with the {HEM-11} Mode	W. J. Gallagher	196	197	196-197
+IV-12	Phase Measurement Along Linac Sections by a Resonant Method	B. Epsztein and D. Tronc	198	200	198-200
+V-01	Design Equations in an {Alvarez}-Type Proton Linear Accelerator	A. Carne and P. M. Lapostolle	201	206	201-206
+V-02	Transverse Beam Growth Due to Longitudinal Coupling in Linear Accelerators	R. L. Gluckstern	207	213	207-213
+V-03	Coupled Motion in Low-Energy Proton Linear Accelerators	S. Ohnuma	214	219	214-219
+V-04	On a Uniform Charge Density of a Beam and its Phase-Space Distribution	S. Ohnuma	220	223	220-223
+V-05	Numerical Calculations of Coupling Effects in a Low Energy Proton Linac	R. Chasman	224	228	224-228
+V-06	Comparison of the Particle Motions as Calculated by Two Different Dynamics Programs	D. A. Swenson and D. E. Young and B. Austin	229	232	229-232
+V-07	A Numerical Experiment on Space-Charge Effects	K. R. Crandall	233	236	233-236
+V-08	Space Charge Effects in Proton Linear Accelerators	R. L. Gluckstern	237	242	237-242
+V-09	Space Charge Effects on Longitudinal Motion in Proton Linacs	A. Benton and C. Agritellis	243	244	243-244
+V-10	Phase-Space Representation of Aberrations Due to Longitudinal Fields in Quadrupoles	E. Regenstreif and P. Tanguy	245	249	245-249
+V-11	The Effect of Quadrupole Fringing Fields on Coupling in Linacs	R. L. Gluckstern	250	253	250-253
+VI-01	Computer Study of Wave Propagation, Beam Loading and Beam Blowup in the {SLAC} Accelerator	R. Helm	254	266	254-266
+VI-02	Beam Break-Up Experiments at {SLAC}	O. H. Altenmueller and E. V. Farinholt and Z. D. Farkas and W. B. Herrmannsfeldt and H. A. Hogg and R. F. Koontz and C. J. Kruse and G. A. Loew and R. H. Miller	267	280	267-280
+VI-03	A Note on Transverse Beam Instabilities in Multisection Linacs	R. L. Gluckstern and D. E. Nagle and W. M. Visscher	281	283	281-283
+VI-04	Simple Models for Beam-Blowup	W. M. Visscher	284	293	284-293
+VI-05	Beam Loading Effects in Standing Wave Linacs	T. Nishikawa	294	302	294-302
+VI-06	Optimization Criteria for Standing Wave Transverse Magnetic Deflection Cavities	J. Haimson	303	331	303-331
+VI-07	Transients in Electron Linacs	B. Epsztein and J. P. Mangin	332	336	332-336
+VI-08	Transient Wave Propagation in Linear Accelerators	J. Abraham	337	343	337-343
+VII-01	The Duoplasmatron Source for the {CERN}-{PS} Linac	B. Vosicki and M. Buzic and A. Cheretakis	344	354	344-354
+VII-02	The New {500 keV} Single-Gap Pre-injector Tube for the {CERN} Proton Synchrotron Linac	J. Huguenin and R. Dubois and R. El-Bez and G. Visconti	355	364	355-364
+VII-03	Initial Tests of the {MURA} High Gradient Column	C. D. Curtis and J. A. Fasolo and G. M. Lee	365	370	365-370
+VII-04	Duoplasmatron Source Performance at {MURA}	J. A. Fasolo and C. D. Curtis and G. M. Lee	371	382	371-382
+VII-05	{Brookhaven}’s Recent Pre-Accelerator Progress	Th. J. M. Sluyters	383	389	383-389
+VII-06	Expectations and Possible Interpretation of Ion Source Behavior	C. D. Curtis	390	393	390-393
+VII-07	A Note on Some Emittance Measurements	H. Wroe	394	394	394-394
+VIII-01	A {100 mA} Ion Beam with a Large Brightness	P. Bernard and J. Faure and R. Vienet	395	397	395-397
+VIII-02	The “Pierce” Geometry: An Accelerating Column Design	C. R. Emigh	398	402	398-402
+VIII-03	Design of a {20 MeV} Proton Linear Accelerator, New Injector for {SATURNE}	M. Promé	403	409	403-409
+VIII-04	Status Report of the {Orsay} Linac	P. Brunet and L. Burnod	410	416	410-416
+VIII-05	A New High Duty Cycle High Current {600 MeV} Electron-Positron Linear Accelerator of {Saclay}	A. Sokolovsky	417	425	417-425
+VIII-06	Some Characteristic Problems of the New High Duty Cycle {Saclay} Electron Linac	H. Leboutet and G. Azam and R. Bensussan and X. Blaise and B. Delmon and J. P. Mangin and J. Soffer	426	434	426-434
+VIII-07	Positron Acceleration in the Frascati {450 MeV} Linear Accelerator	R. Andreani and F. Amman and J. Haimson and C. Nunan	435	438	435-438
+VIII-08	Results on Some {European} Linear Accelerators	G. Azam and J. Milcamps	439	448	439-448
+IX-01	{805 MHz} {RF} Power Sources	D. E. Nagle	449	456	449-456
+IX-02	The {RF} System for the AGS 200-{MeV} Linac	J. Sheehan and R. Witkover	457	459	457-459
+IX-03	Fast {RF} Control Work at {LASL}	R. A. Jameson and W. J. Hoffert and N. A. Lindsay	460	466	460-466
+IX-04	High-Duty-Factor Conversion of the {Berkeley Hilac}	B. H. Smith	467	470	467-470
+IX-05	Computer Control of the {LAMPF} Accelerator	T. M. Putnam and H. S. Butler and J. J. Smith	471	478	471-478
+IX-06	Some Effects of (Not Having) Computer Control for the {Stanford Linear Accelerator}	K. B. Mallory	479	482	479-482
+IX-07	Digital Control of the {Bevatron}-Injector Inflection Trajectory	Allison, Jr., R. W. and R. A. Belshe and D. M. Evans and E. C. Hartwig and H. D. Lancaster and D. R. Machen and R. M. Richter and E. Zajec	483	490	483-490
+X-01	{Stanford}’s Superconducting Accelerator Program	T. I. Smith and W. M. Fairbank and H. A. Schwettman and P. B. Wilson	491	493	491-493
+X-02	Plans for a Superconducting {CW} Electron Linac at the {University of Illinois}	A. O. Hanson and D. Jamnik and C. S. Robinson and C. L. Rogers	494	496	494-496
+X-03	Status Report on the Feasibility Study for a Superconducting Linear Accelerator for Protons	A. Citron	497	498	497-498
+X-04	The Preparation and Performance of Superconducting Cavities	P. Flécher and J. Halbritter and R. Hietschold and K. Hofmann	499	501	499-501
+X-05	An Investigation of the Slotted Iris Structure with Drift Tubes	H. Eschelbacher and H. Schopper	502	507	502-507
+X-06	A One {MeV}/Nucleon Heavy Ion Linear Accelerator	C. Bieth and J. Arianer and J. Bosser and A. Cabrespine and Ch. Goldstein	508	510	508-510

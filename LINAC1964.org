@@ -1,0 +1,123 @@
+#+title: LINAC’64
+
+[[file:all-jacow-events.org][All JACoW Events]]
+
+
+* Export
+
+
+#+begin_src emacs-lisp :eval t
+  (let ((org-time-stamp-custom-formats
+         '("<%Y-%m-%d>" . "%Y-%m-%d %a %H:%M"))
+        (org-display-custom-times 't))
+    (org-table-map-tables
+     (lambda ()
+       (org-table-export
+        (concat "./csv/" (file-name-base) (org-entry-get (point) "TAGS") ".tsv")
+        "orgtbl-to-tsv"))))
+#+end_src
+
+#+RESULTS:
+: Mapping tables: done
+
+
+* Table
+
+** Event :event:
+
+|------------+----------------------------------------------------------------+----------------|
+| key        | value                                                          | short          |
+|------------+----------------------------------------------------------------+----------------|
+| eventtitle | 1964 Linear Accelerator Conference                             | LINAC’64       |
+| eventdate  | <1964-07-20>--<1964-07-24>                                   |                |
+| venue      | Madison, Wisconsin, USA                                        |                |
+| booktitle  | Proceedings of the 1964 Linear Accelerator Conference          | Proc. LINAC’64 |
+| editor     | F. E. Mills and C. D. Curtis and D. A. Swenson and D. E. Young |                |
+|------------+----------------------------------------------------------------+----------------|
+#+TBLFM: @2$3='(cadar (org-collect-keywords '("TITLE")))::@5$3='(concat "Proc. " (cadar (org-collect-keywords '("TITLE"))))
+
+** Sessions :session:
+
+|----------+------------------|
+| Part I   | Pages 1 to 122   |
+| Part II  | Pages 123 to 238 |
+| Part III | Pages 239 to 361 |
+| Part IV  | Pages 362 to 464 |
+| Part V   | Pages 465 to 532 |
+| Part VI  | Pages 533 to 626 |
+|----------+------------------|
+
+** Paper :inproceedings:
+
+
+
+
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+| ﻿eid     | title                                                                                                | author                                                                      |   pages |
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+| PART1-1 | {R.F.} Accelerating Structures: The Cross-Bar Structure                                              | A. Carne                                                                    |    1-20 |
+| PART1-2 | Coupled Resonator Model of Linear Accelerator Tanks                                                  | D. E. Nagle                                                                 |   21-30 |
+| PART1-3 | {800 MeV} {RF} Structures                                                                            | E. Knapp                                                                    |   31-59 |
+| PART1-4 | Characteristics of Slotted Irises                                                                    | S. Giordano                                                                 |   60-74 |
+| PART1-5 | Fabrication and Measuring Methods for Disk-Loaded Waveguides                                         | T. Nishikawa                                                                |   75-83 |
+| PART1-6 | The {500 MeV} Linac Proposed as a New Injector for the {AGS} at the {Brookhaven National Laboratory} | G. W. Wheeler                                                               |   84-93 |
+| PART1-7 | The {LASL} Meson Factory                                                                             | D. E. Nagle                                                                 |  94-107 |
+| PART1-8 | Study for a Superconducting Multi-{GeV} Proton Linac                                                 | H. Schopper                                                                 | 108-109 |
+| PART1-9 | The New {ZGS} Injector Proposal                                                                      | R. Perry                                                                    | 110-122 |
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+| PART2-1 | Preliminary Design of a High Energy High Duty Cycle Proton Linear Accelerator                        | G. Guilbaud and H. Leboutet and J. Kervizic and J. P. Mangin and D. T. Tran | 123-130 |
+| PART2-2 | Progress Report on the {Stanford Linear Accelerator Center}                                          | G. A. Loew                                                                  | 131-143 |
+| PART2-3 | A {Green}’s Function Approach to the Calculation of Drift Tube Cavities                              | M. Rich and W. M. Visscher                                                  | 144-152 |
+| PART2-4 | Drift Tube Calculations                                                                              | H. C. Hoyt                                                                  | 153-161 |
+| PART2-5 | The {Saclay} Design Study of Proton Linear Accelerators                                              | M. Promé                                                                    | 162-176 |
+| PART2-6 | Drift Tube and Parameter Selection for Linear Accelerator Structures Below {150 MeV}                 | D. E. Young                                                                 | 177-185 |
+| PART2-7 | Transverse Beam Blow-up in Standing Wave Linacs                                                      | R. L. Gluckstern                                                            | 186-203 |
+| PART2-8 | Dynamic Effects of Higher {RF} Harmonics                                                             | F. J. Kriegler                                                              | 204-213 |
+| PART2-9 | An Approach to the Study of Beam Loading for the Linear Accelerator                                  | T. Nishikawa                                                                | 214-238 |
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+| PART3-1 | The {CERN}-{PS} Linac - Beam Loading and {RF} Studies                                                | C. S. Taylor and Y. Dupuis                                                  | 239-251 |
+| PART3-2 | Model Measurements and Correction of Beam Loading Effects in Proton Linacs                           | S. Giordano                                                                 | 252-265 |
+| PART3-3 | Particle Motions and the Focusing System in Proton Linacs                                            | S. Ohnuma                                                                   | 266-282 |
+| PART3-4 | Numerical Study of Particle Dynamics in a High-Energy Proton Linear Accelerator                      | M. Jakobson and W. M. Visscher                                              | 283-300 |
+| PART3-5 | Constant Phase Velocity Acceleration Sections in a Proton Linac                                      | J. Parain                                                                   | 301-308 |
+| PART3-6 | Focusing of an {Alvarez} Linac by Use of Magnetic Quadrupoles Oriented at {45°}                      | D. T. Tran and M. G. Gilbaud                                                | 309-327 |
+| PART3-7 | Application of Calculated Fields to the Study of Particle Dynamics                                   | D. A. Swenson                                                               | 328-340 |
+| PART3-8 | Beam Dynamics Calculations for {Alvarez}-Type Linear Accelerators                                    | M. Rich                                                                     | 341-352 |
+| PART3-9 | Performance of the {PS} Linac                                                                        | C. S. Taylor                                                                | 353-361 |
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+| PART4-1 | Performance of the {PLA}                                                                             | J. M. Dickson                                                               | 362-371 |
+| PART4-2 | Beam Energy Measurements on the {Rutherford Laboratory} {PLA}                                        | K. Batchelor and A. Carne and J. M. Dickson and D. J. Warner                | 372-383 |
+| PART4-3 | {ZGS} Injector Observations                                                                          | P. V. Livdahl                                                               | 384-397 |
+| PART4-4 | Experiments on {RF} Field Patterns in the {BNL} Linac                                                | J. T. Keane                                                                 | 398-406 |
+| PART4-5 | Automatic Control and Stabilization of the {Orsay} Linac                                             | P. Brunet and L. Burnod and L. Lheritier                                    | 407-413 |
+| PART4-6 | Progress in High Intensity Ion Source and Accelerator Column Development                             | van Steenbergen, A.                                                         | 414-429 |
+| PART4-7 | Recent Developments in {RF} Proton Sources                                                           | H. Wroe                                                                     | 430-446 |
+| PART4-8 | Recent Measurements on the Duoplasmatron Source                                                      | L. W. Oleksiuk                                                              | 447-455 |
+| PART4-9 | Ion Source and Column Performance at {ORNL}                                                          | G. G. Kelley, O. B. Morgan                                                  | 456-464 |
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+| PART5-1 | The {PLA} Polarized Proton Source                                                                    | J. M. Dickson                                                               | 465-469 |
+| PART5-2 | Ion Source Work at {ANL}                                                                             | D. H. Nordby                                                                | 470-473 |
+| PART5-3 | An Extended {RF} Ion Source with Small Phase Space Emittance Area                                    | R. Perry                                                                    | 474-479 |
+| PART5-4 | A New Approach to Preinjectors                                                                       | H. Wroe                                                                     | 480-486 |
+| PART5-5 | Preaccelerator Column Design                                                                         | C. D. Curtis and G. M. Lee                                                  | 487-496 |
+| PART5-6 | Thoughts on Mode Distribution in {RF} Manifolds                                                      | F. Voelker                                                                  | 497-504 |
+| PART5-7 | {RF} Phase and Amplitude Control                                                                     | R. A. Jameson                                                               | 505-519 |
+| PART5-8 | Recharging Large Capacitor Banks                                                                     | H. R. Shaylor                                                               | 520-530 |
+| PART5-9 | Status Report on the Coaxitron Development Program                                                   | G. W. Wheeler                                                               | 531-532 |
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+| PART6-1 | A Possible Approach to the Initial Adjustment of a Long Linac                                        | G. W. Wheeler and T. W. Ludlam                                              | 533-539 |
+| PART6-2 | {RF} Superconductivity Measurements                                                                  | J. M. Dickson                                                               | 540-544 |
+| PART6-3 | Deuteron Acceleration in the {CLA} ({CERN Linear Accelerator})                                       | Th. Sluyters                                                                | 545-554 |
+| PART6-4 | The {ANL} Second Harmonic Buncher                                                                    | W. Myers                                                                    | 555-563 |
+| PART6-5 | A Family of Improved Linac Bunchers                                                                  | R. Beringer and R. L. Gluckstern                                            | 564-601 |
+| PART6-6 | {Nimrod} Injector                                                                                    | N. D. West and H. Wroe                                                      | 602-605 |
+| PART6-7 | Informal Discussion of Sparking Phenomena                                                            | D. A. Swenson                                                               | 606-615 |
+| PART6-8 | Summary of Informal Session on Mechanical Engineering Aspects                                        | J. E. O’Meara                                                               | 616-621 |
+| PART6-9 | Summary of Evening Session on Beam Loading Effects                                                   | J. E. Leiss                                                                 | 622-626 |
+|---------+------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------|
+
+** Notes
+
+- =PART2-6= and =PART6-6= are presented by other people, move them from the titles to the end of the author lists
+- =PART6-7= is moderated by =D.A. Swenson=
+

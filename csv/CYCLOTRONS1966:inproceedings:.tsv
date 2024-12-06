@@ -1,0 +1,62 @@
+﻿eid	title	author	fistpage	lastpage	pages
+O-001	Opening Remarks	A. M. Weinberg	xi	xii	xi-xii
+O-002	The Fluttering, Spiralling Flight of Cyclotron Evolution	D. L. Judd	xiii	xx	xiii-xx
+A-001	Problems and Performance in the Cyclotron Central Region	H. G. Blosser	1	14	1-14
+A-002	Beam Diagnostics and Instrumentation	D. J. Clark	15	23	15-23
+A-003	Central Region Studies for Incorporating an Axial Ion Source in the Davis 76-Inch Cyclotron	L. J. Kibbe and J. A. Jungerman and N. F. Peek	24	26	24-26
+A-004	Central Region of 240-{cm} Variable Energy Cyclotron	R. N. Litunovsky and V. Nikolaev	27	29	27-29
+A-005	Non-Intercepting Ion Phase Measuring Equipment of the Isochronous Cyclotrons at {Karlsruhe} and {Jülich}	H. H. Feldmann	30	35	30-35
+A-006	Measurements of Beam Behavior in the {Karlsruhe} Cyclotron	H. Dietrich	36	40	36-40
+A-007	Beam Properties of {Philips}’ {AVF} Cyclotrons	van Kranenburgand, A. A. and D. Wierts and H. L. Hagedoorn and P. Kramer	41	47	41-47
+B-001	Single Turn Extraction	M. M. Gordon	48	57	48-57
+B-002	Regenerative Beam Extraction	H. Kim	58	63	58-63
+B-003	Extraction Studies in an {AVF} Cyclotron	H. L. Hagedoorn and P. Kramer	64	73	64-73
+B-004	Variable Energy Extraction from Negative Ion Cyclotrons	A. C. Paul and B. T. Wright	74	83	74-83
+B-005	Study of the Modified Resonance Extraction Method from a Relativistic Cyclotron	V. V. Kolga and V. P. Dmitrievsky and N. I. Polumordvinova and V. S. Rybalko and L. A. Sarkisyan and S. B. Vorozhtsov and B. I. Zamolodchikov and N. L. Zaplatin	84	87	84-87
+B-006	Regenerative Beam Extraction for the {Berkeley} 88-Inch Cyclotron	D. J. Clark and E. Close and H. A. Grunder and H. Kim and P. Pellissier and B. H. Smith	88	93	88-93
+B-007	Mechanical Design of a Regenerative Deflector for the {Berkeley} 88-Inch Cyclotron	D. R. Elo and A. R. Carneiro and F. Bierlein and J. L. Wong	94	100	94-100
+B-008	Operating Characteristics of the {ORIC} Beam Extraction System	E. D. Hudson and R. S. Lord and White, Jr., W. H.	101	105	101-105
+B-009	Some Studies on Regenerative Beam Extraction in Synchrocyclotrons	S. Kullander and S. Lindbäck and Å Svanheden	106	113	106-113
+B-010	Superconducting Plates as Magnetic Shields	R. Benaroya and T. K. Khoe and W. J. Ramler	114	118	114-118
+B-011	Calculating the Disturbed Motion of Particles in Cyclic Accelerators	R. Wideröe	119	126	119-126
+C-001	Polarized Ion Sources for Cyclotrons	M. K. Craddock	127	141	127-141
+C-002	Polarized Negative Ions Produced by Charge Exchange Process	C. W. Drake Jr. and R. V. Krotkov	142	146	142-146
+C-003	Ion Injection from External Sources	W. B. Powell	147	159	147-159
+C-004	The Polarized Protons and Deutons Source for Axial Injection into the {Grenoble} Isochronous Cyclotron	F. A. Ripouteau and R. V. Tripier	160	162	160-162
+C-005	Phase Space Density Studies on Cyclotron Ion Sources	M. L. Mallory and H. G. Blosser	163	170	163-170
+C-006	Space Charge Effects and Current Limitations in Cyclotrons	M. P. Reiser	171	178	171-178
+C-007	A New Injection Method for Cyclotrons	R. Beurtey and R. Maillard and J. Thirion	179	181	179-181
+C-008	Heavy Ion Injection for Stripping in the Central Region of the {CEVIL}	C. Bieth and A. Cabrespine and Ch. Goldstein	182	190	182-190
+C-009	Study of Axial Injection for the {Grenoble} Cyclotron	J. L. Belmont and J. L. Pabot	191	193	191-193
+D-001	Progress Report on the 500-{MeV} Isochronous Cyclotron Meson Factory of {ETH Zurich}	J. P. Blaser and H. A. Willax	194	214	194-214
+D-002	Development and Prospects for the Application of Meson Factories	V. P. Dmitrievsky and V. P. Dzhelepov and V. V. Kolga and B. I. Zamolodchikov	215	219	215-219
+D-003	Synchrocyclotron Conversion	K. R. MacKenzie	220	226	220-226
+D-004	Proposal for a Sector-Focusing Synchro-Cyclotron	S. Kullander and S. Holm and B. Johansson and A. Tidriks	227	234	227-234
+D-005	Modification Studies for the Berkeley 184-Inch Cyclotron	D. J. Clark and H. Kim and K. R. MacKenzie and J. T. Vale	235	239	235-239
+D-006	The {Nevis} Synchrocyclotron Conversion Project	R. Cohen	240	243	240-243
+D-007	Possible Improvements to the {Carnegie Institute of Technology} Synchro-Cyclotron	M. H. Foss	244	246	244-246
+D-008	A Strong Focusing Ring, as Beam Stretcher for Synchro-Cyclotrons	G. Brianti and P. Skarek	247	254	247-254
+D-009	On the Design of {AVF} Cyclotrons Above {100 MeV}	R. T. Avery and W. M. Brobeck and Meads, Jr., P. F.	255	261	255-261
+E-001	An {H⁻} Meson Facility	E. W. Vogt and J. R. Richardson	262	276	262-276
+E-002	Los Alamos Meson Factory: Present Status and Future Plans	D. C. Hagerman	277	279	277-279
+E-003	The Omnitron: A Versatile Medium-Energy Synchrotron for the Acceleration of Light and Heavy Ions	A. Ghiorso and R. M. Main and B. H. Smith	280	287	280-287
+E-004	The Separated-Orbit Cyclotron	J. A. Martin	288	299	288-299
+E-005	Research Possibilities with an Intense Neutron Generator	G. A. Bartholomew	300	308	300-308
+E-006	The {Super-SOC}	F. M. Russell	309	312	309-312
+F-001	Influence of Cyclotron Beam Properties on Experiments	H. E. Conzett	313	317	313-317
+F-002	Research with {AVF} Cyclotrons in {Europe}	H. Schopper	318	325	318-325
+F-003	Research with {AVF} Cyclotrons in the {USA}	R. H. Bassel	326	339	326-339
+F-004	The {ORIC} High - Resolution Spectograph Facility	J. B. Ball	340	343	340-343
+F-005	Ion Optical Studies of Extraction Transport and Analysis Systems for 240-{cm} Cyclotron	V. N. Barkovsky and Ju. G. Basargin and R. N. Litunovsky and O. A. Minjaev and A. V. Popov and A. V. Stepanov	344	348	344-348
+F-006	The {²⁷Al(p,α)²⁴Mg} Reaction Studied with a {30 MeV} {AVF} Cyclotron	L. W. Put and J. D. A. Roeders and van der Woude, A. and H. L. Hagedoorn and P. Kramer	349	352	349-352
+F-007	A Novel Deflection-Bunching System at the {Karlsruhe} Isochronous Cyclotron Used with a Neutron Time-of-Flight-Spectrometer	S. Cierjacks and B. Duelli and L. Kropp and M. Lösel and H. Schweickert and H. Unseld	353	359	353-359
+F-008	Automatic Control of the Trim-Coil Power Supplies at the {Berkeley} 88-Inch Cyclotron	D. R. Struthers	360	363	360-363
+F-009	Machine Development at the {Berkeley} 88-Inch Cyclotron	R. Burger and D. J. Clark and E. Close and H. Kim	364	370	364-370
+G-001	Survey of Isochronous Cyclotron Technology	H. A. Grunder	371	379	371-379
+G-002	Experiments on Ion Acceleration at 685-{mm} Sector Cyclotron	V. N. Barkovsky and V. Vasiljev and R. N. Litunovsky and O. A. Minjaev and V. Nikolaev and A. V. Stepanov and A. Fjodorov	380	382	380-382
+G-003	Acceleration of {H⁻} Ions and Extracted Beam Measurements in the {Milan} Cyclotron	E. Acerbi and G. Dutto and G. Strini and C. Succi and G. Tagliaferri and M. Castiglioni and F. Resmini	383	386	383-386
+G-004	Operation of the {Orsay CEVIL} and Its Extraction Systems	M. P. Bourgarel and C. Bieth and A. Cabrespine and P. Debray and E. Martin	387	393	387-393
+G-005	Control of the {Michigan State University} Cyclotron	R. E. Berg and H. G. Blosser and M. M. Gordon	394	400	394-400
+G-006	Unique Features of the {Texas} {A&M} Variable Energy Cyclotron	W. A. McFarlin and Goerz, Jr., D. J.	401	410	401-410
+G-007	Conversion of {Kazakhstan} Cyclotron to a Variable Energy Isochronous Cyclotron	L. M. Nemenov and A. A. Arzumanov and P. A. Bersenev	411	414	411-414
+Z-001	Closing Remarks	D. L. Judd and R. S. Livingston	415	416	415-416

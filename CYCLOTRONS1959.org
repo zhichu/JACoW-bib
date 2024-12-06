@@ -1,0 +1,158 @@
+#+title: CYCLOTRONS’59
+#+venue: Sea Island, Georgia, USA
+#+eventdate: 1959-02-02/1959-02-04
+#+eventtitle: Conference on Sector-Focused Cyclotrons
+#+shorteventtitle: CYC’59
+#+booktitle: Proceedings of an Informal Conference on Sector-Focused Cyclotrons
+#+isobooktitle: Proc. Informal Conf. Sect.-Focus. Cyclotr.
+#+shortbooktitle: Proc. CYC’59
+
+
+[[file:all-jacow-events.org][All JACoW Events]]
+
+
+
+#+begin_src bibtex 
+  @proceedings{JACoW:CYC1959:Proc:,
+  eventtitle={Conference on Sector-Focused Cyclotrons},
+  eventtitle+an:short={="CYC’59"},
+  eventdate={1959-02-02/1959-02-04},
+  venue={Sea Island, Georgia, USA},
+  booktitle={Proceedings of an Informal Conference on Sector-Focused Cyclotrons},
+  booktitle+an:ISO= {="Proc. Informal Conf. Sect.-Focus. Cyclotr."},
+  booktitle+an:short={="Proc. CYC’59"},
+  options={dataonly},
+  }
+#+end_src
+so that we can use
+#+begin_src bibtex :tangle no :noweb-ref Proc. CYC1959
+  crossref={JACoW:CYC1959:Proc:},
+#+end_src
+instead of putting the following fields into every single entry:
+#+begin_src bibtex :tangle no :noweb-ref Proc. CYC1959'
+  eventtitle={Conference on Sector-Focused Cyclotrons},
+  eventtitle+an:short={="CYC’59"},
+  eventdate={1959-02-02/1959-02-04},
+  venue={Sea Island, Georgia, USA},
+  booktitle={Proceedings of an Informal Conference on Sector-Focused Cyclotrons},
+  booktitle+an:ISO= {="Proc. Informal Conf. Sect.-Focus. Cyclotr."},
+  booktitle+an:short={="Proc. CYC’59"},
+#+end_src
+
+We can also use =@xdata= type for the proceedings and set =xdata= (instead of =crossref=).
+
+* Export
+
+
+#+begin_src emacs-lisp :eval t
+  (let ((org-time-stamp-custom-formats
+         '("<%Y-%m-%d>" . "%Y-%m-%d %a %H:%M"))
+        (org-display-custom-times 't))
+    (org-table-map-tables
+     (lambda ()
+       (org-table-export
+        (concat "./csv/" (file-name-base) (org-entry-get (point) "TAGS") ".tsv")
+        "orgtbl-to-tsv"))))
+#+end_src
+
+#+RESULTS:
+: Mapping tables: done
+
+
+* Table
+
+** Event :event:
+
+|------------+--------------------------------------------------------------------+---------------------|
+| key        | value                                                              | short               |
+|------------+--------------------------------------------------------------------+---------------------|
+| eventtitle | Conference on Sector-Focused Cyclotrons                            | CYCLOTRONS’59       |
+| eventdate  | <1959-02-02>--<1959-02-04>                                       |                     |
+| venue      | Sea Island, Georgia, USA                                           |                     |
+| booktitle  | Proceedings of an Informal Conference on Sector-Focused Cyclotrons | Proc. CYCLOTRONS’59 |
+|------------+--------------------------------------------------------------------+---------------------|
+#+TBLFM: @2$3='(cadar (org-collect-keywords '("TITLE")))::@5$3='(concat "Proc. " (cadar (org-collect-keywords '("TITLE"))))
+
+** Sessions :session:
+
+
+|-----+--------------------------------------------------------------------------------------------------------|
+| I   | Orbit Calculations and Magnetic Field Design                                                           |
+| II  | Realization of Required Field Configurations and Model Magnet Work                                     |
+| III | Radio Frequency Systems                                                                                |
+| IV  | Beam Quality                                                                                           |
+| V   | Beam Extraction                                                                                        |
+| VI  | External Focusing Systems, Instrumentation, Operational Experience and Summary of Outstanding Problems |
+|-----+--------------------------------------------------------------------------------------------------------|
+
+** Paper :inproceedings:
+
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|
+| ﻿eid      | title                                                                                                | author                    |   pages |
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|
+| CYC59A01 | Session {I} Summary                                                                                  | D. L. Judd                |     1-3 |
+| CYC59A02 | Session {I} Introductory Comments                                                                    | D. L. Judd                |     4-6 |
+| CYC59A03 | A Simplified Approach                                                                                | J. R. Richardson          |    7-11 |
+| CYC59A04 | The {University of Birmingham} Radial-Ridge Cyclotron                                                | W. B. Powell              |   12-14 |
+| CYC59A05 | Selection of Magnet Configuration for the {ORIC}                                                     | B. L. Cohen               |   15-17 |
+| CYC59A06 | Spiral Ridge Studies at the {University of Florida}                                                  | N. M. King                |   18-23 |
+| CYC59A07 | General Discussion {A}                                                                               | D. L. Judd                |   24-28 |
+| CYC59A08 | Design and Performance of a 12-{MeV} Isochronous Cyclotron                                           | F. A. Heyn and T. K. Khoe |   29-39 |
+| CYC59A09 | Calculating Orbit Properties of {F-F} Cyclotrons                                                     | G. Parzen                 |   40-44 |
+| CYC59A10 | Orbit Studies Related to the {Berkeley} 88-Inch Cyclotron                                            | L. Smith                  |   45-47 |
+| CYC59A11 | Computer Codes for Cyclotron Orbit Calculations                                                      | T. A. Welton              |   48-54 |
+| CYC59A12 | Digital Computer Programs at {MURA}                                                                  | K. R. Symon               |   55-56 |
+| CYC59A13 | General Discussion {B}                                                                               | D. L. Judd                |   57-58 |
+| CYC59A14 | Orbit Calculations for {MSU} Cyclotron                                                               | H. G. Blosser             |   59-65 |
+| CYC59A15 | Orbit Stability in Three- and Four-Sector Cyclotrons                                                 | M. M. Gordon              |   66-72 |
+| CYC59A16 | Orbit Dynamics for a Four-Spiral-Sector Cyclotron                                                    | K. M. Terwilliger         |   73-75 |
+| CYC59A17 | Central Orbits in the Cyclotron                                                                      | D. A. Lind                |   76-78 |
+| CYC59A18 | A Method of Computing for Nearly Periodic Orbits                                                     | L. H. Thomas              |   79-80 |
+| CYC59A19 | General Discussion {C}                                                                               | D. L. Judd                |   81-84 |
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|
+| CYC59B01 | Session II Summary                                                                                   | E. L. Kelly               |   85-86 |
+| CYC59B02 | Session {II} Introductory Comments                                                                   | E. L. Kelly               |   87-88 |
+| CYC59B03 | The {University of Illinois} Spiral-Ridge Cyclotron                                                  | J. S. Allen               |   89-96 |
+| CYC59B04 | A 4-{MeV} Spiral-Ridge Cyclotron                                                                     | M. Snowden                |  97-103 |
+| CYC59B05 | {Oak Ridge} Model Magnet Studies                                                                     | E. D. Hudson              | 104-109 |
+| CYC59B06 | The {Berkeley} 88-Inch Cyclotron Magnet                                                              | C. G. Dols                | 110-120 |
+| CYC59B07 | Adjustment of Trimming-Coil Currents                                                                 | H. G. Blosser             | 121-124 |
+| CYC59B08 | Model Magnet Work at {NRDL}                                                                          | H. A. Howe                | 125-129 |
+| CYC59B09 | The {UCLA} 50-{MeV} Spiral-Ridge Cyclotron                                                           | B. T. Wright              | 130-134 |
+| CYC59B10 | A Spiral-Ridge Electron Model Cyclotron                                                              | D. L. Lafferty            | 135-140 |
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|
+| CYC59C01 | Session {III} Summary                                                                                | J. R. Richardson          |     141 |
+| CYC59C02 | Session {III} Introductory Comments                                                                  | J. R. Richardson          |     142 |
+| CYC59C03 | The Dee-in-Valley Radio-Frequency System at {UCLA}                                                   | K. R. MacKenzie           | 143-149 |
+| CYC59C04 | Preliminary Design of the {R-F} System for {ORIC}                                                    | R. E. Worsham             | 150-158 |
+| CYC59C05 | Survey of {R-F} Techniques Applicable to Variable-Energy Cyclotrons                                  | B. H. Smith               | 159-166 |
+| CYC59C06 | The {R-F} System for the {University of Colorado} 52-Inch Cyclotron                                  | W. R. Smythe              | 167-170 |
+| CYC59C07 | Variable Frequency in the {Los Alamos} Cyclotron                                                     | K. Boyer                  | 171-173 |
+| CYC59C08 | The {R-F} System of the Variable-Energy Cyclotron at the {University of Rochester}                   | H. W. Fulbright           | 174-178 |
+| CYC59C09 | A Proposal for Varying the Frequency of a Fixed-Frequency Cyclotron                                  | J. R. Rees                | 179-180 |
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|
+| CYC59D01 | Session {IV} Summary                                                                                 | R. S. Livingston          |     181 |
+| CYC59D02 | Session {IV} Introductory Comments                                                                   | R. S. Livingston          |     182 |
+| CYC59D03 | Beam Defining Slits and Focusing Grids Near the Ion Source                                           | W. I. B. Smith            | 183-191 |
+| CYC59D04 | Factors Affecting Beam Quality                                                                       | T. A. Welton              | 192-198 |
+| CYC59D05 | The Influence of Regenerative Extraction on the Energy Spread                                        | N. F. Verster             | 199-202 |
+| CYC59D06 | Beam Quality Measurements and Focusing Grid Studies                                                  | H. G. Blosser             | 203-207 |
+| CYC59D07 | {Livermore} Cyclotron Beam Features                                                                  | C. J. Taylor              | 208-210 |
+| CYC59D08 | Ion Source and Beam Quality Studies                                                                  | R. J. Jones               | 211-215 |
+| CYC59D09 | Beam Quality for Nuclear Scattering and Reaction Studies                                             | F. H. Schmidt             | 216-219 |
+| CYC59D10 | Beam Quality and Operational Experience with the {University of Rochester} Variable-Energy Cyclotron | W. P. Alford              | 220-222 |
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|
+| CYC59E01 | Session {V} Introductory Comments                                                                    | T. A. Welton              |     223 |
+| CYC59E02 | Regenerative Beam Extraction from the 150-{MeV} Synchrocyclotron at the {Laboratoire Curie}          | N. F. Verster             | 224-229 |
+| CYC59E03 | Beam Extraction in the {Livermore} Cyclotron                                                         | J. M. Peterson            | 230-233 |
+| CYC59E04 | Beam Deflection with the Aid of a Nonlinear Resonance                                                | M. M. Gordon              | 234-240 |
+| CYC59E05 | Beam Deflection Systems                                                                              | H. G. Blosser             | 241-245 |
+| CYC59E06 | Beam Extraction Studies for the {ORIC}                                                               | R. H. Bassel              | 246-250 |
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|
+| CYC59F01 | Some Observations on Cyclotron Shielding                                                             | B. J. Moyer               | 251-256 |
+| CYC59F02 | External Beam Focusing System                                                                        | F. H. Schmidt             | 257-261 |
+| CYC59F03 | Operation of the {Los Alamos} Variable-Energy Cyclotron                                              | K. Boyer                  | 262-265 |
+| CYC59F04 | External Beam Focusing System — {Argonne} 60-Inch Cyclotron                                         | W. J. Ramler              | 266-269 |
+| CYC59F05 | Beam Facilities Planned for the {ORIC}                                                               | R. S. Bender              | 270-271 |
+| CYC59F06 | Multi-Purpose Magnetic Particle Analyzer                                                             | A. I. Yavin               | 272-288 |
+|----------+------------------------------------------------------------------------------------------------------+---------------------------+---------|

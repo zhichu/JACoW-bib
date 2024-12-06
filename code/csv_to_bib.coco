@@ -1,0 +1,54 @@
+from pandas import read_table
+from re import compile as regex
+from __constants__ import *
+from os.path import isfile
+from event_list import get_update_list
+
+data_only = {'key':'options', 'value':'dataonly'}
+
+csv_to_dicts =  .tolist() ∘ .apply(⇒ _.dropna().to_dict(),axis=1) ∘ read_table$(dtype=str)
+find_dates = r'<([\d-]*)>' ↦ regex  ↦ .findall
+to_iso8061 = (⇒ _ ↦ find_dates ↦ (x ⇒ f'{x[0]}/{x[-1]}'))
+is_date = r'^.*date$' ↦ regex  ↦ .search
+get_special = r'([%&])' ↦ regex
+to_TeX = get_special.sub$(r'\\\1')
+def key_value_short_to_strs(k,v,s) =
+    (if k ↦ is_date then [f'{k} = {{{v ↦ to_iso8061}}}'] else [f'{k} = {{{v ↦ to_TeX}}}']) + (if s then [f'{k}+an:short = {{="{s ↦ to_TeX}"}}'] else [])
+indent = ('  '+.)
+dont_show = (.+[data_only])
+proc_ref = (⇒ f'JACoW:{_}:')
+def add_label_to_list(x,y) = [x] + y
+format_fld = (.+',\n')
+str_to_proc = (⇒ f'@proceedings{{{_}}}\n\n')
+def exclude_keys(ks,d) = {k: d[k] for k in d.keys() - ks}
+simple_key_val = (⇒f'{_[0]} = {{{_[1] ↦ to_TeX}}}')
+paper_dict_to_label = to_TeX ∘ reduce$(+) ∘ lift$(,)(.get('crossref') , .get('eid'))
+str_to_inproc = (⇒ f'@inproceedings{{{_}}}\n\n')
+crossref = (⇒ {'crossref': (_ ↦ proc_ref)})
+str_to_unpub = (⇒ f'@unpublished{{{_}}}\n\n')
+def write_str_to_bib(bib_str,ev):
+    with open(f'{bib_dir}/{ev}.bib','w') as f:
+        bib_str ↦ f.write
+    f'{ev}.bib generated' ↦ print
+
+ev_dict_to_strs = (⇒ _ ↦ lift$(,)(.get('key') , .get('value') , .get('short')) *↦ key_value_short_to_strs ↦ fmap$indent)
+ev_to_fields = (⇒ f'{csv_dir}/{_}:event:.tsv' ↦ csv_to_dicts ↦ dont_show ↦ fmap$ev_dict_to_strs ↦ reduce$(+))
+ev_to_labeled_fields = (⇒ _ ↦ lift(,)(proc_ref , ev_to_fields) *↦ add_label_to_list)
+labeled_fields_to_str = ''.join ∘ fmap$format_fld
+ev_to_proc = str_to_proc ∘ labeled_fields_to_str ∘ ev_to_labeled_fields
+
+paper_dict_to_fields = (⇒ _ ↦ exclude_keys$({'firstpage','lastpage'}) ↦ .items() ↦ list ↦ fmap$(indent ∘ simple_key_val))
+paper_dict_to_labeled_fields = (⇒ _ ↦ lift(,)(paper_dict_to_label , paper_dict_to_fields) *↦ add_label_to_list)
+paper_dict_to_inproc = str_to_inproc ∘ labeled_fields_to_str ∘ paper_dict_to_labeled_fields
+ev_to_inproc_lists = (⇒ f'{csv_dir}/{_}:inproceedings:.tsv' ↦ csv_to_dicts ↦ fmap$(paper_dict_to_inproc ∘ (.|(_↦crossref))))
+ev_to_inprocs = ''.join ∘ ev_to_inproc_lists
+
+paper_dict_to_unpub = str_to_unpub ∘ labeled_fields_to_str ∘ paper_dict_to_labeled_fields
+maybe_file_to_unpub_lists = (⇒ (if _[0] then (_[1] ↦ csv_to_dicts ↦ fmap$(paper_dict_to_unpub ∘ (.|(_↦crossref)))) else []))
+ev_to_unpub_lists = (⇒ f'{csv_dir}/{_} :unpublished:.tsv' ↦ lift$(,)(isfile,ident) ↦ maybe_file_to_unpub_lists)
+ev_to_unpubs = ''.join ∘ ev_to_unpub_lists
+
+ev_to_bib = (⇒ _ ↦ lift$(,)(ev_to_proc , ev_to_inprocs, ev_to_unpubs) ↦ reduce$(+))
+ev_to_bib_file = (⇒ _ ↦ lift$(,)(ev_to_bib , ident) *↦ write_str_to_bib)
+def generate_bib():
+    get_update_list() ↦ fmap$(ident$(side_effect=ev_to_bib_file))

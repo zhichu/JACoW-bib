@@ -1,0 +1,98 @@
+#+title: LINAC’62
+#+venue: Upton, Long Island, New York, USA
+#+eventdate: 1962-08-20/1962-08-24
+
+[[file:all-jacow-events.org][All JACoW Events]]
+
+
+* Export
+
+
+#+begin_src emacs-lisp :eval t
+  (let ((org-time-stamp-custom-formats
+         '("<%Y-%m-%d>" . "%Y-%m-%d %a %H:%M"))
+        (org-display-custom-times 't))
+    (org-table-map-tables
+     (lambda ()
+       (org-table-export
+        (concat "./csv/" (file-name-base) (org-entry-get (point) "TAGS") ".tsv")
+        "orgtbl-to-tsv"))))
+#+end_src
+
+#+RESULTS:
+: Mapping tables: done
+
+
+* Table
+
+** Event :event:
+
+|------------+----------------------------------------------------------+----------------|
+| key        | value                                                    | short          |
+|------------+----------------------------------------------------------+----------------|
+| eventtitle | 1962 Conference on Linear Accelerators for High Energies | LINAC’62       |
+| eventdate  | <1962-08-20>--<1962-08-24>                             |                |
+| venue      | Upton, Long Island, New York, USA                        |                |
+| booktitle  | Minutes of the Linear Accelerator Conference             | Proc. LINAC’62 |
+| editor     | van Steenbergen, A.                                      |                |
+|------------+----------------------------------------------------------+----------------|
+#+TBLFM: @2$3='(cadar (org-collect-keywords '("TITLE")))::@5$3='(concat "Proc. " (cadar (org-collect-keywords '("TITLE"))))
+
+** Sessions :session:
+
+|---+-------------------------------|
+| A | New Linacs and Status Reports |
+| B | Linac Design                  |
+| C | Beam Dynamics                 |
+| D | Linac Technologies            |
+|---+-------------------------------|
+
+
+** Paper :inproceedings:
+
+
+
+|------+--------------------------------------------------------------------------------------------+--------------------------------+---------|
+| ﻿eid  | title                                                                                      | author                         |   pages |
+|------+--------------------------------------------------------------------------------------------+--------------------------------+---------|
+| A-01 | The New {Bevatron} Injector                                                                | L. Smith                       |     1-6 |
+| A-02 | The {ZGS} Injector                                                                         | R. Perry                       |    7-18 |
+| A-03 | The {P.L.A.} of the {Rutherford Laboratory}                                                | K. Batchelor                   |   19-37 |
+| A-04 | The {Nimrod} Injector                                                                      | N. D. West                     |   38-49 |
+|------+--------------------------------------------------------------------------------------------+--------------------------------+---------|
+| B-01 | Design of Drift Tube Linacs                                                                | G. W. Wheeler                  |   50-64 |
+| B-02 | Phase Oscillation and Transverse Focusing                                                  | S. Ohnuma                      |   65-75 |
+| B-03 | Design of Drift Tube Linacs                                                                | D. Young                       |   76-97 |
+| B-04 | The {Yale} Design Study of Linear Accelerators                                             | V. W. Hughes                   |  98-100 |
+| B-05 | Secondary Beams from a High Energy Linac                                                   | W. A. Blanpied                 | 101-109 |
+| B-06 | Shielding and Experimental Layout                                                          | H. B. Knowles                  | 110-123 |
+| B-07 | Feasibility Study of a π Meson Linear Accelerator                                          | R. L. Gluckstern               | 124-127 |
+| B-08 | Design of Long Iris-Loaded Linacs                                                          | R. B. Neal                     | 128-161 |
+| B-09 | Phase and Radial Motion in Linacs                                                          | R. B. Robertson-Shersby-Harvie | 162-170 |
+| B-10 | Some Thoughts on Low-Velocity Traveling Waves                                              | E. D. Courant                  | 171-173 |
+| B-11 | Design of Long Iris-Loaded Linacs                                                          | K. Batchelor                   | 174-183 |
+| B-12 | Superconducting Linacs                                                                     | K. Batchelor                   | 184-195 |
+| B-13 | Superconducting Linacs                                                                     | R. B. Neal                     | 196-203 |
+| B-14 | Some Remarks on Superconducting Linacs                                                     | L. C. Teng                     | 204-205 |
+| B-15 | Some Thoughts Related to Cryogenic Linacs                                                  | R. Perry                       | 206-208 |
+|------+--------------------------------------------------------------------------------------------+--------------------------------+---------|
+| C-01 | The Stepped Phase Velocity Linear Accelerator                                              | H. B. Knowles                  | 209-223 |
+| C-02 | Stepped Phase Velocity Linacs                                                              | L. Smith                       | 224-234 |
+| C-03 | Beam Observations in the {P.L.A.}                                                          | K. Batchelor                   | 235-260 |
+| C-04 | Bunchers                                                                                   | J. P. Blewett                  | 261-266 |
+| C-05 | Debunchers                                                                                 | K. Johnsen                     | 267-273 |
+| C-06 | Linac Focusing                                                                             | L. Smith                       | 274-282 |
+| C-07 | Beam Loading                                                                               | F. E. Mills                    | 283-288 |
+|------+--------------------------------------------------------------------------------------------+--------------------------------+---------|
+| D-01 | A Study of Possible {Deuteron} Acceleration                                                | E. D. Courant                  | 289-293 |
+| D-02 | An Achromatic Beam Transport System                                                        | D. A. Swenson                  | 294-302 |
+| D-03 | {RF} Power Developments                                                                    | G. W. Wheeler                  | 303-305 |
+| D-04 | {RF} Power Sources                                                                         | M. V. Hoover                   | 306-317 |
+| D-05 | The {ZGS} Injector Vacuum System                                                           | R. Perry                       | 318-322 |
+| D-06 | Ion Source Developments                                                                    | R. Perry                       | 323-334 |
+| D-07 | Polarized Proton Source Development                                                        | R. P. Featherstone             | 335-337 |
+| D-08 | {AGS} Preinjector Beam Emittance Area and Emittance Area Density Distribution Measurements | van Steenbergen, A.            | 338-380 |
+| D-09 | Drift Tube Alignment Experience on the {AGS} Linac Injector                                | I. J. Polk                     | 381-385 |
+|------+--------------------------------------------------------------------------------------------+--------------------------------+---------|
+
+

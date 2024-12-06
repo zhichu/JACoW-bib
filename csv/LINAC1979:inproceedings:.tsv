@@ -1,0 +1,92 @@
+﻿eid	title	author	firstpage	lastpage	pages
+S1-1	Applications of Linear Accelerators	J. P. Blewett	1	4	1-4
+S1-2	Design Study of the {Beijing} {200 MeV} Proton Linac	S.-H. Wang and Y.-J. Chang and T.-H. Lo and Y.-H. Lo	5	7	5-7
+S1-3	The Photon Factory {2.5 GeV} Injector Electron Linac	J. Tanaka and S. Anami and A. Enomoto and S. Fukuda and K. Matsumoto and K. Nakahara and I. Sato and T. Shidara	8	12	8-12
+S1-4	The Linac for the {National Synchrotron Light Source}	K. Batchelor and J. Bittner and T. Dickinson and V. Racaniello and J. Sheehan	13	16	13-16
+S1-5	The {UNILAC} Upgrading Program	N. Angert and D. Böhne and J. Klabunde and H. Trautmann	17	20	17-20
+S1-6	The {Fusion Materials Irradiation Test (FMIT)} Accelerator	E. L. Kemp and D. J. Liska and M. D. Machalek	21	24	21-24
+S1-7	A High-Energy Beam Transport System	K. E. Melson and J. A. Farrell and D. J. Liska and P. Meads	25	27	25-27
+S1-8	Status of the Variable Frequency Heavy Ion Linac, {RILAC}	M. Odera and Y. Chiba and T. Kambara	28	31	28-31
+S1-9	Accelerating Structure Parameters of the {New England Nuclear Corp. Proton Linac}	D. Comastra	32	36	32-36
+S1-10	Linac Efficiency and Beam Qualities in p, d, {³\llap{₂}He} and {⁴\llap{₂}He} Acceleration	J.-P. Auclair and P.-A. Chamouard and J.-L. Lemaire	37	42	37-42
+S1-11	Limitations and Improvements of Heavy Ion Acceleration with a 20-{MeV} Proton Linac	J.-P. Auclair and P.-A. Chamouard and J.-L. Lemaire	43	46	43-46
+S1-12	Plans for {H⁻} Acceleration in the {AGS} Linac	D. S. Barton and R. L. Witkover	47	52	47-52
+S1-13	{RF} Linac-Pumped Lasers	W. E. Stein and C. A. Brau and T. R. Loree and S. D. Rockwood	53	56	53-56
+S1-14	{LASL} Electron Linac Workshop	W. E. Stein	57	60	57-60
+S2-1	High-Current Heavy-Ion Linacs as Igniters for Commercial-Scale Inertial Fusion Power Plants	D. L. Judd	61	65	61-65
+S2-2	The New {CERN} 50-{MeV} Linac	E. Boltezar and H. Haseroth and W. Pirkl and G. Plass and T. Sherwood and U. Tallgren and P. Têtu and D. J. Warner and M. Weiss	66	77	66-77
+S2-3	{LAMPF} Operations at {500 μA}	D. C. Hagerman	78	82	78-82
+S2-4	Operation of the Brookhaven 200-{MeV} Linac	N. M. Fewell and V. LoDestro	83	87	83-87
+S2-5	The Rutherford Laboratory 70-{MeV} Linear Accelerator	N. D. West	88	93	88-93
+S2-6	Status of the {KEK} Injector Linac	S. Anami and H. Baba and S. Fukumoto and K. Ito and T. Kakuyama and C. Kubota and Y. Mori and T. Sakaue and I. Sato and A. Takagi and S. Takano and T. Takenaka and J. Tanaka	94	97	94-97
+S2-7	Status Report on the {UNILAC}	D. Böhne	98	103	98-103
+S2-8	Status of the {Argonne} Superconducting-Linac Heavy-Ion Booster	J. Aron and B. Benaroya and L. M. Bollinger and B. G. Clifft and W. Henning and K. W. Johnson and P. Markovich and J. M. Nixon and K. W. Shepard	104	108	104-108
+S2-9	Operation of the {Heidelberg} Heavy-Ion Post-Accelerator	H. Ingwersen and B. Huck and E. Jaeschke and B. Kolb and R. Repnow and Th. Walcher	109	113	109-113
+S2-10	Operation of the {Karlsruhe} Superconducting Post Accelerator Test Section in the {Saclay} Tandem Heavy Ion Beam	K. W. Zieher and G. Hochschild and A. Hornung and J. P. Fouan and J. Gastebois and P. Joly	114	117	114-117
+S2-11	Precision Beam Formation in {2 GeV} Linear Accelerator of Electrons	V. I. Artyomov and V. A. Vishnyakov and A. N. Dovbnya and N. A. Kovalenko	118	121	118-121
+S2-12	A 5-{MeV} Electron Linac with High Energy Resolution	Yu. P. Vakhrushin and V. M. Nikolaev and A. V. Rjactsov and Yu. P. Severgin and V. L. Smirnov and Yu. A. Svistunov	122	128	122-128
+S3-1	Low-Beta Linac Structures	D. A. Swenson	129	137	129-137
+S3-2	An {RF} Power Manifold for the Radio Frequency Quadrupole Linear Accelerator	J. M. Potter	138	143	138-143
+S3-3	Voltage Breakdown Testing for the Radio-Frequency Quadrupole Accelerator	S. W. Williams and F. J. Humphry and J. M. Potter and G. W. Rodenz	144	147	144-147
+S3-4	Work on {RF} Quadrupole Focusing Structiures at {GSI}	R. W. Müller	148	151	148-151
+S3-5	The Design of a 12.5-{MHz} Wideröe Linac for Ion Beam Fusion	A. Moretti and R. J. Burke and J. A. Bywater and S. Jorna and T. K. Khoe and R. J. Lari and J. S. Moenich and R. J. Stockley and J. M. Watson	152	158	152-158
+S3-6	A Heavy Ion Post-Accelerator with Coupled Spiral and Split-Ring Resonators	A. Schempp and W. Caspar and H. Klein and G. Lotterbach and E. Müller and W. Rohrbach	159	163	159-163
+S3-7	High-Beta Linac Structures	S. O. Schriber	164	175	164-175
+S3-8	Limitations of the Disk-and-Washer Structure	S. O. Schriber and J. M. Potter	176	179	176-179
+S3-9	Beam Loading Experiments with a Side-Coupled Structure	G. E. McMichael and J. McKeown and J. S. Fraser	180	183	180-183
+S3-10	Detuning Effect in a Traveling Wave Type Linac	S. Arai and K. Kobayashi and E. Tojyo and K. Yoshida	184	189	184-189
+S3-11	Particle Acceleration with {TE₀₁₁} Cavity	Z. D. Farkas	190	193	190-193
+S3-12	{C}-band Superconducting Cavity Research at {KEK}	T. Furuya and K. Hosoyama and T. Kato and Y. Kojima and O. Konno	194	196	194-196
+S3-13	Modelling of Biperiodic Slow-wave Structures	V. L. Bukharin and A. Y. Novozhilov and O. V. Plink and V. K. Shilov and E. J. Shkolnikov and N. P. Sobenin and V. V. Stepnov	197	204	197-204
+S4-1	{RF} Quadrupole Beam Dynamics Design Studies	K. R. Crandall and R. H. Stokes and T. P. Wangler	205	216	205-216
+S4-2	Influence of Space Charge on Axial Particle Motion in Heavy Ion Linacs	P. Junior and H. Deitinghoff and H. Klein	217	222	217-222
+S4-3	Longitudinal Current Limit in a Linac Accelerating Cell	J. G. Kalnins	223	226	223-226
+S4-4	The Significance of Beam Optics Concepts as Applied to the New {CERN} Linac	M. Weiss	227	230	227-230
+S4-5	On Emittance Growth in Linear Accelerators	R. A. Jameson and R. S. Mills	231	237	231-237
+S4-6	A Statistical Approach to the Estimation of Beam Spill	G. P. Boicourt and R. A. Jameson	238	241	238-241
+S4-7	General Least-Squares Fitting Procedures to Minimize the Volume of a Hyperellipsoid	E. A. Wadlinger	242	244	242-244
+S4-8	Focusing of High Current Beams in Continuously Rotated Quadrupole Systems	R. L. Gluckstern	245	248	245-248
+S4-9	Linear Accelerators with Intertank Focusing	B. Franczak and K. Blasche and B. Franzke	249	252	249-252
+S4-10	Beam Dynamics in a Proton Linear Accelerator for a Neutron Spallation Source	K. Mittag	253	256	253-256
+S4-11	A Phase Adjusted Focusing Laser Accelerator	P. Huanwu and Z. Jiejia	257	261	257-261
+S4-12	Simultaneous Beams of Different Energy from {LAMPF}	G. R. Swain and D. C. Hagerman	262	268	262-268
+S5-1	A Microcomputer Control System for the {Superhilac} Third Injector	H. D. Lancaster and L. J. Besse and M. P. Fahmie and J. Glatz and S. R. Keith and S. B. Magyary and A. L. Ritchie and F. B. Selph and G. R. Stover	269	273	269-273
+S5-2	A Distributed Linac Control System Featuring {SDLC} Loop Communication	R. W. Goodwin and M. F. Shea	274	278	274-278
+S5-3	Distributed Control System for the {FMIT}	J. A. Johnson and D. R. Machen and R. M. Suyama	279	282	279-282
+S5-4	{LAMPF} First-Fault Identifier for Fast Transient Faults	A. R Swanson and R. E. Hill	283	285	283-285
+S5-5	Computer Controlled Formation of the 750-{keV} Accelerator Column on the New {CERN} 50-{MeV} Linac	H. Haseroth	286	290	286-290
+S5-6	Longitudinal and Transverse Beam Optimization at the {UNILAC}	L. Dahl and J. Klabunde and P. Strehl and V. Schaa	291	296	291-296
+S5-7	Measurements of Energy, Energy Spread and Bunch Width at the {UNILAC}	J. Klabunde and V. Schaa and E. Schaffner and P. Strehl and H. Vilhjalmsson and D. Wilms	297	303	297-303
+S5-8	Calibration During Installation and During Initial Operation of the {CERN} {50 MeV} Linac	D. J. Warner	304	308	304-308
+S5-9	New Linac Three Phase Planes Pulsed Emitttance Measurement	P. Têtu	309	313	309-313
+S5-10	Beam Tomography in Two and Four Dimensions	O. R. Sander and D. D. Chamberlin and R. A. Jameson and G. N. Minerbo	314	318	314-318
+S5-11	Single Bunch Acceleration and Detection in {S}-band Electron Linear Accelerator	J. Tanaka and S. Anami and S. Fukuda and H. Matsumoto and I. Sato and K. Kobayashi and Y. Tabata and S. Tagawa and M. Washio	319	326	319-326
+S6-1	{RF} Sources Developments	J. V. Lebacqz	327	335	327-335
+S6-2	Recent Developments in High Power Vacuum Tube Technology	J. R. Faulkner	336	339	336-339
+S6-3	{New England Nuclear Linac} {RF} Power System	R. F. Lankshear	340	343	340-343
+S6-4	The {RF}-System of the {CERN} “New Linac”	J. Cuperus and F. James and W. Pirkl	344	347	344-347
+S6-5	Recent Improvements of the Accelerator Components at the {UNILAC}	D. Böhne and H. Emmerling and A. Gasper	348	355	348-355
+S6-6	Developments of the {RF} System for the {Fusion Materials Irradiation Test Accelerator}	M. V. Fazio and H. P. Johnson and D. M. Riggin	356	359	356-359
+S6-7	Conditioning Experiments on the {100 %} Duty Factor {3 MeV} {Alvarez} Linac	B. G. Chidley and J. C. Brown and J. Ungrin	360	363	360-363
+S6-8	{200 MHz} Fast Phase Shifters and Phase Detection for a Ramping Energy	J.-P. Auclair and P.-A. Chamouard and J.-L. Lemaire	364	366	364-366
+S6-9	High Power Isolator for the {KEK} Proton Linac	S. Anami and H. Baba and S. Fukumoto and K. Ito and C. Kubota and Y. Mori and T. Sakaue and T. Takenaka and J. Tanaka and K. Shinohara	367	372	367-372
+S7-1	The Drift Tube and Beam Line Quadrupole Permanent Magnets for the {NEN} Proton Linac	R. F. Holsinger	373	379	373-379
+S7-2	Tipless Permanent Magnet Quadrupole Lenses	N. V. Lazarev and S. Skachkov	380	383	380-383
+S7-3	Mechanical Aspects of the {New England Nuclear Linac}	R. Damm and J. Aggus and G. Greenberg	384	387	384-387
+S7-4	Cavity and Drift Tube Technology for the Upgraded {UNILAC}	D. Böhne and H. Gaiser and E. Malwitz	388	391	388-391
+S7-5	Mechanical Design of {CERN} New Linac Accelerating Structure	E. Boltezar	392	395	392-395
+S7-6	Modular Design Aspects of the {FMIT} Drift-Tube Linac	D. J. Liska and D. Clark and T. Cole and W. Coops and K. Creek and W. Fox and J. A. Frank and P. Giles and D. Greenwood and H. Norman and C. Potter and R. G. Schamaun	396	400	396-400
+S7-7	Mechanical Design Considerations in {FMIT} {RFQ} Development	C. W. Fuller and J. M. Potter and S. W. Williams	401	408	401-408
+S8-1	Recent Progress in Ion Sources and Pre-Accelerators	D. J. Clark	409	419	409-419
+S8-2	Tests with a Multidipole Ion Source on the {CERN} {500 keV} Experimental Pre-Accelerator	J. Grando and H. Haseroth and C. Hill and M. Hone	420	423	420-423
+S8-3	Development of a High Brightness Ion Source	A. J. T. Holmes and H. Inman	424	427	424-427
+S8-4	Properties of {H⁻} and {D⁻} Beams from Magnetron and Penning Sources	Th. Sluyters and V. Kovarik	428	431	428-431
+S8-5	The {EBIS} as an Injector for Heavy-ion Linacs	R. W. Hamm	432	435	432-435
+S8-6	Development of High Current Heavy Ion Sources at {GSI}	R. Keller and N. Angert	436	439	436-439
+S8-7	New Method for Positron Production at {SLAC}	B. Aune and R. H. Miller	440	443	440-443
+S8-8	The Compensation for Beam Loading on the Preinjector of the New {CERN} 50-{MeV} Linac	H. Haseroth and M. Hone and J. L. Vallet	444	447	444-447
+S8-9	Design Criteria for High Voltage, High Current Accelerating Columns	J. D. Hepburn and B. G. Chidley and M. R. Shubaly and J. Ungrin	448	452	448-452
+S8-10	Ion Source and Transport System for {BNL-HIF} Pre-Accelerator	G. M. Gammel and E. F. Meier and R. M. Mobley	453	456	453-456
+S8-11	Development of a High-Current Deuteron Injector for the {FMIT} Facility	J. D. Schneider and D. D. Armstrong and L. L. Catlin and E. A. Meyer and H. L. Rutkowski and B. A. Sherwood	457	461	457-461
+S8-12	Pre-Accelerator for the {NEN} Linac	R. F. Bentley	462	464	462-464
+S8-13	Injector Operations at {LAMPF}	R. R. Stevens Jr. and E. P. Chamberlin and R. W. Hamm and J. R. McConnell and R. L. York	465	468	465-468
