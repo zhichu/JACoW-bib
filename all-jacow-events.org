@@ -10,9 +10,141 @@ They are basically the same. The only difference would be to add a different dat
 - =\addbibresource[location=remote,type=file]{https://gitlab.com/jacow.org/jacow-events/-/raw/main/bib/CYCLOTRONS1959-this-conference.bib}=
 - =\addbibresource[location=remote,type=file]{https://gitlab.com/jacow.org/jacow-events/-/raw/main/bib/CYCLOTRONS1959.bib}=
 
+** Synchronise to Github
+
+*** Initialise
+#+begin_src shell
+  git init
+#+end_src
+
+#+RESULTS:
+: Initialized empty Git repository in /Users/zhichu/project/JACoW/template/latex3/events/.git/
+
+*** Add all files and make a commit
+#+begin_src shell :wrap example :results raw
+  git add .
+  git commit -m "update"
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[master c540009] update
+ 2 files changed, 201 insertions(+), 50 deletions(-)
+#+end_example
+
+Of course, do not include Emacs backup files:
+#+begin_src gitignore :tangle .gitignore
+  \#*\#
+  .\#*
+  .DS_Store
+  *~
+  __pycache__/
+  __coconut_cache__/
+#+end_src
+
+*** Switch to main branch
+
+#+begin_src shell :wrap example :results raw
+  git branch -M master
+#+end_src
+
+#+RESULTS:
+#+begin_example
+#+end_example
+
+*** Check log
+#+begin_src shell :wrap example :results raw
+  git log | tail -f
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Author: ℤhichu ℂhen <1871526+zhichu@users.noreply.github.com>
+Date:   Fri Dec 6 20:06:48 2024 +0800
+
+    update
+
+commit 1d705c548ddc0d6b91064cc8bb3d67d12d6594f6
+Author: ℤhichu ℂhen <1871526+zhichu@users.noreply.github.com>
+Date:   Fri Dec 6 20:01:00 2024 +0800
+
+    update
+#+end_example
 
 
 
+*** Add origin
+
+#+begin_src shell :wrap example :results raw
+  git remote add origin https://github.com/zhichu/JACoW-bib.git
+#+end_src
+
+#+RESULTS:
+#+begin_example
+#+end_example
+
+*** Link ssh-key
+:PROPERTIES:
+:header-args:shell: :wrap example :results raw
+:END:
+
+Generate in a terminal:
+#+begin_src shell :eval no
+  ssh-keygen -t ed25519 -C "zhichuchen@icloud.com"
+#+end_src
+
+
+#+begin_src shell 
+  ls -lA ~/.ssh
+#+end_src
+
+#+RESULTS:
+#+begin_example
+total 68
+-rw-r--r-- 1 zhichu staff   720 Jun 20  2023 config
+-rw------- 1 zhichu staff   668 Dec  4  2017 id_dsa
+-rw-r--r-- 1 zhichu staff   608 Dec  4  2017 id_dsa.pub
+-rw------- 1 zhichu staff   227 Dec  4  2017 id_ecdsa
+-rw-r--r-- 1 zhichu staff   180 Dec  4  2017 id_ecdsa.pub
+-rw------- 1 zhichu staff   411 Dec  6 20:42 id_ed25519
+-rw-r--r-- 1 zhichu staff   103 Dec  6 20:42 id_ed25519.pub
+-rw------- 1 zhichu staff  1843 Nov 15  2019 id_rsa
+-rw-r--r-- 1 zhichu staff   414 Nov 15  2019 id_rsa.pub
+-rw------- 1 zhichu staff 15950 Jul  2 07:31 known_hosts
+-rw------- 1 zhichu staff 15775 Jul  2 07:31 known_hosts.old
+#+end_example
+
+#+begin_src shell 
+  cat ~/.ssh/id_ed25519.pub
+#+end_src
+
+#+RESULTS:
+#+begin_example
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFpS1R4c+2h+/uatDvHK12ElxqxDTvgdcNfJISu6WDfZ zhichu@Zhichus-MacBook-Pro.local
+#+end_example
+
+#+begin_src shell :wrap example :results raw
+  gh ssh-key add ~/.ssh/id_ed25519.pub --type signing
+#+end_src
+
+#+RESULTS:
+#+begin_example
+#+end_example
+
+*** Push changes
+
+#+begin_src shell
+  git push -u origin master
+#+end_src
+
+#+RESULTS:
+#+begin_example
+#+end_example
+
+Since I’m using VPN, my network is not great. I need to lower the MTU or
+#+begin_src shell
+  git config --global http.postBuffer 157286400
+#+end_src
 ** Topology
 
 Each event will have a corresponding =org= file. The information will be put in tables. Use =<Ctrl>-c <Tab>= to hide other columns if the table is too wide.
@@ -616,7 +748,7 @@ Either run the above code block or run the following shell script
 
 #+RESULTS:
 #+begin_example
-CYCLOTRONS1959  CYCLOTRONS1963  CYCLOTRONS1966  CYCLOTRONS1969  CYCLOTRONS1972  CYCLOTRONS1975  CYCLOTRONS1978  CYCLOTRONS1981  CYCLOTRONS1984  CYCLOTRONS1986  LINAC1961       LINAC1962       LINAC1963       LINAC1964       LINAC1966       LINAC1968       LINAC1970       LINAC1972       LINAC1976       LINAC1979       LINAC1981       LINAC1984       LINAC1986       PAC1965         PAC1967         PAC1969         PAC1971         PAC1973         PAC1975         PAC1977         PAC1979         PAC1981         PAC1983         PAC1985         SRF1980         SRF1984         
+CYCLOTRONS1959  CYCLOTRONS1963  CYCLOTRONS1966  CYCLOTRONS1969  CYCLOTRONS1972  CYCLOTRONS1975  CYCLOTRONS1978  CYCLOTRONS1981  CYCLOTRONS1984  CYCLOTRONS1986  EPAC1988        LINAC1961       LINAC1962       LINAC1963       LINAC1964       LINAC1966       LINAC1968       LINAC1970       LINAC1972       LINAC1976       LINAC1979       LINAC1981       LINAC1984       LINAC1986       LINAC1988       PAC1965         PAC1967         PAC1969         PAC1971         PAC1973         PAC1975         PAC1977         PAC1979         PAC1981         PAC1983         PAC1985         PAC1987         SRF1980         SRF1984         SRF1987         
 #+end_example
 
 #+begin_src shell :dir code :results raw replace output :wrap example
@@ -625,7 +757,10 @@ CYCLOTRONS1959  CYCLOTRONS1963  CYCLOTRONS1966  CYCLOTRONS1969  CYCLOTRONS1972  
 
 #+RESULTS:
 #+begin_example
-SRF1984.bib generated
+EPAC1988.bib generated
+LINAC1988.bib generated
+PAC1987.bib generated
+SRF1987.bib generated
 #+end_example
 
 
@@ -670,11 +805,11 @@ SRF1984.bib generated
 | SRF        | <1984-07-23>--<1984-07-27> | Geneva, Switzerland                        | 1984 | [[file:SRF1984.org][SRF’84]]        |      |
 | PAC        | <1985-03-13>--<1985-03-16> | Vancouver, BC, Canada                      | 1985 | [[file:PAC1985.org][PAC’85]]        |      |
 | LINAC      | <1986-06-02>--<1986-06-06> | Stanford, California, USA                  | 1986 | [[file:LINAC1986.org][LINAC’86]]      |      |
-| CYCLOTRONS | <1986-10-13>--<1986-10-17> | Tokyo, Japan                               | 1986 | [[file:CYCLOTRONS1986.org][CYCLOTRONS’86]] | *?*    |
-| PAC        | <1987-03-16>--<1987-03-19> | Washington D.C., USA                       | 1987 | [[file:PAC1987.org][PAC’87]]        | *?*    |
-| SRF        | <1987-09-14>--<1987-09-18> | Argonne National Laboratory, Illinois, USA | 1987 | [[file:SRF1987.org][SRF’87]]        | *?*    |
-| EPAC       | <1988-06-07>--<1988-06-11> | Rome, Italy                                | 1988 | [[file:EPAC1988.org][EPAC’88]]       | *?*    |
-| LINAC      | <1988-10-03>--<1988-10-07> | Newport News, Virginia, USA                | 1988 | [[file:LINAC1988.org][LINAC’88]]      | *?*    |
+| CYCLOTRONS | <1986-10-13>--<1986-10-17> | Tokyo, Japan                               | 1986 | [[file:CYCLOTRONS1986.org][CYCLOTRONS’86]] |      |
+| PAC        | <1987-03-16>--<1987-03-19> | Washington D.C., USA                       | 1987 | [[file:PAC1987.org][PAC’87]]        |      |
+| SRF        | <1987-09-14>--<1987-09-18> | Argonne National Laboratory, Illinois, USA | 1987 | [[file:SRF1987.org][SRF’87]]        |      |
+| EPAC       | <1988-06-07>--<1988-06-11> | Rome, Italy                                | 1988 | [[file:EPAC1988.org][EPAC’88]]       |      |
+| LINAC      | <1988-10-03>--<1988-10-07> | Newport News, Virginia, USA                | 1988 | [[file:LINAC1988.org][LINAC’88]]      |      |
 | PAC        | <1989-03-20>--<1989-03-23> | Chicago, IL, USA                           | 1989 | [[file:PAC1989.org][PAC’89]]        | *?*    |
 | CYCLOTRONS | <1989-05-08>--<1989-05-12> | Berlin, Germany                            | 1989 | [[file:CYCLOTRONS1989.org][CYCLOTRONS’89]] | *?*    |
 | SRF        | <1989-08-14>--<1989-08-18> | KEK, Tsukuba, Japan                        | 1989 | [[file:SRF1989.org][SRF’89]]        | *?*    |

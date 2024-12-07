@@ -1,0 +1,481 @@
+eid	title	author	firstpage	lastpage	pages
+0003	The {LEP} Project	E. Picasso	3	6	3-6
+0007	The {HERA}-Project	G.-A. Voss	7	10	7-10
+0011	Continuous Beam Electron Accelerators	H. Herminghaus	11	16	11-16
+0017	Synchrotron Radiation Light Sources	J. L. Laclare	17	21	17-21
+0022	Highlights from {Japan} - {Tristan} and Post-{Tristan} Accelerators	Y. Kimura	22	28	22-28
+0029	Superconducting {RF} Cavities for Accelerator Application	D. Proch	29	36	29-36
+0037	Preparation of Niobium Coated Copper Superconducting {RF} Cavities for the Large Electron Positron Collider	C. Benvenuti and D. Bloess and E. Chiaveri and N. Hilleret and M. Minestrini and W. Weingarten	37	39	37-39
+0040	Microwave Properties of the New High $T_c$ Superconductors and their Possible Application for Accelerator Cavities	G. Müller and M. Hein and N. Klein and H. Piel and L. Ponto	40	42	40-42
+0043	Electron Beam Profile, Positron Systems and Measurements on the Daresbury {SRS}	J. S. MacKay	43	45	43-45
+0046	Commissioning of {Super-ACO}	E. M. Sommer and J. C. Besson and P. Certain and A. Daël and A. Damany and P. Juan and A. Labéque and M. P. Level and P. C. Marin and J. Michaut and C. Monet-Descombey and P. Nghiem and R. Souchet and H. Zyngier	46	48	46-48
+0049	A Flavour Factory and Nuclear Physics Facility Based on Superconducting Linacs	U. Amaldi and D. C. Fiander and P. Sievers and J. Bisognano and I. E. Campisi and N. Cavallo and M. Bassetti and C. Biscari and R. Boni and M. Castellano and U. Gambardella and E. Gianfelice and S. Guiducci and S. Kulinski and G. Modestino and P. Patteri and M. A. Preger and M. Serio and B. Spataro and F. Tazzioli and G. Coignet and L. Palumbo and S. Tazzari and D. M. Ritson	49	51	49-51
+0052	The Linear Superconducting Accelerator Project {LISA}	A. Aragona and C. Biscari and R. Boni and M. Castellano and A. Cattoni and V. Chimenti and S. De Simone and G. Di Pirro and S. Faini and U. Gambardella and A. Ghigo and S. Guiducci and S. Kulinski and L. Maritato and G. Modestino and P. Patteri and M. Preger and C. Sanelli and M. Serio and B. Spataro and S. Tazzari and F. Tazzioli and L. Trasatti and M. Vescovi and N. Cavallo and F. Cevenini	52	54	52-54
+0055	The Transient Wake Field Transformer Experiment	W. Bialowons and M. Bieler and H. -D. Bremer and F. -J. Decker and H. -C. Lewin and P. Schütt and G. -A. Voss and R. Wanzenberg and T. Weiland	55	60	55-60
+0061	Ion Accelerators and Storage Rings	N. Angert	61	64	61-64
+0065	Review of {Spallation Neutron Sources}	I. S. K. Gardner	65	69	65-69
+0070	Meson Factories	F. Bradamante	70	74	70-74
+0075	Pulsed High-Power Beams	L. L. Reginato and D. L. Birx	75	77	75-77
+0078	Space Charge Dominated, Low $v/c$ Accelerators	A. Schempp	78	82	78-82
+0083	Sources and Accelerators for Polarized Ions: A Review	J. Arvieux	83	87	83-87
+0088	Sources of Highly Charged Ions	R. Geller	88	92	88-92
+0093	The Development of High Current Singly Charged Ion Sources	A. J. T. Holmes	93	100	93-100
+0101	{RF} Power Sources	M. Allen	101	108	101-108
+0109	The Relativistic Heavy Ion Collider at B{rookhaven}	H. Hahn	109	111	109-111
+0112	{ASTRID}, A Storage Ring for Ions and Electrons	S. P. Møller	112	114	112-114
+0115	Description and Commissioning of {MIMAS}, Booster Storage Ring for Heavy and Polarized Ions	P. A. Chamouard and M. Olivier and G. Rommel and A. Tkatchenko	115	117	115-117
+0118	Performance of {MBE-4}, An Experimental Multiple Beam Induction Linear Accelerator for Heavy Ions	A. I. Warwick and T. J. Fessenden and D. Keefe and C. H. Kim and H. Meuth	118	120	118-120
+0121	Relativistic Klystron Research for High Gradient Accelerators	M. A. Allen and R. S. Callin and H. Deruyter and K. R. Eppley and W. R. Fowkes and W. B. Herrmannsfeldt and T. Higo and H. A. Hoag and T. L. Lavine and T. G. Lee and G. A. Loew and R. H. Miller and P. L. Morton and R. B. Palmer and J. M. Paterson and R. D. Ruth and H. D. Schwarz and Y. Takeuchi and A. E. Vlieks and J. W Wang and P. B. Wilson and D. B. Hopkins and A. M. Sessler and W. A. Barletta and D. L. Birx and J. K. Boyd and T. Houck and G. A. Westenskow and S. S. Yu	121	126	121-126
+0127	Polarized Beams at {PSI}	P. A. Schmelzbach and M. Daum and S. Jaccard and T. Stammbach	127	129	127-129
+0130	Acceleration and Bunch Formation with Two Coupled {RFQ}’s	P. Leipe and H. Deitinghoff and H. Klein and K. Langbein and A. Schempp	130	132	130-132
+0133	A Mega Watt Electron Positron Conversion Target - A Conceptual Design	P. Sievers and M. Höfert	133	138	133-138
+0139	New {e⁻} Sources Switched by Laser Beams	M. Boussoukaya	139	143	139-143
+0144	{Free Electron Lasers}	A. Renieri	144	147	144-147
+0148	{B}-Factories	K. Wille	148	152	148-152
+0153	Accelerators for Radiotherapy	Y. Jongen	153	157	153-157
+0158	Accelerators in Industrial Applications	K. Bethge	158	165	158-165
+0166	Superconducting Cyclotrons	E. Acerbi	166	170	166-170
+0171	Brief Review of the Development of Electrostatic Accelerators and Continuing Work at {Strasbourg}	M. Letournel	171	174	171-174
+0175	Current Status of {BEPC}	S. X. Fang	175	180	175-180
+0181	Beam Diagnostic Techniques, Observations and Comparison with Theory	A. Hofmann	181	188	181-188
+0189	Industrial Applications of Heavy Ions Beams at {GANIL}	C. Bieth and D. Busardo and M. Van Den Bossche and P. Pierrard and E. Balanzat and J. Meslage	189	191	189-191
+0192	Optimization of Cancer Treatment with Accelerator Produced Radiations	W. Pohlit	192	194	192-194
+0195	The Renormalized Theory of Beam-Beam Interaction	Y. H. Chin	195	197	195-197
+0198	Antoher Look at Coherent Longitudinal Instabilities of Bunched Beams	G. H. Rees	198	200	198-200
+0201	Perspectives of Ultracold and Crystalline Ion Beams Cooled by Electrons	I. Hofmann and S. Cocher and J. Struckmeier	201	203	201-203
+0204	Results from Electron Cooling Experiments at {LEAR}	A. Wolf and S. Baird and J. Bosser and M. Chanel and M. Girardini and H. Haseroth and C. E. Hill and P. Lefévre and R. Ley and D. Möhl and D. Manglunki and G. Molinari and A. Poncet and G. Tranquille and J.-L. Vallet and C Habfast and J. Stein and L. Hütten and H. Poth and W. Schwab and B. Seligmann and M. Wörtge and P. Dittner	204	206	204-206
+0207	Effects of Ions in the {Sincrotrone Trieste}	C. J. Bocchetta and A. Wrulich	207	209	207-209
+0210	The Trieste Synchrotron Light Source {ELETTRA}	A. Wrulich	210	214	210-214
+0215	The {CERN} {pp̄} Facility	E. Jones	215	217	215-217
+0218	The {Large Hadron Collider} in the {LEP} Tunnel	G. Brianti	218	222	218-222
+0223	The {Tevatron}: Status and Outlook	G. Dugan	223	227	223-227
+0228	Brief Comments on Nonlinear Dynamics Studies in Storage Rings	A. W. Chao	228	232	228-232
+0233	The {IHEP} Accelerating and Storage Complex — Status and Development	A. I. Ageev and V. N. Alferov and A. D. Artemov and V. I. Balbekov and A. F. Dunaitsev and Yu. S. Fedotov and V. I. Gridasov and G. G. Gurov and V. V. Komarov and O. V. Kurnayev and V. N. Lebedev and A. A. Logunov and K. P. Myznikov and V. G. Rogozinsky and L. D. Soloviev and I. I. Sulygin and N. M. Tarakanov and V. A. Yarba and V. V. Yelistratov and E. L. Makeev and V. L. Rozhkov and A. A. Vasiliev and G. P. Vorontsov and G. A. Gusev and B. G. Karasev and M. N. Kosyakin and I. F. Malyshev and I. V. Mozin and A. V. Nikiforovsky and V. I. Peregud and O. B. Senchenko and P. V. Smirnov and V. A. Titov and S. N. Vasiliev and A. D. Artemov	233	236	233-236
+0237	The {SSC} Project	J. Peoples	237	241	237-241
+0242	The Progress of Low Energy Particle Accelerators in {China}	C. Chen and W. Zhao	242	248	242-248
+0249	Energy Production with Accelerators	R. Bock	249	256	249-256
+0257	A High-Brightness Photo-Injector for a {Free Electron Laser} Proposal	S. Joly and Cl. Bonetti and F. Cocu and J. P. De Brion and R. Dei-Cas and J. Frehaut and G. Haouat and A. Herscovici and H. Leboutet and J. Sigaud	257	259	257-259
+0260	Plasma Lens Work at {UCLA}	T. C. Katsouleas and J. M. Dawson and J. J. Su	260	262	260-262
+0263	Large Cylindrical Lenses with Solid and Liquid Lithium	B. F. Bayanov and A. D. Chernyakin and Yu. N. Petrov and G. I. Silvestrov and T. V. Sokolova	263	265	263-265
+0266	Dynamic Aperture Measurements at the {Tevatron}	J. M. Peterson and A. W. Chao and D. E. Johnson and S. G. Peggs and C. G. Saltmarsh and L. C. Schachinger and R. M. Talman and D. A. Edwards and D. Finley and N. M. Gelfand and R. E. Gerig and M. Harrison and R. P. Johnson and N. Merminga and M. Syphers and P. L. Morton	266	268	266-268
+0269	Towards a Slow Extraction System for the {TRIUMF} Kaon Factory Extender Ring with {0.1 %} Losses	U. Wienands and R. V. Servranckx	269	271	269-271
+0272	Tuning the Arcs of the {SLAC Linear Collider}	T. Fieguth and P. Bambade and T. Barklow and K. L. Brown and F. Bulos and D. L. Burke and G. E. Fischer and J. Haïssinski and A. Hutton and C. Jung and S. A. Kheifets and S. Komamiya and T. Mattison and J. J. Murray and N. Phinney and M. Placidi and D. M. Ritson and M. Sands and J. C. Sheppard and W. Spence and N. Toge and A. Weinstein	272	274	272-274
+0275	Beam Phase Space Determination at 50 GeV in the SLC Linac	J. T. Seeman and C. Adolphsen	275	278	275-278
+0279	Status and Future of the {3D} {Mafia} Group of Codes	F. Ebeling and R. Klatt and F. Krawzcyk and E. Lawinsky and T. Weiland and S. G. Wipf and B. Steffen and T. Barts and J. Browman and R. K. Cooper and G. Rodenz	279	284	279-284
+0285	Linear Collider Studies in {Europe}	W. Schnell	285	289	285-289
+0290	The ‘Future’ in High-Energy Physics	C. Rubbia	290	302	290-302
+0303	Peculiarities of the {IHEP} Accelerator Complex Operation with the Fast-Cycling Booster	Yu. M. Ado and A. D. Ermolaev and A. S. Gurevich and O. P. Lebedev and E. A. Myae and P. T. Pashkov and A. V. Smirnov and V. I. Stolpovsky and E. F. Troyanov	303	304	303-304
+0305	The Prospects of Improvemnt and Development of Accelerator Installations at {Yerevan Physics Institute}	A. Ts. Amatuni and A. S. Alexanyan and R. O. Avakyan and A. Z. Babayan and H. V. Badalyan and A. I. Baryshev and H. L. Bayatyan and K. Sh. Egiyan and I. P. Karabekov and E. M. Laziev and H. A. Martirossyan and S. G. Matinyan and H. G. Mkrtchyan and V. Ts. Nikogossyan and H. G. Oxuzyan and M. L. Petrossyan and K. A. Sadoyan and Kh. A. Simonyan and V. I. Tsakanov and A. R. Tumanyan and L. A. Vardanyan and H. H. Vartapetyan	305	307	305-307
+0308	The {CERN} Antiproton Collector Ring	B. Autin and M. Battiaz and M. Bell and R. Billinge and J. Boucheron and G. Carron and F. Caspers and V. Chohan and J. Gruber and W. Hardt and M. Harold and H. Horisberger and C. D. Johnson and E. Jones and H. Koziol and P. Krejcik and M. Legras and R. Maccaferri and H. F. Malthouse and P. Marchand and M. Martini and S. Maury and K. Metzmacher and S. Milner and M. Paoluzzi and P. Pearce and F. Pedersen and B. Pincott and W. Pirkl and A. Poncet and L. Rinolfi and L. Sermeus and T. R. Sherwood and G. Suberlucq and A. H. Sullivan and A. Susini and L. Thorndahl and H. H. Umstätter and J. Vlogaert and N. Walker and D. J. Williams and E. J. N. Wilson and C. Zettler and van der Meer, S. and S. X. Fang and Z. Y. Guo	308	310	308-310
+0311	Initial Design of a $ϕ$ Factory	J. I. M. Botman and H. L. Hagedoorn and van Middelkoop, G. and F. C. Erné and W. Hoogland and G. Luijckx and R. Maas	311	313	311-313
+0314	{CLIO}: {Free Electron Laser} in {Orsay}	J. C. Bourdon and R. Belbéoch and P. Brunet and Y. Dabin and Enomoto and A. and B. Mouton and J. P. Perrine and E. Plouviez and R. Pointal and M. Renard and M. Roch and J. Rodier and P. Roudier and Y. Thiéry and P. Bourgeois and P. Carlos and J. Fagot and J. L. Fallou and C. Hézard and J. C. Malglaive and D. T. Tran and M. Bergher and R. Chaput and A. Dael and J. M. Ortéga and Y. Pétroff and M. Velghe	314	316	314-316
+0317	Upgrade {JULIC} as Injector for {COSY-JÜLICH}	W. Bräutigam and H. G. Böge and H. Beuscher and R. Brings and P Wucherer	317	319	317-319
+0320	Recent Developments on the {TRIUMF} KAON Factory Proposal	M. K. Craddock and R. Baartman and R. Burge and T. Enegren and S. Koscielniak and R. E. Laxdal and G. H. Mackenzie and R. L. Poirier and K. Reiniger and R. V. Servranckx and T. Suzuki and U. Wienands and M. Zach	320	322	320-322
+0323	Progress Report on the {Milan} Superconducting Cyclotron	E. Acerbi and F. Alessandria and G. Baccaglioni and G. Bellomo and C. Birattari and A. Bosotti and F. Broggi and G. Cortesi and C. De Martinis and E. Fabrici and A. Ferrari and D. Giove and A. Giussani and W. Giussani and P. Michelato and C. Pagani and G. Rivoltella and L. Rossi and L. Serafini and A. Sussetto and V. Torri and G. Varisco and L. Kai and G. Cuttone and G. Raia	323	325	323-325
+0326	The Upgrading of the {TRIUMF} Facility to {500 μA} Operation	G. Dutto and R. Baartman and E. W. Blackmore and D. A. Dohan and K. R. Kendall and R. Laxdal and G. H. Mackenzie and A. Otter and P. W. Schmor and R. Worsham and M. Zach	326	328	326-328
+0329	Commissioning of the {SPS} as {LEP} Injector	K. Cornelis and R. Schmidt	329	331	329-331
+0332	General Description of the {ESRF} Injector System	J. M. Filhol and P. Berkvens and J. F. Bouteille	332	334	332-334
+0335	The Superconducting {130 MeV} Electron Accelerator at {Darmstadt}	V. Aab and K. Alrutz-Ziemssen and R. Amend and D. Flasche and H.-D. Gräf and V. Huck and K. D. Hummel and M. Knirsch and F. Lindqvist and W. Lotz and A. Richter and T. Rietdorf and U. Schaaf and S. Simrock and E. Spamer and A. Stiller and O. Titze and H. Weise and W. Ziegler and H. Heinrichs and H. Piel and J. Pouryamout	335	338	335-338
+0339	Status Report on the Superconducting Cyclotron {AGOR}	S. Gales	339	341	339-341
+0342	Injector {AVF} Cyclotron at {RIKEN}	A. Goto	342	344	342-344
+0345	Heavy Ion Cyclotrons Development at {JINR}	G. G. Gulbekyan	345	346	345-346
+0347	Diagnostics and Commissioning Progress on {ISIS}	M. R. Harold and R. G. Bendall and A. I. Borden and I. S. K. Gardner and M. A. Clarke-Gayther and C W. Planner and G. H. Rees and N. D. West	347	349	347-349
+0350	{CRYRING} - A Heavy-Ion Storage and Synchrotron Ring	C. J. Herrlander and K. -G. Rensfelt and J. Starker	350	352	350-352
+0353	Initial Operation of the Reconstructed {Uppsala} Synchrocyclotron	S. Holm and P.-U. Renberg	353	355	353-355
+0356	{ELSA} — The Continuous Beam Accelerator at {Bonn}	D. Husmann and K. H. Althoff and A. Dreist and H. Ebeling and O. Kaul and C. Lippert and M. Neckenig and H. -D. Nuhn and W. Schauerte and M. Schillo and F. J. Schittko and C. Wermelskirchen and von Drachenfels, W.	356	358	356-358
+0359	The {LBL} {Advanced Light Source}	A. Jackson and S. Chattopadhyay and R. Keller and C. Kim and H. Nishimura and F. Selph and M. Zisman	359	361	359-361
+0362	The {MIT-BATES} South Hall Ring	K. D. Jacobs and R. D. Biron and J. B. Flanz and E. Ihloff and S. Kowalski and Z. Radouch and T. Russ and A. Saab and W. W. Sapp and C. Williamson and A. Zolfaghari and J. Zumbro	362	364	362-364
+0365	The {Heidelberg} Test Storage ring for Heavy Ions {TSR}	E. Jaeschke and W. Arnold and G. Bisoffi and M. Blum and A. Friedrich and C. Geyer and M. Grieser and D. Habs and H. W. Heyng and B. Holzer and R. Ihde and M. Jung and D. Krämer and K. Matl and R. Neumann and A. Noda and W. Ott and B. Povh and R. Repnow and F. Schmitt and M. Steck and E. Steffens	365	367	365-367
+0368	The τ-CHARM Factory Storage Ring	J. M. Jowett	368	370	368-370
+0371	Four Years of Operation of the {180 MeV} {CW} Electron Accelerator {MAMI A}	K. -H. Kaiser and H. Herminghaus and R. Herr and H. J. Kreidel and J. Müller and H. Mussel	371	373	371-373
+0374	{STA} {SR} Project	H. Kamitsubo and S. H. Be and M. Hara and R. Nagaoka and S. Sasaki and T. Wada	374	376	374-376
+0377	{EURAC}: A Concept for a {EURopean ACcelerator} Neutron Source	W. Kley and G. R. Bishop and A. Sinha and J. M. Perlado	377	379	377-379
+0380	The Dedicated Synchrotron Radiation Source	V. V. Anashin and N. G. Gavrilov and E. S. Gluskin and E. I. Gorniker and B. A. Gudkov and A. S. Kalinin and V. N. Korchuganov and G. N. Kulipanov and E. A. Kuper and G. Ya. Kurkin and V. S. Kuzminykh and S. N. Kuznetsov and E. B. Levichev and Yu. G. Matvejev and A. S. Medvedko and V. N. Osipov and V. E. Panchenko and S. P. Petrov and V. M. Petrov and A. N. Skrinsky and Yu. F. Tokarev and E. M. Trakhtenberg and V. A. Ushakov and A. G. Valentinov and V. G. Veshcherevich and P. D. Vobly and V. I. Yukhlin and N. I. Zubkov	380	382	380-382
+0383	The {Strasbourg} Project. A {35 MV} {Vivitron} Tandem	M. Letournel	383	385	383-385
+0386	Status Report on the {LEP Pre-Injector (LPI)} and the {Proton Synchrotron (PS)} as a {e⁺e⁻} Accelerator	J. H. B. Madsen and S. Battisti and D. Blechschmidt and R. Cappi and J. P. Delahaye and B. Frammery and K. Hübner and A. Krusche and H. Kugler and A. Poncet and J. P. Potier and A. Riche and J. P. Riunaud and D. J. Warner	386	388	386-388
+0389	The Bypass Project at {DORIS II}	W. Brefeld and H. Nesemann and J. Robach	389	391	389-391
+0392	Performance of the {CERN} Antiproton Accumulator Complex	B. Autin and G. Carron and F. Caspers and V. Chohan and C. D. Johnson and E. Jones and H. Koziol and P. Krejcik and Le Dallic, G. and M. Martini and S. Maury and C. Metzger and F. Pedersen and L. Rinolfi and J. C. Schnuriger and T. R. Sherwood and C. S. Taylor and L. Thorndahl and N. Walker and E. J. N. Wilson and van der Meer, S.	392	394	392-394
+0395	The Use of the {Fermilab} Antiproton Accumulator in Medium Energy Physics Experiments	V. Bharadwaj and M. Church and E. Harms and S. Y. Hsueh and W. Kells and J. MacLachlan and W. Marsh and J. McCarthy and J. Peoples and D. Peterson and X. Q. Wang and N. Pastrone	395	397	395-397
+0398	Status of the Project {COSY} {Jülich}	U. Pfister	398	400	398-400
+0401	{Bratislave} Multipurpose Neutron Source	J. Pivarc and S. Hlavác	401	403	401-403
+0404	The {Fermilab} Antiproton Source: Recent Performance and Improvements	P. A. Rapidis and L. Bartoszek and V. K. Bharadwaj and G. Dugan and M. Gormley and J. Hangst and D. J. Harding and S. Y. Hsueh and W. Kells and J. Marriner and R. Pasquinelli and R. Peters and D. Peterson and J. Petter and S. Mtingwa	404	406	404-406
+0407	Performance of {ISIS} at {Julic}	J. Reich and H. Beuscher and W. Bräutigam and P Wucherer and H. L. Hagedoorn	407	409	407-409
+0410	Status of the {Celsius} Project	D. Reistad	410	412	410-412
+0413	Project of Small-Dimensional {200 MeV} Proton Synchrotron	I. I. Averbukh and A. D. Cherniakin and L. L. Danilov and M. M. Karliner and V. N. Karusyuk and V. N. Marusov and G. I. Silvestrov and V. G. Volokhov and T. A. Vsevolozhskaya	413	415	413-415
+0416	Status of the {AGS} Upgrade Project	Th. Sluyters	416	417	416-417
+0418	Performance of the {Daresbury} {SRS} with an Increased Brilliance Optic	V. P. Suller and J. N. Corlett and D. M. Dykes and E. A. Hughes and J. S. MacKay and M. W. Poole and P. D. Quinn and S. L. Thompson and R. P. Walker	418	420	418-420
+0421	The {ALPI} Project at the {Laboratori Nazionali Di Legnaro}	G. Bassato and G. P. Buso and F. Cervellera and A. Dainelli and A. Facco and P. Favaron and G. Fortuna and J. D. Larson and V. Palmieri and R. Pengo and A. M. Porcellato and K. Rudolph and B. Tiveron and I. Ben-Zvi and J. S. Sokolowski	421	423	421-423
+0424	{TRITRON} — A Superconducting Cyclotron with Separated Orbits	T. Grundey and W. Assmann and U. Buhl and L. Dietl and G. Hinderer and C. Riess and L. Rohrer and R. Savoy and U. Trinks	424	426	424-426
+0427	{MEQALAC}, A {1 MeV} Multi-Channel {RF}-Accelerator for Light Ions	W. H. Urbanus and J. G. Bannenberg and R. G. C. Wojke and van Amersfoort, P. W. and H. Klein and A. Schempp and R. W. Thomae and T. Weis	427	429	427-429
+0430	{Felix}: The {Dutch} {Free Electron Laser} for Infrared Experiments	van Amersfoort, P. W. and R. W. B. Best and W. J. Mastop and B. J. H. Meddens and D. Oepts and van der Geer, C. A. J. and van der Meer, A. F. G. and van der Wiel, M. J.	430	432	430-432
+0433	The Near-Infrared {Free-Electron-Laser} Project at {Darmstadt}	V. Aab and K. Alrutz-Ziemssen and H. Genz and H.-D. Gräf and A. Richter and H. Weise and A. Gaupp	433	435	433-435
+0436	Status of the {AGS} Booster Project	W. T. Weng	436	438	436-438
+0439	The Use of {PETRA} as a {B}-Factory	H. Nesemann and W. Schmidt-Parzefall and F. Willeke	439	441	439-441
+0442	Status Report on {RIKEN} Ring Cyclotron	Y. Yano	442	444	442-444
+0445	Design of a Small Storage Ring in {JAERI}	H. Yokomizo and K. Ashida and T. Harada and Y. Harada and T. Harami and H. Hashimoto and M. Iizuka and M. Kabasawa and Y. Kawarasaki and H. Konishi and K. Mashiko and K. Nakayama and M. Ohkubo and S. Sasaki and N. Sasamoto and Y. Suzuki and K. Yamada and K. Yanagida	445	447	445-447
+0448	The Heavy Ion Accelerator Facility {VICKSI}	W. Busse and B. Martin and R. Michaelsen and W. Pelzer and K. Ziegler	448	452	448-452
+0453	Proposal for Racetrack Microtrons as Driver for a {Free Electron Laser} and as Injector for an Electron Storage Ring	J. I. M. Botman and H. L. Hagedoorn and W. J. G. M. Kleeven and Van Der Heide, J. A. and Van Genderen, W. and G. J. Ernst and W. J. Witteman	453	455	453-455
+0456	The Design of Low Emittance Electron Storage Rings	L. N. Hand and S. Lundgren	456	458	456-458
+0459	Recent Advances in Magnetically Driven Induction Linacs	L. L. Reginato and D. L. Birx	459	460	459-460
+0461	Investigations on New Acceleration Schemes in {Dubna}	V. P. Sarantsev	461	463	461-463
+0464	Design of Compact {RFQs}	A. Schempp	464	466	464-466
+0467	Conceptual Design of a Ring Beauty Factory	A. N. Dubrovin and A. N. Skrinsky and G. M. Tumaikin and A. A. Zholents	467	469	467-469
+0470	{Constant-Current Variable-Voltage (CCVV)} Accelerators	O. A. Anderson and W. S. Cooper and C. H. Kim and W. B. Kunkel and C. A. Matuk and P. Purgalis and L. Soroka and R. P. Wells	470	472	470-472
+0473	Linacs with Self-Acceleration of Bunched Beam	B. Y. Bogdanovich and A. V. Shalnov	473	474	473-474
+0475	Finite Plasma Wakefield Accelerator	L. Diakhaté	475	477	475-477
+0478	A Scheme for a Fully Superconducting Electron Injector	M. Jablonka and B. Aune and Ch. Magne	478	480	478-480
+0481	Optics Effects & Options for {TeV} Colliders - {II}	J. E. Spencer and B. Zotter	481	483	481-483
+0484	Multipurpose Air-Core Sperconducting Cyclotrons	K. M. Subotic	484	486	484-486
+0487	Electron Injector Designs for Light Source	D. Tronc and G. Meyrand and A. Setty and D. T. Tran	487	489	487-489
+0490	The Resonant Wake Field Transformer Concept for Particle Acceleration	W. Bialowons and M. Bieler and H. -D. Bremer and F. -J. Decker and H. -Ch. Lewin and P. Schütt and G. -A. Voss and R. Wanzenberg and T. Weiland	490	492	490-492
+0493	A Miniaturized High-Energy Wakefield Accelerator	Y. T. Yan	493	495	493-495
+0496	Charge and Current Neutralization of High-Current Ion Beams	A. V. Agafonov and A. N. Lebedev and D. B. Orlov	496	498	496-498
+0499	A Possible Self-Acceleration of a Relativistic Bunch of Electrons in Plasma	A. Ts. Amatuni and S. S. Elbakian and E. V. Sekhpossian	499	501	499-501
+0502	Focusing Properties of a Plasma Wave	J. L. Bobin	502	504	502-504
+0505	Calculation of Protonium Production Rate from Corotating Beams of {p̄} and {H⁻} in {LEAR}	R. Giannini	505	507	505-507
+0508	General Considerations on a Damping Ring for a {5–10 GeV} Linear Collider	M Bassetti and S. Guiducci and L. Palumbo	508	510	508-510
+0511	First Considerations on Stochastic Cooling in {Cosy} {Jülich}	N. Bongers and B. Dahmen and R. Danzglock and H. U. Hacker and A. Hardt and C. Henkel and K. Henn and M. Köhler and J. Launer and S. A. Martin and K. Nau and O. Ollech and S. Peischard and D. Prasuhn and A. Richert and H. Singer and K. Sobotta and W. Spie and H. Stockhorst and R. Wagner and A. Weinert and D. Weynen	511	513	511-513
+0514	Maximum Beam Currents of Light Ions in {RFQs}	P. Junior and H. Deitinghoff and H. Klein	514	516	514-516
+0517	The {RFQ} as a Neutron Source both for High Intensity and Micropulses	P. Junior	517	519	517-519
+0520	{3D} - Magneto - and Electrostatic Calculations Using {MAFIA-S3}	F. Krawczyk and T. Weiland	520	522	520-522
+0523	Electromagnetic Wave Generation with High Transformation Ratio by Intense Charged Particle Bunches	E. M. Laziev and V. M. Tsakanov and S. S. Vahanyan	523	525	523-525
+0526	A Beam Energy Analysis and Monitoring System for Linear Accelerators	M. J. Lee and C. J. Blanchette and R. Iverson and D. Kleban and J. T. Seeman and M. Stanek and J. L. Turner and B. Zambre and G. S. Abrams and C. E. Adolphsen	526	528	526-528
+0529	Influence on the Sign of an Ion Charge on Friction Force at Electron Cooling	N. S. Dikansky and N. Kh. Kot and V. I. Kudelainen and V. A. Lebedev and V. V. Parkhomchuk and A. A. Seriy and V. D. Shiltsev and A. N. Skrinsky and B. N. Sukhina	529	531	529-531
+0532	Pulsars as Cosmic Ray Accelerators - The Critical Frequency	K. O. Thielheim	532	534	532-534
+0535	Space Charge Neutralization of Modulated Ion Beams	T. Weis and R. Dölling and P. Gross and H. Klein and J. Wiegand	535	537	535-537
+0538	The New {AGS} {H⁻} {RFQ} Preinjector	J. Alessi and J. M. Brennan and J. Brodowski and H. N. Brown and A. Kponou and K. Prelec and R. Witkover and R. Gough and J. Staples	538	540	538-540
+0541	Lear Beam Stability Improvemnts Using {FFT} Analysis	E. Asséo and J. Bengtsson and M. Chanel	541	543	541-543
+0544	{RF} Tuning and Initial {CW} Operation of {RFQ1}	B. G. Chidley and G. M. Arbique and R. M. Hutcheon and G. E. McMichael and J. Y. Sheikh	544	546	544-546
+0547	Status Report on the Initial Cooling Studies in the {IUCF} Cooler	T. J. P. Ellison and D. L. Friesel and T. S. Sloan and O. Dermois	547	549	547-549
+0550	The Injector Linac for the {Mainz} Microtron	H. Euteneuer and H. Braun and H. Herminghaus and R. Klein and H. Schöler and T. Weis	550	552	550-552
+0553	Improvements to the {Fermilab} Main Ring	R. Gerig and S. Mane and S. Pruss and M. Syphers and D. Trbojevic	553	555	553-555
+0556	Luminosity Lifetime in the {Tevatron}	G. P. Jackson and D. Finley and R. P. Johnson and Q. Kerns and J. McCarthy and R. Siemann and P. Zhang	556	558	556-558
+0559	Progress towards {H⁻} Extraction at {TRIUMF}	R. E. Laxdal and G. H. Mackenzie and J. B. Pearson and G. Stinson and R Trellé and R. Worsham and M. Zach	559	561	559-561
+0562	Performance Limitations of {LHC} Low Beta Insertions	B. T. Leemann and W. Scandale	562	564	562-564
+0565	The Beam Slow Extraction From a Magnetic ring Based on Particle-Target Interaction	N. D. Malitsky and Yu. P. Severgin and I. A. Shukeilo	565	567	565-567
+0568	Low Energy Injection in a Compact Synchrotron Radiation Storage Ring	N. Liu and G. Liu and T. Wang	568	569	568-569
+0570	Variation of Longitudinal Beam Position and Profile during Acceleration in {Tristan} Main Ring	K. Nakajima and T. Kageyama and A. Ogata	570	572	570-572
+0573	Low Energy Injection Scheme of Compact Electron Storage Rings	K. Nakayama and Y. Gomei	573	575	573-575
+0576	A Preliminary Study of a Voltage Multiplying Structure for Electron Acceleration	A. Fiebig and G. Nassibian and Ch. Schieblich	576	578	576-578
+0579	Stochastic Precooling of Heavy Fragments in the {ESR}	F. Nolden and D. Böhne and G. Berthes and B. Franzke and A. Schwinn	579	581	579-581
+0582	Commissioning and Operating Experience with the {H⁻} Injection System for the Fast Cycling Synchrotorn of {ISIS}	C. W. Planner and S. C. Broughton and W. R. Evans and V. C. Kempson and V. Pugh and M. L. Yates	582	584	582-584
+0585	Extraction of a Steady State Electron Beam from {HCD} Plasmas for {EBIS} Applications	A. Hershcovitch and V. Kovarik and K. Prelec	585	586	585-586
+0587	Performance of the {DESY} {RFQs}	A. Schempp and M. Ferch and H. Klein and P. Schastok and K. H. Pape and S. H. Wang and H. S. Zhang	587	589	587-589
+0590	{RFQ}-Injector for {CRYRING}	A. Schempp and H. Deitinghoff and H. Klein and C. J. Herrlander and A. Källberg and A. Soltan	590	592	590-592
+0593	Development of an Experimental {RFQ} Accelerator	R. C. Sethi and B. R. Bairi and S. S. Kapoor and V. T. Nimje and P. Junior	593	595	593-595
+0596	Racetrack Microtron - {150 MeV} Injector for Compact {SR} Ring	M. Sugitani	596	598	596-598
+0599	Internal Beam Facilities at {Kharkov} {PSSR}	Yu. N. Telegin and Yu. N. Grigor’ev and I. M. Karnaukhov and V. M. Khvastunov and V. P. Likhachev and S. A. Pashchuk and O. D. Zvonareva	599	601	599-601
+0602	{100 MeV} Electron Linac with the {DAW} Structure as an Injector for the {Siberia-2} Storage Ring	M. M. Karliner and O. A. Nezhevenko and G. N. Ostreiko and B. Z. Persov and S. I. Ruvinsky and G. N. Serdobintsev and E. N. Shaimerdenov and V. G. Vescherevich and V. P. Yackovlev	602	604	602-604
+0605	{30 MeV} {RFQ} Linac Parameters	D. A. Demikhovsky and A. P. Maltsev and E. A. Myae and V. I. Stolpovsky and V. A. Teplyakov and E. F. Troyanov and V. A Zenin and A. V. Zherebtsov	605	606	605-606
+0607	An Experiment to Evaluate the Possiblility of Electron Cooling of Partially Stripped Heavy Ions	R. Becker and E. Jennewein and M. Kleinod and U. Pröbstel and K. Valadkhani and N. Angert and F. Bosch and I. Hofmann and J. Klabunde and P. Mokler and H. Schulte and P. Spädtke and B. Wolf and A. Müller and S. Schennach and W. Spies	607	609	607-609
+0610	Pulse Propagation in {Free Electron Lasers}: The Oscillator Mode and Phase Sensitive Gain Measurements	G. Dattoli and T. Hermsen and D. Jaroszinsky and A. Torre	610	612	610-612
+0613	Measurements of the Hollow Beam at the Wake Field Transformer Experiment at {DESY}	F. -J. Decker and W. Bialowons and M. Bieler and H. -D. Bremer and H. -C. Lewin and P. Schütt and G. -A. Voss and R. Wanzenberg and T. Weiland	613	615	613-615
+0616	Experimental Study of Simultaneous Acceleration of Protons and {H⁻} Ions in the Cyclotron	V. P. Dmitrievsky and A. A. Glazov and V. V. Kolga and L. K. Thanh and A. T. Vasilenko and V. Bejsovec and M. Cihak and M. Krivanek and Z. Treibal and J. Tucek	616	618	616-618
+0619	The Non Linear Dynamic Aperture Experiment in the {SPS}	L. Evans and J. Gareyte and A. Hilaire and W. Scandale and L. Vos	619	621	619-621
+0622	Beam Studies with an Unmodulated {RFQ} Beam Line	N. Zoubek and P. Junior and H. Klein and K. Langbein and A. Schempp	622	626	622-626
+0627	Collective Coupling States in a Quasineutral Ion Beam	A. V. Agafonov and A. N. Lebedev and G. V. Martirosyan and D. B. Orlov	627	628	627-628
+0629	The Particles Scattering on the Hard Part of Synchrotron Radiation in the Accelerators and Storage Rings: The Influence on the Beam Dynamics	S. G. Arutunian	629	630	629-630
+0631	Longitudinal Instability of Bunched Beam Interacting with High-Frequency Impedance	V. I. Balbekov	631	633	631-633
+0634	Bunch Lengthening in the {SLC} Damping Ring	L. Rivkin and K. Bane and P. Chen and W. Gabella and T. Higo and A. Hofmann and S. Kheifets and T. Knight and W. Linebarger and P. Morton and J. Paterson and T. Raubenheimer and R. Ruth and J. Sheppard and W. Spence and J. Spencer and R. Stege and P. Wilson	634	636	634-636
+0637	The Calculated Longitudinal Impedance of the {SLC} Damping Rings	K. L. F. Bane	637	639	637-639
+0640	Polarized Beams in the {European} Hadron Facility	P. Blüm and A. Pisent	640	642	640-642
+0643	Coherent Betatron Instability in the {Tevatron}	S. A. Bogacz and M. Harrison and K. Y. Ng	643	645	643-645
+0646	Coupled Bunch Instability in {Fermilab} Booster - Longitudinal Phase-Space Simulation	S. A. Bogacz and S. Stahl	646	648	646-648
+0649	Analytical Evaluation of Synchrotron Radiation Integrals for Isomagnetic Lattices with Rectangular Dipole Magnets	J. A. Uythoven and J. I. M. Botman and H. L. Hagedoorn	649	650	649-650
+0651	The Beam Emittance of Cyclotrons with an Axial Injection System	J. I. M. Botman and H. L. Hagedoorn and J. Reich	651	653	651-653
+0654	Exhaustive Search of Field Defect Compensation and Reading Errors in {A. G.} Machines	D. Brandt and A. Verdier	654	656	654-656
+0657	Proton Emittance Growth Caused by Electron {rf}-Noise and the Beam-Beam Interaction in {HERA}	R. Brinkmann	657	659	657-659
+0660	{GALOPR}, A Beam Transport Program, with Space-Charge and Bunching	B. Bru	660	662	660-662
+0663	Improving the {Fermilab} Booster Emittance	Y. Chao and J. Crisp and S. Holmes and J. Lackey and W. Merz	663	665	663-665
+0666	Analytical and Numerical Evaluation of {Landau} Cavities in the {Fermilab} Booster	Yu-Chiu Chao and King-Yuen Ng	666	668	666-668
+0669	Extraction and Central Region Calculations for the Minicyclotron {ILEC}	De Regt, R. and H. L. Hagedoorn and W. Kleeven and van der Heide, J. A.	669	671	669-671
+0672	Measurements and Analysis of Collective Effects in the {LEP} Electron Positron Accumulator	S. Bartalucci and J. F. Bottollier-Depois and D. Brandt and J. P. Delahaye and K. Hübner and A. Hofmann and J. P. Potier	672	674	672-674
+0675	Analysis of Tracking Data Using Normal Forms	F. Neri and A. J. Dragt	675	677	675-677
+0678	Selfconsistent Simulation of High Power Tubes with {TBCI-SF}	F. Ebeling and P. Schütt and T. Weiland	678	680	678-680
+0681	Magnet Ramping with Variable Optics in the {SIS}	B. Franczak	681	683	681-683
+0684	A Possible Symplectic Coherent Beam-Beam Model	A. W. Chao and M. A. Furman and K. Y. Ng	684	686	684-686
+0687	Slow Resonant Extraction at the {European} Hadron Facility	F. Galluccio	687	689	687-689
+0690	Fast Instability of Positron Bunches in the {CERN} {SPS}	D. Brandt and J. Gareyte	690	692	690-692
+0693	Optics Perturbations due to Discontinuous Replacement of Radiated Energy	G. Guignard and Y. Marti	693	695	693-695
+0696	Analytic Calculation of the Dynamical Aperture for the Two Dimensional Betatron Motion in Storage Rings	J. Hagel and H. Moshammer	696	698	696-698
+0699	Analytic Theory of Synchro-Betatron Resonances	J. Hagel and T. Suzuki	699	701	699-701
+0702	Study of Chromaticity Correction in Low Emittance Storage Ring	M. Hara and R. Nagaoka and H. Tanaka and K. Tsumaki and K. Yoshida	702	704	702-704
+0705	High-Frequency Limit of the Longitudinal Impedance of an Array of Cavities	S. A. Heifets and S. A. Kheifets	705	707	705-707
+0708	Loss Parameters for Very Short Bunches	J. J. Bisognano and S. A. Heifets and B. C. Yunn	708	710	708-710
+0711	Coupling Impedances of a Set of Resonators	H. Henke	711	713	711-713
+0714	Beam Emittance Growth by Internal Target Effects in {COSY}	N. Diehl and F. Hinterberger and T. Mayer-Kuckuk and D. Prasuhn	714	716	714-716
+0717	A Particle Tracking Method for Accelerators with Small Radius of Curvature	K. Hiramoto and M. Nishi	717	719	717-719
+0720	The {CRYRING} Lattice	J. Jeansson and A. Simonsson	720	722	720-722
+0723	Status of the {SSC} Lattice Design	A. A. Garren and D. E. Johnson	723	725	723-725
+0726	Beam Response Measurements at {SPEAR}	J. M. Jowett and A. Hofmann and K. L. F. Bane and P. L. Morton and W. Spence and R. Stege	726	728	726-728
+0729	Synchronous Particle and Non-Adiabatic Capture	J. M. Kats	729	731	729-731
+0732	A Storage Ring Mode for {CEBAF} as a Commissioning Tool	J. Kewisch and J. R. Boyce and D. Douglas	732	734	732-734
+0735	Moment Equations with Space Charge for an {AVF} Cyclotron	W. J. G. M. Kleeven and H. L. Hagedoorn	735	737	735-737
+0738	The Spin Precession Tune Spread in the Storage Ring	I. A. Koop and Ju. M. Shatunov	738	739	738-739
+0740	Nonlinear Effects in High-Current Beams	A. P. Korolev and P. R. Zenkevich	740	742	740-742
+0743	The Longid Simulation Code	S. R. Koscielniak	743	745	743-745
+0746	Polarization Simulation Studies for {LEP}	J. P. Koutchouk	746	748	746-748
+0749	Achromatic Lattice Comparison for Light Sources	S. L. Kramer and Y. Cho and E. A. Crosbie	749	751	749-751
+0752	Design for a Practical, Low-Emittance Damping Ring	P. Krejcik	752	754	752-754
+0755	Nonlinear Beam Behaviour in the {CERN} Antiproton Collector	P. Krejcik	755	757	755-757
+0758	Closed Orbit Distortions and Their Corrections in the {600 MeV} Electron-Positron Accumulator at {LEP}	H. Kugler and S. Battisti and D. Brandt and J. P. Potier and A. Verdier	758	760	758-760
+0761	The Longitudinal Coupling Impedance of a Cyclic Accelerator Vacuum Chamber with Small Cross-Section Variations	S. S. Kurennoy and S. V. Purtov	761	763	761-763
+0764	Nonlinear Synchrotron Motion near Transition Energy in {RHIC}	S. Y. Lee and J. Wei	764	766	764-766
+0767	{SLC} Beam Line Error Analysis Using a Model-Based Expert System	M. Lee and S. Kleban	767	769	767-769
+0770	A Study of the Coupling Resonances in the {AGS} Booster	S. Y. Lee and S. Tepikian and X. F. Zhao	770	772	770-772
+0773	The {RHIC} Lattice	S. Y. Lee and J. Claus and E. D. Courant and G. F. Dell and H. Hahn and B. Parzen and A. G. Ruggiero	773	775	773-775
+0776	Collective Effects on {Super-ACO}	M. P. Level and P. C. Marin and M. Sommer and H. Zyngier	776	778	776-778
+0779	Simulation of Proton {RF} Capture in the {AGS} Booster	F. Z. Khiari and A. U. Luccio and W. T. Weng	779	781	779-781
+0782	Longitudinal Space Charge Via Multi-Particle Simulation	J. R. Maidment and E. A. Karantzoulis	782	784	782-784
+0785	Bunch Coalescing and Bunch Rotation in the {Fermilab} Main Ring: Operational Experience and Comparison with Simulations	P. S. Martin and D. Wildman	785	787	785-787
+0788	{COSY} - Lattice Description	P. Krejcik and S. Martin and D. Prasuhn and H. Stockhorst and R. Wagner	788	790	788-790
+0791	An Experimental Study of the {SSC} Magnet Aperture Criterion	N. Merminga and D. A. Edwards and D. Finley and N. M. Gelfand and R. Gerig and M. Harrison and R. Johnson and M. Syphers and R. Meller and R. Siemann and R. Talman and P. Morton and A. Chao and D. Johnson and S. Peggs and J. Peterson and C. Saltmarsh and L. Schachinger	791	793	791-793
+0794	Emittance and Dynamic Aperture in Compact Storage Rings with Superconducting Bending Magnets	H. O. Moser and B. Krevet	794	796	794-796
+0797	Numerical Computation of the Longitudinal Coupling Impedance	R. Gluckstern and F. Neri	797	799	797-799
+0800	Compensation Schemes for Undulator Insertion	P. Nghiem and M. Sommer and H. Zyngier	800	802	800-802
+0803	{TRACY}, A Tool for Accelerator Design and Analysis	H. Nishimura	803	805	803-805
+0806	Evaluation of the Dynamic Aperture of {TARN II}	A. Noda and M. Kanazawa and K. Noda and T. Watanabe and M. Yoshizawa	806	808	806-808
+0809	Longitudinal Instability in {TRISTAN} Main Ring Observed by a Streak Camera	A. Ogata and K. Nakajima and N. Yamamoto	809	811	809-811
+0812	Low Energy Multi Pulse Stacking in {MIMAS} by Betatron Deceleration	J. C. Ciret and M. Olivier and J. Payet	812	814	812-814
+0815	Transverse Impedance of a Conducting Cylindrical Pop with Discontinuous Cross Section	E. Gianfelice and L. Palumbo	815	817	815-817
+0818	Code Comparison for Accelerator Design and Analysis	Z. Parsa	818	820	818-820
+0821	The Effect of Coupling on Intrabeam Scattering	B. Parzen	821	823	821-823
+0824	Interactive First Turn and Global Closed Orbit Correction	V. Paxson and S. Peggs and L. Schachinger	824	826	824-826
+0827	Correction of Random Multipole Errors with Lumped Correctors	J. M. Peterson and E. Forest	827	829	827-829
+0830	Beam Instability Characteristics of the {Daresbury} {SRS}	M. W. Poole and J. N. Corlett and J. S. MacKay and V. P. Suller	830	832	830-832
+0833	Partial Beam Decorrelation of Sources Providing Ion Out of Axial Magnetic Fields	J. Reich and H. Beuscher and R. K. Bhandari and J. I. M. Botman and H. L. Hagedoorn	833	835	833-835
+0836	Beam-Beam Interactions and Luminosity Considerations in {RHIC}	M. J. Rhoades-Brown	836	838	836-838
+0839	Beam Foil Interaction Studies for the Future Stripper of {GANIL}	E. Baron and Ch. Ricaud	839	841	839-841
+0842	Closed Orbit Correction of the {CERN} Antiproton Collector Ring	M. Martini and L. Rinolfi	842	844	842-844
+0845	Optimization of a Low Emittance Lattice for the {ESRF}	A. Ropert	845	847	845-847
+0848	Polarized Antiprotons with the Spin Splitter	H. Kreiser and R. Rossmanith and A. Penzo and Y. Onel	848	850	848-850
+0851	Emittance Growth Induced by Radiation Fluctuations in the Final Focus of a Linear Collider	F. Ruggiero and B. Zotter	851	853	851-853
+0854	Beam Optics of a Dipole Fringe Field	L. Sagalovsky	854	856	854-856
+0857	Interactive Global Decoupling of the {SSC} Injection Lattice	L. Schachinger	857	859	857-859
+0860	Strategies for Longitudinal Painting in the {EHF} Booster at Injection	E. Gianfelice and H. Schönauer	860	862	860-862
+0863	Design of a Bunching System for a High-Intensity Electron L{INAC}	R. H. Miller and C. H. Kim and F. Selph	863	865	863-865
+0866	{ITACA}: A New Computer Code for the Integration of Transient Particle and Field Equations in Axi-Symmetrical Cavities	L. Serafini and C. Pagani	866	868	866-868
+0869	Bunch Length Measurements at {Adone}	M Bassetti and M. Castellano and S. De Simone and S. Guiducci and P. Patteri and M. A. Preger and M. Serio and N. Cavallo and F. Cevenini and L. Palumbo	869	871	869-871
+0872	The Effect of Perturbation on the Longitudinal Motion of Particles in a Stepped Phase Velocity Linac	Yu. Senichev and E. N. Shaposhnikova	872	874	872-874
+0875	Analysis of the Triple Bend Achromat as a Lattice for {BESSY II}	B. Simon and R. Maier and G. Wüstefeld	875	877	875-877
+0878	Bunch Length and Impedance Measurements in {SPEAR}	K. Bane and M. Donald and A. Hofmann and J. Jowett and W. Lockman and P. Morton and W. Spence and R. Stege and P. Wilson	878	880	878-880
+0881	On the Inhererent Properties of the Cyclotron Equilibrium Orbits	Lj. S. Milinkovic and K. M. Subotic	881	883	881-883
+0884	Effects of Insertion Devices on Beam Dynamics	L. Tosi	884	886	884-886
+0887	Description of Nonlinear Beam Dynamics in the {CERN} {Large Hadron Collider} by Using Normal Form Algorithms	A. Bazzani and B. Leemann and W. Scandale and G. Servizi and G. Turchetti	887	889	887-889
+0890	Impedance Calculation above Cut-Off with {URMEL-I}	U. van Rienen and T. Weiland	890	892	890-892
+0893	Addition of a Beam-Beam Element to {MAD}. {LEP} Simulation Results	A. Verdier and J. M. Veuillen	893	895	893-895
+0896	Transverse Stability of the High Intensity {SPS} Proton Beam	L. Vos	896	898	896-898
+0899	Transverse Two-Beam Instability at {LEP}	J. M. Wang	899	901	899-901
+0902	Computer Simulations of the Wake Field Transformer Experiment at {DESY}	W. Bialowons and M. Bieler and H. -D. Bremer and F. -J. Decker and H. -C. Lewin and P. Schütt and G. -A. Voss and R. Wanzenberg and T. Weiland	902	904	902-904
+0905	Discrete Helical Spin Rotators	U. Wienands	905	907	905-907
+0908	Nonlinear Beam Dynamics Close to Resonances Excited by Sextupole Fields	F. Schmidt and F. Willeke	908	910	908-910
+0911	Persistent Current Field Errors and Dynamic Aperture of {HERA-p}	R. Brinkmann and F. Willeke	911	913	911-913
+0914	The Analytical Lattice Approach for the Ring Design of {BESSY II}	G. Wüstefeld and R. Maier and B. Simon	914	916	914-916
+0917	Spin Matching Conditions for a Storage Ring with Solenoid Rotators	D. N. Shatilov and A. A. Zholents	917	922	917-922
+0923	Magnet Exciting System with Dual Resonant Frequency Circuit	T. Adachi and H. Sasaki and H. Someya	923	925	923-925
+0926	Protection of Superconducting Magnets against Irradiation during Fast Resonance Extraction from {UNK}	A. N. Akimov and I. S. Baishev and A. I. Drozhdin and Yu. S. Fedotov and M. A. Maslov	926	928	926-928
+0929	Advances in {BNL}’s Polarized Ion Source Development	J. Alessi and B. DeVito and A. Hershcovitch and A. Kponou and C. Meitzler	929	931	929-931
+0932	Computer Controlled System for {RF} Manipulation at {ITEP} Proton Synchrotron	N. N. Alexeev and V. P. Piskunov and A. S. Rjabcev and V. P. Zavodov and Ju. M. Zlatov	932	934	932-934
+0935	A Drift Tube Accelerating Structure for {CRYRING}	K. Abrahamsson and G. Andler and C. B. Bigham	935	937	935-937
+0938	Industrial Production of Superconducting Accelerating Cavities for {HERA}	G. Arnolds-Mayer and A. Matheisen and W. -D. Möller and D. Proch	938	940	938-940
+0941	Test Results on {1.5 GHz} Superconducting Cavities at {Saclay}	B. Aune and M. Boloré and J. Bourbonneux and J. M. Cavedon and J. P. Charrier and P. Damsin and J. Fagot and A. Godin and J. Gratadour and B. Hervieux and M. Juillard and F. Koechlin and P. Leconte and C. Magne and B. Mahut and A. Mosnier and J. Rodriguez and A. Veyssiere and S. Buhler and T. Junquera and Le Scornet, J. and A. Liebe	941	943	941-943
+0944	Large Frequency Swing {RF} Cavities for {MIMAS}	P. Ausset and T. Aniel and C. Fougeron and J. M. Lagniel	944	946	944-946
+0947	Matching of Ion Sources to Cyclotron Inflectors	R. Baartman	947	948	947-948
+0949	Space Charge Neutralization Studies of an {H⁻} Beam	R. Baartman and D. Yuan	949	950	949-950
+0951	Operational Software for Multicycling the {CERN} Super Proton Synchrotron	R. Bailey and J. Ulander and I. Wilkie	951	953	951-953
+0954	Development of a High Brightness Electron Gun for the Accelerator Test Facility at {Brookhaven National Laboraotry}	K. Batchelor and H. Kirk and J. Sheehan and M. Woodle and K. McDonald	954	957	954-957
+0958	Superconducting {RF} Cavities for {LEP}	P. Bernard and D. Bloess and G. Cavallari and E. Chiaveri and G. Geschonke and E. Haebel and H. Lengeler and G. Passardi and J. Schmid and R. Stierlin and J. Tückmantel and W. Weingarten	958	960	958-960
+0961	Collisional and Radiative Processes Used for Diagnostics in a Heavy-Ion Storage Ring Employing Electron Cooling	H. F. Beyer and D. Liesen	961	963	961-963
+0964	Computer Controls Programming for Decelerating Beam in the {Fermilab} Antiproton Accumulator	V. Bharadwaj and D. Bogert and M. Church and M. Glass and W. Marsh and D. McConnell and D. Peterson	964	966	964-966
+0967	Hollow Beam Gun for the Wake Field Transformer Experiement at {DESY}	M. Bieler and W. Bialowons and H. -D. Bremer and F. -J. Decker and H. -Ch. Lewin and P. Schütt and G. -A. Voss and R. Wanzenberg and T. Weiland	967	969	967-969
+0970	Behaviour of Warm Accelerating RF Structures under High Gradient	G. Bienvenu	970	972	970-972
+0973	The {MIMAS} and {SATURNE} Kicker Magnet Systems	G. Bohner and J. Tilmont	973	975	973-975
+0976	Determination of {100 psec} Short Linac Bunches by Broadband Pickups and Reconstruction Technique	K. Bongardt and K. Kennepohl	976	978	976-978
+0979	Resonant Beam Position Monitor for Low Intensity Ion Beams	R. Bossart	979	981	979-981
+0982	A {600 MHz} Chopper System for an Electron Linac	C. Bourat and B. Aune and M. Jablonka and J. M. Joly	982	984	982-984
+0985	{RF} Feedback Applied to a Multicell Superconducting Cavity	D. Boussard and H. P. Kindermann and V. Rossi	985	987	985-987
+0988	Test of a {352 MHz} Superconducting Cavity in the {CERN} {SPS}	Ph. Bernard and D. Bloess and D. Boussard and G. Cavallari and E. Chiaveri and W. Erdt and E. Haebel and H. P. Kindermann and H. Lengeler and G. Passardi and J. Schmid and R. Stierlin and J. Tückmantel and W. Weingarten	988	990	988-990
+0991	The {100 MHz} {RF} System for the {CERN} Collider	D. Boussard and P. Baudrenghien and T. Linnecar and G. Rogner and W. Sinclair	991	993	991-993
+0994	High Emissivity Photocathodes	M. Boussoukaya and H. Bergeret and R. Chehab and B. Leblond and J. Leduff	994	996	994-996
+0997	The Gun/Chopper System for the {Mainz} Microtron	H. Braun and H. Herminghaus and A. Streun	997	999	997-999
+1000	RF System of {COSY} {Jülich}	G. Berg and W. Bräutigam and H. U. Hacker and A. Hardt and H. Launer and S. Martin and K. Nau and A. Richert and W. Spie and G. Wüstefeld	1000	1002	1000-1002
+1003	A Fast Chopper for Programmed Population on the Longitudinal Phase Space of the {AGS} Booster	J. M. Brennan and L. Ahrens and J. Alessi and J. Brodowski and J. Kats	1003	1005	1003-1005
+1006	A High Harmonic Cavity for Controlled Longitudinal Phase Space Dilution in the {AGS}	J. M. Brennan and L. Ahrens and P. Cameron and W. Frey and M. A. Goldman and D. Kasha and J. Kats and A. McNerney and E. Raka and R. Sanders	1006	1008	1006-1008
+1009	The Separation of Control Variables in an {H⁻} Ion Source	P. S. Bowling and S. K. Brown	1009	1011	1009-1011
+1012	Beam Transfer Lines for the Tandem-Superconducting Cyclotron at {Laboratorio Nazionale Del Sud}	L. Calabretta and L. Cao and G. Cuttone and P. Di Bernardo and D. Giove and K. Liu and G. Raia and C. Yan	1012	1014	1012-1014
+1015	Logistics of {LEP} Installation	C. Genier and S. Capper	1015	1017	1015-1017
+1018	Diagnostic and Control System for the {LISA} Project	M. Castellano and S. De Simone and G. Di Pirro and S. Guiducci and P. Patteri and M. Serio and L. Trasatti and N. Cavallo and F. Cevenini	1018	1020	1018-1020
+1021	Development of Pellet Chain for Charge Carrying	K. H. Chung and J. H. Hong and B. H. Choi and S. K. Ko	1021	1023	1021-1023
+1024	APF Accelerating Structures for Light and Heavy Ions	I. V. Chuvilo and A. Y. Dyadin and M. L. Gusev and V. S. Kabanov and I. V. Khomenko and V. V. Kurakin and V. V. Kushin and S. B. Manusadjan and I. O. Parshin and S. V. Platnikov and D. N. Seleznev and V. S. Stolbunov and S. B. Ugarov and N. N. Vinogradskiy and A. B. Zarubin	1024	1026	1024-1026
+1027	Design of Hybrid Magnet Undulators with Non-Constant Parameters for High Gain and High Efficiency {Free Electron Laser}	F. Ciocci and G. Dattoli and L. Giannessi and A. Torre	1027	1029	1027-1029
+1030	The Magnet System of the {Electron Positron Accumulator (EPA)}	D. Cornuet	1030	1032	1030-1032
+1033	An Adiabatic Electron Gun for the {CRYRING} Electron Cooler	H. Danared	1033	1034	1033-1034
+1035	Vacuum Chamber {EDDY} Current Correction Coil for the {AGS} Booster	G. Danby and J. Jackson	1035	1037	1035-1037
+1038	Beam Diagnostics for Heavy and Polariezed Ions in the Range of {10 keV/amu} to {1 GeV/amu}	L. Degueurce and P. Ausset	1038	1040	1038-1040
+1041	New Electron Source Assisted by Two Lasers	J. P. Girardeau-Montaut and C. Girardeau-Montaut and H. Corbet and R. Dei-Cas and G. Haouat and J. P. Laget and E. Michaud and M. Renaud and J. Sigaud	1041	1043	1041-1043
+1044	A {CW}-PION Focusing Horn for Low-Energy Muon Neutrino Beams	T. Dombeck and R. Fisk and D. D. Koetke and D. S. Koetke	1044	1046	1044-1046
+1047	Performance of the {Los Alamos} Expanding Telescope	T. Dombeck	1047	1049	1047-1049
+1050	Time Stepping Klystron and Lasertron Simulations	A. Dubrovin	1050	1052	1050-1052
+1053	{GANIL} {D.C.} Power Converters: Imporvement of the Response to Mains Fluctuations, Mains Voltage Harmonic Filtering	G. Dugay	1053	1055	1053-1055
+1056	An Improved Ion Source for a Compact Cyclotron	F. Dworschak and W. Kogler and W. Stellmacher and G. Lucki	1056	1058	1056-1058
+1059	Injection and Fast Extraction in the {ESR}	G. Eickhoff and K. Beckert and B. Franczak and B. Franzke	1059	1060	1059-1060
+1061	{ESRF} Insertion Devices	P. Elleaume	1061	1063	1061-1063
+1064	Three Dimensional Survey for Magnet Alignment	K. Endo and Y. Ohsawa and I. Ikoda and M. Kadokura and K. Kobayashi and T. Kobayashi	1064	1066	1064-1066
+1067	Corrosion of Copper by Deionized Cooling Water	H. Schöler and H. Euteneuer	1067	1068	1067-1068
+1069	A {5 kW}, {1.5 GHz} Klystron for Superconducting Cavities	C. Bearzatto and G. Faillon	1069	1071	1069-1071
+1072	The 3 Preinjectors of {MIMAS} for Heavy Ions Polarized and Unpolariezed Ions	J. Faure and J. L. Lemaire and R. Vienet	1072	1074	1072-1074
+1075	A Radiofrequency Pulse Compressor for Square Output Pulses	A. Fiebig and Ch. Schieblich	1075	1077	1075-1077
+1078	Optical Transition Radiation Diagnostics for Low Emittance, High Energy, Charged Particle Beams	R. B. Fiorito and D. W. Rule and S. G. Iversen and X. K. Maruyama and S. E. Caldwell and J. S. Ladish	1078	1080	1078-1080
+1081	Studies of Fast Wire Scanners for {LEP}	C. Fischer and G. Burtin and R. Colchester and B. Halvarsson and R. Jung and J. M. Vouillot	1081	1083	1081-1083
+1084	Modulation of the Lepton Production for the {CERN} {LEP} Pre-Injector	G. P. Benincasa and P. Burla and L. Casalegno and A. Daneels and J. P. Delahaye and B. Frammery and F. Giudici and I. Kamber and J. Lewis and P. Schenkels and Ch. Serre and C. -H. Sicard	1084	1086	1084-1086
+1087	Advanced Concepts in Accelerator Timing Control	R. Frankel and C. Salwen	1087	1089	1087-1089
+1090	The {AGS} Booster Control System	R. Frankel and E. Auerbach and T. Clifford and B. Culwick and S. Mandell and R. Mariotti and C. Salwen and N. Schumburg	1090	1092	1090-1092
+1093	Separation of Reaction or Decay Products from Cooled Ion Beams Stored in the {ESR}	B. Franzke and G. Eickhoff	1093	1095	1093-1095
+1096	Radio Frequency System of the {RIKEN} Ring Cyclotron	T. Fujisawa and Y. Chiba and S. Kohara and Y. Kumata and M. Nagase and K. Ogiwara and Y. Oikawa and I. Takeshita and I. Yokoyama	1096	1098	1096-1098
+1099	{52 MHz} {RF} System of {HERA}	L. W. Funk and J. C. Brown and P. J. P. Bunge and R. J. Burton and S. T. Craig and A. B. Hood and R. M. Hutcheon and T. T. Ngoc and D. R. Proulx and R. J. West and M. S. deJong	1099	1101	1099-1101
+1102	The {52 MHz} {RF} System for {PETRA II}	L. W. Funk and J. C. Brown and P. J. P. Bunge and R. J. Burton and S. T. Craig and A. B. Hood and R. M. Hutcheon and R. J. West and M. S. deJong	1102	1104	1102-1104
+1105	The Radio Frequency System for Protons in {HERA}	A. Gamp and W. Ebeling and W. Funk and J. R. Maidment and C. W. Planner and G. H. Rees	1105	1107	1105-1107
+1108	{RF} Sparking in Accelerator Cavities	A. Gerhard and J. Brutscher and H. Klein and M. Kurz and A. Schempp and R. Hutcheon and G. Bolme	1108	1110	1108-1110
+1111	Operational Experience with the Distributed Control System of the {Milan} Superconducting Cyclotron	A. Amato and M. Castro and G. Cuttone and D. Giove and A. Paccalini and G. Rivoltella	1111	1113	1111-1113
+1114	$4π/5$ Backward {TW} Structure Tested for Electron Linacs Optimization	P. Girault and D. Tronc and G. Bienvenu	1114	1116	1114-1116
+1117	Use of {VMEBUS} in Accelerator Applications	J. F. Gournay and F. Garreau and A. Giraud and G. Gourcy and J. Rouault	1117	1119	1117-1119
+1120	Control Facilities for Commissioning and Operation of the Water Cooling, Air Handling and Fire Detection of {LEP}	C. Bertuzzi and A. Guiard-Marigny	1120	1122	1120-1122
+1123	Studies of Fundamental Processes in High Power Switches	M. A. Gundersen and V. Dominic and W. Hartmann and G. Kirkman	1123	1125	1123-1125
+1126	Expertsystem for {COSY} - Control	N. Bongers and B. Dahmen and R. Danzglock and H. U. Hacker and A. Hardt and C. Henkel and K. Henn and J. Launer and S. A. Martin and K. Nau and O. Ollech and S. Peischard and A. Richert and H. Singer and K. Sobotta and W. Spie and A. Weinert and D. Weynen and G. Schug and G. Röhling	1126	1128	1126-1128
+1129	A Versatile Multi Processed Control System for {MIMAS}	D. Bogard and J. L. Hamel and P. Hulin and J. Payet	1129	1131	1129-1131
+1132	Magnets and Power Supplies for {COSY}	U. Bechstedt and N. Bongers and W. Briéll and A. Hardt and W. Klein and U. Schwarz and E. Veiders	1132	1134	1132-1134
+1135	Investigations of Intense Pulsed Electron Beams from Pseudo-Spark Discharges	W. Benker and J. Christiansen and K. Frank and H. Gundel and W. Hartmann and T. Redel and M. Stetter	1135	1137	1135-1137
+1138	{ECR} Ion Source for the Injector {AVF} Cyclotron at {Riken}	K. Hatanaka and H. Nonaka	1138	1139	1138-1139
+1140	Properties of Spiral Loaded Cavities	J. Häser and H. Klein and A. Schempp	1140	1142	1140-1142
+1143	Development of Composite Tubes for Experimental Vacuum Chambers of Colliders	C. Hauviller	1143	1145	1143-1145
+1146	Computer-Aided Engineering in High Energy Physics	G. Bachy and C. Hauviller and R. Messerli and M. Mottier	1146	1148	1146-1148
+1149	Fast Longitudinal Phase Space Diagnostics for the Injector Linac of {MAMI}	H. Euteneuer and H. Herminghaus and K. W. Nilles and H. Schöler	1149	1150	1149-1150
+1151	The Reversing Magnet of the {850 MeV} Stage of {MAMI}	H. Herminghaus and P. Jennewein and U. Ludwig-Mertin and G. Meyer and P. Zinnecker	1151	1153	1151-1153
+1154	Field Measurements and Sorting of the {HERA} {e}-Ring Dipoles	Y. Holler and O. Kaul and K. Sinram	1154	1156	1154-1156
+1157	Design and Fabrication of {33 GHz} High-Gradient Accelerator Sections	D. B. Hopkins and A. M. Sessler and J. Haimson and B. Mecklenburg and J. C. Farmer and W. K. Kelley and C. P Steffani and H. A. Johnsen	1157	1159	1157-1159
+1160	Residual Gas Ionization Beam Profile Monitors for the {HERA} Proton Machines	F. Hornstra	1160	1162	1160-1162
+1163	Ground Test Accelerator Control System Software	L. Burczyk and R. Dalesio and R. Dingler and J. Hill and J. A. Howell and D. Kerstiens and R. King and A. Kozubal and C. Little and V. Martz and R. Rothrock and J. Sutton	1163	1165	1163-1165
+1166	Realization of the {LEP} Power Converters	H. W. Isch	1166	1168	1166-1168
+1169	{352.2 MHz} {RF} System for the {ESRF}	J. Jacob and C. David	1169	1171	1169-1171
+1172	The Electron Cooling Device for the Heavy Ion Storage Ring {TSR}	M. Steck and M. Blum and A. Friedrich and E. Jaeschke and M. Jung and V. Köler and D. Krämer and K. Matl	1172	1174	1172-1174
+1175	The Magnetsystem of the {TSR}	D. Krämer and B. Holzer and E. Jaeschke and W. Ott and R. Repnow	1175	1177	1175-1177
+1178	Accelerator Simulation on a Parallel Computer	A. Jejcic and J. Maillard and J. Silva and M. Auguin and F. Boeri and A. Vincent-Carrefour	1178	1180	1178-1180
+1181	Recent Progress of Permanent Magnets	Xu Jianming and Xu Qing	1181	1183	1181-1183
+1184	Layout and Design and Construction of the Electrostatic Separation System of the {LEP} {e⁺e⁻} Collider	W. Kalbreier and N. Garrel and R. Guinand and R. L. Keizer and K. H. Kissler	1184	1186	1184-1186
+1187	On Niobium Sputter Coated Cavities	G. Arnolds-Mayer and U. Kaufmann and H. Downar and T. Friesen	1187	1189	1187-1189
+1190	Design and Performance of a Prototype Synchronous High Tension Discharge Switch for the Separation System of the {LEP} {e⁺e⁻} Collider	R. L. Keizer and G. Boch and J. Dieperink and A. Finnigan and N. Garrel and M. Granier and W. Kalbreier and M. Laffin	1190	1192	1190-1192
+1193	Electromagnetic Design of the {HERA} {e⁻} Vacuum	R. Klatt and T. Weiland	1193	1195	1193-1195
+1196	The Conceptual Design of the {ESRF} Control System	W. D. Klotz and C. Hervé	1196	1198	1196-1198
+1199	Architecture of the {LEP} Application Software	J. P. Koutchouk	1199	1201	1199-1201
+1202	Meson Factory Accelerating Structure Tuning	Ju. V. Bylinsky and S. K. Esin and A. V. Feschenko and T. N. Habibullin and L. V. Kravchuk and P. N. Ostroumov and V. A. Puntus and G. V. Romanov and S. Zh Zharylkapov	1202	1204	1202-1204
+1205	Computer Aided Beam Diagnostics and Automatic Matching on the {Mainz} Microtron	H. -J. Kreidel	1205	1207	1205-1207
+1208	Industrial Fabrication of the Superconducting {HERA} Quadrupole Coil	D. Krischel and J. Böer and H. Fechteler and F. Sommer	1208	1210	1208-1210
+1211	Five Parameter Method of Tuning of Biperiodic $π/2$ Accelerating Structures	S. Kulinski and J. Sekutowicz	1211	1213	1211-1213
+1214	Beam Diagnostics Using Variations of Local Magnetic Fields	P. Kuske and H. -G Hoberg and J. Machado and R. Maier and A. Schiele	1214	1216	1214-1216
+1217	High Voltage Power Supply for Electrostatic Kickers for {CRYRING}	M. Kvarngren and M. A. K. Eriksson	1217	1219	1217-1219
+1220	Design of the {150 kW}, {46–62 MHz} Power Amplifier for the {TRIUMF} Kaon Factory Booster Ring	S. Kwiatkowski and T. Enegren and R. L. Poirier	1220	1222	1220-1222
+1223	Dynamic Transfer from {MIMAS} to {SATURNE}	T. Aniel and J. M. Lagniel and A. Tkatchenko	1223	1225	1223-1225
+1226	Building, Supply Facilities and Infrastructure {COSY} {Jülich}	H. Lang and W. Besselmann and J. Kreutzer and K. Matela and N. Mosko and H. -J. Probst and D. Römer and J. Strauch and E. Veiders	1226	1227	1226-1227
+1228	Further Development of the Plasma Beam Ion Source	K. Langbein	1228	1230	1228-1230
+1231	Conversion of the {SPS} to a Multicycling Accelerator	C. G. Beetham and L. Burnod and R. J. Lauckner and J. F. Miles and G. Mugnai and C. G. Saltmarsh and D. H. Thomas	1231	1233	1231-1233
+1234	{RF} Impedance Calculations for Three-Dimensional Devices for {HERA}	E. Lawinsky and T. Weiland and S. G. Wipf	1234	1236	1234-1236
+1237	The {IMPELA} Control System	C. B. Lawrence and S. T. Craig and J.-P. Labrie and S. Lord and B. F. White	1237	1239	1237-1239
+1240	The Design of Photon Absorbers for the {ESRF} Vacuum Chamber	G. Marot and R. Bennett	1240	1242	1240-1242
+1243	The {ESRF} Vacuum System	R. J. Bennett and J. M. Lefebvre and B. A. Trickett	1243	1245	1243-1245
+1246	Introduction of a New Class of High-Power {Y}-Junction Circulators: The {352 MHz}/{1.5 MW} Type Designed for {CERN}/{LEP}	S. Lenz and W. Hauth and E. Pivit	1246	1248	1246-1248
+1249	Capacitive Large-Range-Intensity Beam-Position Monitors at {GANIL}	F. Loyer and F. Daudin and C. Doutressoulles and B. Ducoudret and J. P. Rataud	1249	1251	1249-1251
+1252	Analysis of Beam Losses at {PSR}	R. J. Macek and D. H. Fitzgerald and R. L. Hutson and M. A. Plum and H. A. Thiessen	1252	1254	1252-1254
+1255	Knowledge Engineering Methods for Accelerator Operation	E. Malandain and S. Pasinelli and P. Skarek	1255	1257	1255-1257
+1258	Ramping Controls for the {IUCF} Storage Ring	W. Manwaring	1258	1260	1258-1260
+1261	Magnetic Field of the {K800} Cyclotron	D. Johnson and T. Kuo and F. Marti and J. A. Nolen and Jr. and B. Sherrill and A. Zeller and L. H. Harwood	1261	1263	1261-1263
+1264	The {Fermilab} Collider {D∅} Low $β$ System	A. D. McInturff and J. Carson and T. Collins and K. Koepke and E. Malamud and P. Mantsch and R. Niemann and A. Riddiford	1264	1266	1264-1266
+1267	Radial Compression of Picosecond Electrical Pulses	C. Bamber and W. Donaldson and T. Juhasz and L. Kingsley and E. Lincke and A. C. Melissinos	1267	1268	1267-1268
+1269	{Dialog}: A System for Instrumentation Diagnosis	A. Burns and J. Menu	1269	1271	1269-1271
+1272	The Electrical Test of a Short String of Superconducting {HERA} Type Magnets	K. -H. Me	1272	1274	1272-1274
+1275	The Test of the Quench Protection Diodes for {HERA}	K. H. Mess	1275	1277	1275-1277
+1278	Operational Experience and Tests of the {Milan} {K800} Cyclotron Vacuum System	P. Michelato and A. Giussani and C. Pagani	1278	1280	1278-1280
+1281	Superconducting Cavities for {HERA}	B. Dwersteg and W. Ebeling and W. -D. Möller and D. Proch and D. Renken and J. Sekutowicz and D. Tong	1281	1283	1281-1283
+1284	Radiation Dose Measurements and a Study of Damage to Accelerator Components in the {TRISTAN} {e⁺e⁻} Collider at {27.5 GeV}	T. Momose and K. Endo and H. Hirayama and T. Ieiri and H. Ishimaru and T. Kawamoto and Y. Mizumachi and Y. Ohsawa and K. Takayama and S. Takeda and K. Uchino	1284	1286	1284-1286
+1287	Damping of the {HOM}’s in a Multicell Superconducting Cavity	A. Mosnier and B. Aune and J. Bourbonneux and K. Djidi and M. Juillard and J. P. Nicolaï	1287	1288	1287-1288
+1289	High Electromagnetic Fields at Low {RF} Losses in Superconducting {S}-Band Accelerator Cavities	G. Müller and H. Piel and J. Pouryamout and R. W. Röth	1289	1291	1289-1291
+1292	Multimode Investigations on {RF} Losses and Field Limitations of Single-Cell Niobium Cavities at {L}- and {S}-Band Frequencies	G. Müller and H. Piel and R. W. Röth and B. Aune and C. Magne and A. Veyssiere	1292	1294	1292-1294
+1295	{Nb₃Sn} for Superconducting Accelerators at {4.2 K}	M. Peiniger and G. Müller and H. Piel and P. Thüns	1295	1297	1295-1297
+1298	Calculations of {EDDY}-Current Effects in a Ramped Dipole Field	A. Nilsson and P. Carlé	1298	1299	1298-1299
+1300	A Beam Splitter for the Parasitic Use of the {72 MeV} Proton Beam Line to Produce Isotopes	M. Olivo and H. V. Reist	1300	1302	1300-1302
+1303	Accelerating Voltage Amplitude and Phase Stabilization for the Milan Superconducting Cyclotron	A. Bosotti and A. Caruso and M. Di Giacomo and V. Lovati and C. Pagani and G. Varisco and F. Zibra	1303	1305	1303-1305
+1306	Computer Control for the {Milan} {K800} Cyclotron {RF} System	A. Bosotti and A. Caruso and D. Giove and V. Lovati and C. Pagani and G. Varisco and F. Zibra	1306	1308	1306-1308
+1309	Fabrication and Test of Superconducting {RF} Cavities for {CEBAF}	U. Klein and A. Palussek and M. Peiniger and H. Vogel and H. Piel	1309	1311	1309-1311
+1312	A Proposed Superconducting Photoemission Source of High Brightness	H. Chaloupka and H. Heinrichs and H. Piel and C. K. Sinclair and F. Ebeling and T. Weiland and U. Klein and H. Vogel	1312	1314	1312-1314
+1315	Recent Extensions of the Program Magnus-3D for Three-Dimensional Accelerator Magnetic Engineering	A. M. Ferrari and S. Pissanetzky	1315	1317	1315-1317
+1318	The Transverse Polarimeter for {LEP}	M. Placidi	1318	1320	1318-1320
+1321	Parallel Bias vs Perpendicular Bias of a Ferrite Tuned Cavity for the {TRIUMF} Kaon-Factory Booster Ring	R. L. Poirier and T. Enegren and S. J. Mai and I. Enchevich	1321	1323	1321-1323
+1324	{EPA} Beam-Vacuum Interaction and Ion Clearing System	F. Caspers and J. P. Delahaye and J. C. Godot and K. Hubner and A. Poncet	1324	1326	1324-1326
+1327	Studies of Pulsed Volume Sources of {H⁻} Ions	K. Prelec	1327	1329	1327-1329
+1330	Beam Monitoring System for the {Kharkov} {2 GeV} Electron Linac	G. D. Pugachev and V. N. Boriskin and A. N. Dovbnya and V. A. Gurin and V. N. Katarzhnov and V. V. Mel’nichenko and V. A. Popenko and A. N. Savchenko	1330	1331	1330-1331
+1332	Development of a Lithium Liquid Metal Ion Source for MeV Ion Beam Analysis	P. M. Read and G. D. Alton and J. T. Maskrey	1332	1334	1332-1334
+1335	Source of Polarized Electrons	W. Hartmann and H. G. Andresen and K. Aulenbacher and W. Heil and L. Koch and E. W. Otten and E. Reichert and M. Sprenger and K. H. Steffens and B. Wagner	1335	1336	1335-1336
+1337	Vacuum System Design and Performance for the {Daresbury} {HBL}	R. J. Reid	1337	1339	1337-1339
+1340	Experimental Results of High Power Dual Frequency Resonant Magnet Excitation at {TRIUMF}	K. W. Reiniger and G. Heritier	1340	1342	1340-1342
+1343	Beam Loading Analysis of a Transformer-Coupled {RF} Cavity	S. Bartalucci and R. Garoby and A. Riche and A. Susini	1343	1345	1343-1345
+1346	A $z$-Pinch Plasma Lens for Focusing High-Energy Particles in an Accelerator	B. Autin and H. Gundel and H. Riege and F. Dothan and H. Bauer and E. Boggasch and J. Christiansen and K. Frank and R. Tkotz and G. Miano and L. de Menna	1346	1348	1346-1348
+1349	Development of a Strategy for Modelling Operation and Failure of High Power R. F. Windows	R. A. Rimmer	1349	1351	1349-1351
+1352	Measurement of {H\rlap{₂}⁺} Stripping Cross Sections in Carbon and Aluminium Foils (with some additional data for {Al₂0₃})	T. Ludwig and D. Blasczyk and P. Kohl and D. Protic and G. Riepe and M. Rogge and P. V. Rossen and H. Neuburger and W. Polster and D. Prasuhn	1352	1354	1352-1354
+1355	The Magnetic Field Measuring System of the {Milan} Superconducting Cyclotron	E. Acerbi and G. Bellomo and G. Rivoltella and L. Rossi	1355	1357	1355-1357
+1358	Tapered Undulators for {FEL}	E. Sabia and A. Dipace and A. Renieri	1358	1360	1358-1360
+1361	Electron Beam with an Energy {1 MeV} in the Recuperation Regime	M. E. Veis and B. M. Korabelnikov and N. K. Kuksanov and P. I. Nemytov. and R. A. Salimov and A. N. Skrinsky	1361	1363	1361-1363
+1364	The {AGS} Booster High Frequency {RF} System	R. Sanders and P. Cameron and R. Damn and M. Goldman and E. Jablonski and J. Keane and A. McNerney and M. Meth and M. Plotkin and M. Puglisi and A. Ratti	1364	1366	1364-1366
+1367	Accelerating and Separating Mixed Beams of Ions with Similar Charge to Mass Ratio in the {CERN} {PS} Complex	N. Angert and E. Brouzet and R. Garoby and S. Hancock and H. Haseroth and C. Hill and K. Schindl and P. Têtu	1367	1369	1367-1369
+1370	An {ECR}-Ionizer for a Polarized Ion Source	P. A. Schmelzbach and L. Friedrich and E. Huttel	1370	1371	1370-1371
+1372	Multicycling of the {CERN}-{SPS}: Supercycle Generation and First Experience with this Mode of Operation	K. Cornelis and W. Herr and R. Schmidt	1372	1374	1372-1374
+1375	Initial Operating Experience and Recent Development on the {TRIUMF} Optically Pumped Polarized {H⁻} Ion Source	P. W. Schmor and W. M. Law and C. D. P. Levy and M. McDonald	1375	1377	1375-1377
+1378	Metallized Ceramic Vacuum Chambers for the {LEP} Injection Kicker Magnets	M. Mayer and H. Kuhn and G. H. Schröder and B Zega and G. Howard and G. Wilkinson	1378	1380	1378-1380
+1381	The Injection Kicker System of {LEP}	G. H. Schröder and J. Bonthond and U. Jansson and H. Kuhn and M. Mayer and G. Vossenberg	1381	1383	1381-1383
+1384	New Electrostatic Pick-Ups for the {PS}	E. Schulte and J. Durand and J. Gonzalez and M. Thivent	1384	1386	1384-1386
+1387	Beam Position Pick-Ups in the Straight Sections of the {HERA} Proton Ring	W. Schütte and K. -H. Meß	1387	1389	1387-1389
+1390	Description of the Directional Coupler Position Monitor as $n$-Port	W. Schütte	1390	1392	1390-1392
+1393	Operation of a Laser-Ion Source in a {Van de Graaff}	J. Sellmair and G. Korschinek	1393	1395	1393-1395
+1396	{Van-de-Graaf} Accelerator Operation with Laser Source of Highly-Charged Heavy Ions	L. S. Barabash and A. A. Golubev and D. G. Koshkarev and K. I. Krechet and B. Yu. Sharkov and A. V. Shumshurov	1396	1397	1396-1397
+1398	{3 T} Superconducting Dipole Magnet with a Highly Homogeneous Field	I. A. Shelaev and Z. V. Borisovskaya and V. I. Lobanov and I. P. Yudin	1398	1400	1398-1400
+1401	Performance and Operational Experience with {CERN}-Lithium Lenses	P. Sievers and R. Bellone and D. Fiander and J. Hangst and G. Silvestrov	1401	1403	1401-1403
+1404	Injection in {CRYRING}	A. Simonsson	1404	1406	1404-1406
+1407	Input Coupler for Superconducting Accelerator Structure	A. A. Komkov and O. L. Maslennikov and V. F. Petrov and V. L. Smirnov and B. A. Sokolov)	1407	1409	1407-1409
+1410	Design and Technical Features of the Vacuum System at {COSY}	H. Stechemesser and W. Bertram and K. Döring and H. Jaegers and H. B. Müller and J. Zeumann and A. Zumloh and A. Hamacher and G. Riepe	1410	1412	1410-1412
+1413	The {SIS}-Beam Diagnostic System	P. Strehl and H. Vilhjalmsson	1413	1415	1413-1415
+1416	Low Frequency Ferrite Cavities	A. Susini	1416	1417	1416-1417
+1418	The Plane Wave Transformer Linac Structure	D. A. Swenson	1418	1420	1418-1420
+1421	Design and Perforance of the {AAC} Stack Core Cooling System	J. Bosser and P. Bramham and C. Metzger and C. Taylor	1421	1423	1421-1423
+1424	The Thermodynamics of Hydrogen Micro-Spheres as Internal Targets in Ion Storage Rings	B. Trostel	1424	1426	1424-1426
+1427	Production of 7Be Radioactive Beams at {IAE} Cyclotron	V. V. Buranov and A. M. Dobychin and S. B. Sakuta and V. N. Unezhev and N. I. Venikov	1427	1429	1427-1429
+1430	Experiment of the First Prototypes of Pipe Cooled {500 MHz} Cavities from Explosion Bonded Niobium Copper	B. Dwersteg and W. -D. Möller and D. Proch and U. Klein and A. Palussek and H. Vogel	1430	1432	1430-1432
+1433	A New {100 KW} {CW} {Y}-Junction Stripline Circulator Concept and its Realization in the {500 MHz} Range	W. Weiser and S. Lenz and E. Pivit	1433	1435	1433-1435
+1436	Electron Cooling on the {ESR} at {GSI}	N. Angert and W. Bourgeois and H. Emig and B. Franzke and B. Langenbeck and K. D. Leible and H. Schulte and P. Spädtke and B. H. Wolf	1436	1438	1436-1438
+1439	High Current Commissioning of the {H⁻} Ion Accelerating Column of the {ISIS} Injector	H. Wroe and N. D. West	1439	1441	1439-1441
+1442	Design Study of a New Central Region of the {Princeton University} {AVF} Cyclotron for High-Quality $N=2$ Beams	M. Yoon and S. Oh	1442	1444	1442-1444
+1445	Performance of {BEPC}-{SR} Magnet System	Z. Cao and R. Hou and B. F. Li and C. M. Li and Y. F. Shi and J. M. Xu and Z. S. Yin and B. Zhao and P. M. Zhu	1445	1450	1445-1450
+1451	Some Consideration on the Application of Linear Resonance Accelerators to the Ion Implantation	A. N. Antropov and V. K. Baev and N. M. Gavrilov and R. K. Gavrilova and A. A. Kostjuhin and S. A. Minaev and A. V. Shalnov	1451	1453	1451-1453
+1454	Medical Radioisotopes Production at the Isochronous Cyclotron in {ALMA-ATA}	A. A. Arzumanov and V. N. Batischev and V. K. Gladun and V. L. Kochetkov	1454	1455	1454-1455
+1456	High-Power Small {RF} Accelerator of Electrons {ILU-8} with Local Radiation Protection	V. L. Auslender and V. G. Cheskidov and D. L. Factorovich and V. A. Gorbunov and G. M. Kazakevich and A. D. Panfilov	1456	1458	1456-1458
+1459	Medical Synchrotron for Proton Therapy	K. Endo and S. Fukumoto and K. Muto and T. Arimoto and Y. Hayakawa and T. Inada and T. Kitagawa and A. Maruhashi and M. Sato and J. Tada and Y. Takada	1459	1461	1459-1461
+1462	Commercial Ion Linacs	R. W. Hamm and J. H. Bower and K. R. Crandall and M. E. Hamm and J. M. Potter	1462	1464	1462-1464
+1465	A Vacuum Electrostatic Generator	B. H. Choi and H. D. Kang and W. Kim and B. H. Oh and K. H. Chung	1465	1467	1465-1467
+1468	Design Study of High-Energy, High-Current {RF} Accelerators for Ion Implantation	H. Deitinghoff and J. Häuser and H. Klein and P. Leipe and A. Schempp and R. W. Thomae and T. Weis and J. Bannenberg and W. Urbanus and R. Wojke and van Amersfoort, P. W.	1468	1470	1468-1470
+1471	A Project of Tandem Accelerator Mass Spectrometry Facility at {Peking University}	K. Li and C.-E. Chen and T. Chen and Z. Guo and H. Liu and S. Yan and R. Zhang and S. Zheng and H. Si	1471	1473	1471-1473
+1474	The {European} Light Ion Medical Accelerator	P. Mandrillon and F. Farley and R. Ostojic and M. Bona and J. C. Godot and A. Susini and G. Ryckewaert and S. Zaremba and E. Schreiber	1474	1476	1474-1476
+1477	The Activity on Accelerators at the {ENEA} Frascati Center: Status and Perspectives	G. Messina and U. Bizzarri and G. Giubileo and A. Mola and L. Picardi and P. Raimondi and C. Ronsivalle and A. Vignati	1477	1479	1477-1479
+1480	The High-Frequency Electron Accelerator for the Use in Industrial Technological Lines	V. L. Auslender and V. G. Cheskidov and V. E. Nekhaev and A. D. Panfilov and V. A. Poliakov and A. A. Tuvik	1480	1482	1480-1482
+1483	Design Study of a Synchrotron Radiation Source for {X}-ray Lithography	M Bassetti and E. Bernieri and E. Burattini and A. Cattoni and V. Chimenti and C. Sanelli and S. Tazzari and F. Tazzioli and C. Mencuccini and L. Palumbo and L. Picardi and Q. H. Chen and R. Rinzivillo	1483	1485	1483-1485
+1486	Calibration of Medical Linear Accelerators in {Louisiana} Using {Task Group 21 Protocol}	B. P. Pullen	1486	1487	1486-1487
+1488	Operational Experience with the {500 μA} {H⁻} Isotope Production Cyclotron {Cyclone} 30	J. -L. Bol and M. Lacroix and G. Lannoye and G. Ryckewaert and S. Zaremba and A. Chevalier and E. Conard and Y. Jongen	1488	1490	1488-1490
+1491	A Radioactive Ion Beam Facility at {Louvain-La-Neuve}	M. Huyse and G. Reusen and P. Van Duppen and F. Baeten and C. Dom and M. Arnould and J. Vanhorenbeeck and D. Darquennes and Th. Delbar and Y. Jongen and S. Wa. Kitwanga and M. Lacroix and P. Leleux and P. Lipnik and M. Loiselet and G. Ryckewaert and J. Vervier and S. Zaremba	1491	1493	1491-1493
+1494	Deflection Systems in Medical Linacs	L. Sagalovsky	1494	1496	1494-1496
+1497	The Systems to Extract the Linear, Ring and Concentrated Electron Beam into the Atmosphere	M. E. Veis and V. G. Cherepkov and I. L. Chertok and S. N. Fadeev and A. I. Grishchenko and B. M. Korabelnikov and N. K. Kuksanov and P. I. Nemytov. and R. A. Salimov	1497	1499	1497-1499
+1500	{80 KW} Industrial Electron Accelerators based on Rectifier	M. E. Veis and V. G. Cherepkov and A. I. Grishchenko and P. I. Kachalov and B. M. Korabelnikov and G. S Krainov and N. K. Kuksanov and S. A. Kuznetsov and P. I. Nemytov. and R. A. Salimov and A. N. Samoilovich and V. N. Zaitsev	1500	1501	1500-1501
+1502	A Compact {H⁻} Cyclotron for Isotope Production	H. R. Schneider and R. Baartman and R. E. Laxdal and B. F. Milton and A. J. Otter and J. B. Pearson and R. L. Poirier and P. W. Schmor	1502	1504	1502-1504
+1505	{TRAPP}-Facility for Proton Therapy of Cancer	V. E. Balakin and A. N. Skrinsky and V. P. Smirnov and Yu. D. Valyaev	1505	1505	1505
+1506	A {CW} High Power and High Quality Electrostatic Accelerator for {FEL} Devices	I. Boscolo and G. Brautti and V. Stagno and V. Variale and L. Tecchio	1506	1508	1506-1508
+1509	A Compact 1-{MeV} Deuteron {RFQ} Linac	D. A. Swenson and P. E. Young	1509	1511	1509-1511
+1512	Advanced Ultrafine Particle Accelerator	D. A. Swenson and A. E. Dabiri and D. B. McColl and Z. Mikic and M. F. Scharff	1512	1514	1512-1514
+1515	{IMPELA}: An Industrial Accelerator Family	J. Ungrin and N. H. Drewell and N. A. Ebrahim and J.-P. Labrie and C. B. Lawrence and V. A. Mason and B. F. White	1515	1517	1515-1517
+1518	Utilization of the Light Ion Cyclotron of the Joint Research Centre at {ISPRA (VA) Italy}	von der Hardt, P. and M. Castiglioni and B. Weckermann)	1518	1520	1518-1520
+1521	Development of Heavy Ion Induction Linear Accelerators as Drivers for Inertial Confinement Fusion	A. I. Warwick and C. Celata and A. Faltens and T. J. Fessenden and D. J. Judd and D. Keefe and C. H. Kim and L. J. Laslett and E. P. Lee and H. Meuth and H. Rutkowski and L. Smith	1521	1522	1521-1522
+1523	{COSY} — A Compact Electron Storage Ring for Synchrotron Radiation	E. Weihreter and W. Anders and K. Bürkmann and K. Derikum and G. v. Egan-Krieger and M. v. Hartrott and N. Holtkamp and W. -D. Klotz and H. Lehr and G. Mülhaupt and R. Maier and M. Martin and A. Schiele and L. Schulz and T. Westphal	1523	1525	1523-1525
